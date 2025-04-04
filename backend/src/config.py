@@ -42,6 +42,8 @@ class Config:
     
     # CrewAI settings
     CREW_VERBOSE: bool = os.getenv('CREW_VERBOSE', 'False').lower() == 'true'
+    
+    ALLOW_CLEAR_ALL_DOCUMENTS = True  # Set to True only in development/testing environments
 
     # Secret key for session management (must be set in environment for production)
     SECRET_KEY: str = os.getenv('SECRET_KEY')

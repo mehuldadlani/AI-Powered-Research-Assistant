@@ -5092,3 +5092,900 @@ LiteLLM completion() model= mistral; provider = ollama
 2025-04-05 01:38:29,294 - src.services.pdf_service - INFO - Cleaning up PDFService...
 2025-04-05 01:38:29,295 - src.services.pdf_service - INFO - PDFService cleaned up
 2025-04-05 01:38:29,295 - root - INFO - PDFService cleaned up successfully
+2025-04-05 01:56:33,024 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.163 seconds
+2025-04-05 01:56:33,026 - root - INFO - Starting up the application...
+2025-04-05 01:56:33,026 - root - INFO - Configuration validated successfully
+2025-04-05 01:56:33,026 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 01:56:33,038 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 01:56:33,162 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 01:56:33,162 - root - INFO - RAG service initialized successfully
+2025-04-05 01:56:33,162 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 01:57:50,876 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 01:57:50,968 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:27:50.799805Z' done=True done_reason='stop' total_duration=77627080291 load_duration=4092376333 prompt_eval_count=2 prompt_eval_duration=7418941875 eval_count=1170 eval_duration=66107400541 message=Message(role='assistant', content="1. If you are a student:\n\na)  Write an essay on the topic: The Role of Technology in Modern Education. (500 words).\n\nThe Role of Technology in Modern Education\n\nIn today's rapidly changing world, technology has become an indispensable tool in almost every aspect of life, and education is no exception. It has significantly transformed the way we learn, making it more accessible, interactive, and effective. This essay aims to discuss the crucial role of technology in modern education, its benefits, challenges, and future prospects.\n\nTechnology plays a pivotal role in enhancing the learning process by providing a plethora of resources that cater to diverse learning styles. For instance, digital textbooks, educational videos, and interactive simulations offer students an immersive learning experience, making complex concepts easier to understand. Moreover, technology enables personalized learning, where each student can learn at their own pace, based on their strengths, weaknesses, and interests. This not only improves retention but also fosters a sense of independence and self-motivation among students.\n\nOne of the most significant benefits of technology in education is its potential to bridge geographical gaps. Online learning platforms allow students from remote areas to access high-quality education resources that might otherwise be unavailable to them. This not only broadens their horizons but also equips them with the skills necessary to compete in today's globalized world.\n\nHowever, the integration of technology into education is not without its challenges. One of the primary concerns is digital distraction, which can hinder the learning process if not managed effectively. Additionally, the high cost of technological devices and internet access makes quality education inaccessible to many students from underprivileged backgrounds. To mitigate these challenges, it is crucial to implement strategies that promote responsible technology use and provide equal opportunities for all students to reap the benefits of technology-enhanced learning.\n\nLooking ahead, the future of education lies in integrating advanced technologies such as Artificial Intelligence (AI), Virtual Reality (VR), and Augmented Reality (AR). AI can help personalize learning by adapting to each student's unique needs, while VR and AR can provide immersive, interactive learning experiences that traditional classrooms cannot offer. However, for this vision to become a reality, there is a pressing need for collaborative efforts among educators, policymakers, and technology developers to ensure that these technologies are used responsibly and equitably to transform education for the better.\n\nIn conclusion, technology has revolutionized modern education by offering resources that cater to diverse learning styles, enabling personalized learning, and bridging geographical gaps. While challenges such as digital distraction and unequal access remain, the potential benefits of integrating advanced technologies into education are immense. To realize this vision, it is essential to promote responsible technology use and ensure equal opportunities for all students. Only then can we create a future where technology serves as a catalyst for quality education that fosters critical thinking, creativity, and innovation in today's globalized world.\n\nb) Compare and contrast the traditional classroom learning environment with a flipped classroom model. (300 words)\n\nTraditional Classroom Learning Environment vs Flipped Classroom Model\n\nThe traditional classroom learning environment is characterized by a teacher-centered approach, where students passively receive information from their teachers. In contrast, the flipped classroom model is student-centered and allows for active engagement in the learning process.\n\nIn a traditional classroom setting, the teacher delivers lectures and provides explanations, while students take notes and absorb the information. This approach relies on memorization and rote learning, making it difficult to cater to diverse learning styles. Moreover, students may struggle to understand complex concepts due to lack of interaction or practical application.\n\nIn contrast, a flipped classroom model reverses the traditional learning paradigm by having students watch lectures at home before coming to class. This allows them to learn at their own pace and review the material as many times as necessary. During class time, students engage in hands-on activities, discussions, and group projects that facilitate active learning and critical thinking. The flipped classroom model also encourages collaboration and peer-to-peer learning, fostering a sense of community among students.\n\nAnother significant advantage of the flipped classroom model is its flexibility. Teachers can create tailored learning experiences for each student by adapting the content based on their needs and preferences. Moreover, the flipped classroom model enables teachers to monitor each student's progress closely, allowing them to intervene promptly if necessary.\n\nHowever, there are challenges associated with implementing a flipped classroom model, such as digital accessibility issues, unequal distribution of resources, and resistance from traditional teaching methods. To address these challenges, it is essential to provide equal opportunities for all students to access the necessary technology and resources. Additionally, teachers must be trained in using technology effectively and adopting innovative pedagogical strategies to create engaging learning experiences.\n\nIn conclusion, while both traditional classroom learning environments and flipped classroom models have their merits, the latter offers a more interactive, student-centered approach that caters to diverse learning styles, encourages active engagement, and fosters critical thinking skills. To ensure its success, it is crucial to address digital accessibility issues, provide equal opportunities for all students, and train teachers in adopting innovative pedagogical strategies. Only then can we create a future where education is truly tailored to the needs of each student.", images=None, tool_calls=None)
+2025-04-05 01:57:50,972 - root - INFO - CrewAIService initialized successfully
+2025-04-05 01:57:50,976 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 01:57:50,978 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 01:57:50,978 - root - INFO - AIService initialized successfully
+2025-04-05 01:57:50,987 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 01:57:50,987 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 01:57:50,987 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 01:57:51,130 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 01:57:56,607 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 01:58:05,617 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 01:58:05,617 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 01:58:05,618 - root - INFO - QnAService initialized successfully
+2025-04-05 01:58:05,618 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 01:58:05,618 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 01:58:05,618 - root - INFO - PDFService initialized successfully
+2025-04-05 01:58:05,619 - root - INFO - Services initialized and passed to routes
+2025-04-05 01:58:05,622 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 92.596 seconds
+2025-04-05 01:58:05,624 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 01:58:05,644 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:00:03,432 - src.services.qna_service - INFO - Querying collection for prompt: What is the main topic of this paper?
+2025-04-05 02:00:03,489 - src.services.rag_service - INFO - Document retrieved successfully: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:00:03,489 - src.services.qna_service - INFO - Query results received: 1 documents
+2025-04-05 02:00:03,489 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 02:00:04,404 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 4
+2025-04-05 02:00:04,404 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 02:00:04,420 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 02:00:04,446 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:00:16,987 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:00:17,032 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:00:17,081 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:00:17,081 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:00:17,098 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:00:17,110 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 02:00:17,110 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:00:17,110 - src.services.qna_service - INFO - LLM response received
+2025-04-05 02:00:17,121 - asyncio - WARNING - Executing <Task finished name='Task-11' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 12.718 seconds
+2025-04-05 02:00:52,956 - src.services.qna_service - INFO - Querying collection for prompt: What is the main outcome of this paper?
+2025-04-05 02:00:52,958 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:00:52,958 - src.services.qna_service - INFO - Query results received: 1 documents
+2025-04-05 02:00:52,958 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 02:00:53,172 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 4
+2025-04-05 02:00:53,172 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 02:00:53,182 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 02:00:53,191 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:01:04,282 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:01:04,298 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:01:04,314 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 02:01:04,314 - src.services.qna_service - INFO - LLM response received
+2025-04-05 02:01:04,320 - asyncio - WARNING - Executing <Task finished name='Task-19' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 11.147 seconds
+2025-04-05 02:01:04,331 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:01:04,340 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:03:33,460 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.170 seconds
+2025-04-05 02:03:33,462 - root - INFO - Starting up the application...
+2025-04-05 02:03:33,462 - root - INFO - Configuration validated successfully
+2025-04-05 02:03:33,462 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:03:33,475 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:03:33,600 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:03:33,600 - root - INFO - RAG service initialized successfully
+2025-04-05 02:03:33,601 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:03:55,936 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:03:55,978 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:33:55.881101Z' done=True done_reason='stop' total_duration=22276405542 load_duration=15845417 prompt_eval_count=2 prompt_eval_duration=3987272250 eval_count=330 eval_duration=18266514584 message=Message(role='assistant', content="2016-03-27\n\n# The relationship between in-flight and ground-based exposure to ultrafine particles (UFP) in the cabin of an Airbus A380 airliner Journal of Exposure Science & Environmental Epidemiology, 26 (5), pp. 493 - 501. Abstract:\n\nThe relationship between in-flight and ground-based exposure to ultrafine particles (UFP) has not been previously investigated. Using personal monitors, we measured UFP exposures of a flight crew member aboard an Airbus A380 airliner during a 16-hour transatlantic flight at various cabin altitudes/pressures and compared the data to that generated on the ground in the same airport. The results indicated that ground-based exposure was significantly higher (25% [CI: 4-65]) than in-flight exposure; however, the relationship between exposures was complex and varied depending upon cabin altitude/pressure. This difference may be due to a variety of factors including different source emissions, ventilation system efficiencies and particle sizes/compositions. The results have implications for exposure assessment studies in aircraft cabins and suggest that ground-based measurements made at airports with similar ventilation systems to those of the aircraft studied may provide a reasonable estimate of exposure during flight; however, caution should be exercised in making such comparisons especially when the aircraft's cabin altitude/pressure differs significantly from that at ground level.", images=None, tool_calls=None)
+2025-04-05 02:03:55,982 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:03:55,985 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:03:55,985 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:03:55,985 - root - INFO - AIService initialized successfully
+2025-04-05 02:03:55,990 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:03:55,990 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:03:55,990 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:03:56,258 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:04:06,656 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:04:07,414 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:04:07,414 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:04:07,414 - root - INFO - QnAService initialized successfully
+2025-04-05 02:04:07,415 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:04:07,415 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:04:07,415 - root - INFO - PDFService initialized successfully
+2025-04-05 02:04:07,415 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:04:07,418 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 33.955 seconds
+2025-04-05 02:04:07,420 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=30, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:04:07,438 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:06:23,213 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.162 seconds
+2025-04-05 02:06:23,215 - root - INFO - Starting up the application...
+2025-04-05 02:06:23,215 - root - INFO - Configuration validated successfully
+2025-04-05 02:06:23,215 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:06:23,228 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:06:23,363 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:06:23,363 - root - INFO - RAG service initialized successfully
+2025-04-05 02:06:23,363 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:06:40,814 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:06:40,824 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:36:40.801848Z' done=True done_reason='stop' total_duration=17427592542 load_duration=16210750 prompt_eval_count=2 prompt_eval_duration=4535873292 eval_count=244 eval_duration=12872944791 message=Message(role='assistant', content=' <!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n</head>\n<body>\n    <?php\n        $servername = "localhost";\n        $username = "root";\n        $password = "";\n        $dbname = "test";\n\n        // Create connection\n        $conn = new mysqli($servername, $username, $password, $dbname);\n\n        // Check connection\n        if ($conn->connect_error) {\n            die("Connection failed: " . $conn->connect_error);\n        }\n\n        $sql = "CREATE DATABASE test";\n        if ($conn->query($sql) === TRUE) {\n            echo "New database created successfully";\n        } else {\n            echo "Error creating database: " . $conn->error;\n        }\n    ?>\n</body>\n</html>', images=None, tool_calls=None)
+2025-04-05 02:06:40,826 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:06:40,826 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:06:40,826 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:06:40,826 - root - INFO - AIService initialized successfully
+2025-04-05 02:06:40,826 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:06:40,826 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:06:40,826 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:06:40,856 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:06:51,939 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:06:52,713 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:06:52,713 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:06:52,713 - root - INFO - QnAService initialized successfully
+2025-04-05 02:06:52,713 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:06:52,713 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:06:52,713 - root - INFO - PDFService initialized successfully
+2025-04-05 02:06:52,714 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:06:52,716 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 29.501 seconds
+2025-04-05 02:06:52,717 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:06:52,722 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:08:56,234 - src.services.rag_service - INFO - Document retrieved successfully: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:08:56,235 - src.services.qna_service - INFO - Answering question. Prompt: 'What is the main outcome of this paper?', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 02:08:56,235 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:08:56,235 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:08:56,235 - src.services.qna_service - ERROR - Error answering question: object of type 'NoneType' has no len()
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/qna_service.py", line 179, in answer_question
+    logger.info(f"Retrieved document. Content length: {len(context[0])}")
+                                                       ^^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2025-04-05 02:11:08,773 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.162 seconds
+2025-04-05 02:11:08,775 - root - INFO - Starting up the application...
+2025-04-05 02:11:08,775 - root - INFO - Configuration validated successfully
+2025-04-05 02:11:08,775 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:11:08,788 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:11:08,915 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:11:08,915 - root - INFO - RAG service initialized successfully
+2025-04-05 02:11:08,915 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:11:36,328 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:11:36,337 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:41:36.311852Z' done=True done_reason='stop' total_duration=27391292334 load_duration=17195750 prompt_eval_count=2 prompt_eval_duration=5127397750 eval_count=432 eval_duration=22238315542 message=Message(role='assistant', content=' A. Ramesh,  M.Sc., M.Phil\n    Associate Professor\n    Department of Psychology and Human Development\n    National Institute of Advanced Studies (NIAS)\n    Indian Institute of Science Campus\n    Bengaluru-560 012\n\n    Phone: (+91 80) 2293-2745, 2293-2730,  2293-2760\n    Fax:    (+91 80) 2293-2746\n    Email: aramesh@nias.res.in\n\n    My research interests include the study of cognition and emotions in children and adults, with special reference to creative thinking, problem solving, decision making, moral development, and emotion regulation strategies and skills. I am also interested in cross-cultural differences in cognitive development and their implications for cognition and mental health.\n\n    I have published 17 articles in international peer-reviewed journals, one book chapter, and two technical reports. Currently, I am working on a project funded by the Indian Council of Social Science Research (ICSSR), New Delhi, on the relationship between creativity and emotional intelligence among school children in India. The study is comparing 100 fourth graders and 100 eleventh graders from two schools in rural Karnataka with their counterparts in urban Bangalore.\n\n    I am also a member of the International Society for Research on Emotion (ISRE), Society for Research in Child Development (SRCD), and European Association for Research in Learning and Instruction (EARLI). I have delivered talks at several international conferences, including the biennial conference of EARLI in 2016.\n\n    I welcome students who are interested in research on cognitive development or emotions to work with me on their M.Phil. projects.\n\n    My curriculum vitae is available here: A_Ramesh_CV', images=None, tool_calls=None)
+2025-04-05 02:11:36,338 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:11:36,338 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:11:36,338 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:11:36,338 - root - INFO - AIService initialized successfully
+2025-04-05 02:11:36,338 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:11:36,338 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:11:36,338 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:11:36,368 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:11:44,851 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:11:49,250 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:11:49,251 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:11:49,251 - root - INFO - QnAService initialized successfully
+2025-04-05 02:11:49,252 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:11:49,252 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:11:49,252 - root - INFO - PDFService initialized successfully
+2025-04-05 02:11:49,252 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:11:49,255 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 40.480 seconds
+2025-04-05 02:11:49,258 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:11:49,265 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:12:11,574 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 02:12:41,436 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_1.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 02:12:49,494 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_2.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 02:14:24,824 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.166 seconds
+2025-04-05 02:14:24,825 - root - INFO - Starting up the application...
+2025-04-05 02:14:24,825 - root - INFO - Configuration validated successfully
+2025-04-05 02:14:24,825 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:14:24,838 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:14:24,894 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:14:24,895 - root - INFO - RAG service initialized successfully
+2025-04-05 02:14:24,895 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:14:49,549 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:14:49,597 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:44:49.474316Z' done=True done_reason='stop' total_duration=24570116542 load_duration=18196833 prompt_eval_count=2 prompt_eval_duration=4596798500 eval_count=346 eval_duration=19951093958 message=Message(role='assistant', content='2017-06-19\n\n# Influence of Engine and Clutch Modifications on the Power Transmission Characteristics of a 3.0L Diesel Engine Powered Light Utility Vehicle (LUV) 2017-01-1487\n\nThis paper presents the results of a study to investigate the effect of engine and clutch modifications, on the power transmission characteristics of a light utility vehicle (LUV) powered by a 3.0 L diesel engine. The main objective of this work is to provide data for optimization of the transmission ratios with regard to acceleration performance, drivability, fuel consumption and emission control. The tests were performed on a test bench using a dynamometer and different clutch settings and engine modifications. Two types of transmission were used in the study; manual and automated sequential transmissions. Engine modifications included the use of variable geometry turbochargers (VGT) with electronic control and adjustable fuel injection timing while clutch modifications involved varying the clutch disc spring rate to obtain various levels of clutch pedal effort (CPE). The results obtained from the study indicate that there is a correlation between CPE, engine torque at peak power point and vehicle acceleration performance. In particular, high values of CPE were associated with improved acceleration performance but increased fuel consumption while lower values resulted in poorer acceleration performance but reduced fuel consumption. In conclusion, it was observed that adjusting the clutch spring rate and utilizing VGTs with electronic control can help to optimize engine-clutch-transmission interactions for improved power transmission characteristics, drivability, fuel efficiency and emission control of LUVs.', images=None, tool_calls=None)
+2025-04-05 02:14:49,598 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:14:49,599 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:14:49,599 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:14:49,599 - root - INFO - AIService initialized successfully
+2025-04-05 02:14:49,600 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:14:49,601 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:14:49,602 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:14:49,699 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:15:10,596 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:15:12,181 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:15:12,182 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:15:12,182 - root - INFO - QnAService initialized successfully
+2025-04-05 02:15:12,183 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:15:12,183 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:15:12,183 - root - INFO - PDFService initialized successfully
+2025-04-05 02:15:12,183 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:15:12,187 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 47.362 seconds
+2025-04-05 02:15:12,191 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=30, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:15:12,219 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:15:18,512 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 02:15:18,514 - root - INFO - Starting up the application...
+2025-04-05 02:15:18,514 - root - INFO - Configuration validated successfully
+2025-04-05 02:15:18,514 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:15:18,527 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:15:18,594 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:15:18,594 - root - INFO - RAG service initialized successfully
+2025-04-05 02:15:18,595 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:15:50,992 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:15:51,004 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:45:50.976692Z' done=True done_reason='stop' total_duration=32369106667 load_duration=17704375 prompt_eval_count=2 prompt_eval_duration=2313065083 eval_count=604 eval_duration=30036498417 message=Message(role='assistant', content='1557. 将二进制前缀表示转换为整数\n\n给定一个由若干 0 和 1 组成的字符串，找到所有这些下标对 i, j 的集合，使得对于所有有效的下标 k (i <= k < j)，字符串的第 k 位和第 j 位的值都相等。\n\n例如，给定字符串 "1010"，返回 [[0,4]]。\n\n返回所有满足条件的下标对集合。\n\n说明:\n\n* 字符串长度将不超过 30000 。\n\n```scss\n示例:\n输入: "1010"\n输出: [[0,4]]\n解释: 从下标 0 (总是位于第一个 1)到 4 的所有下标对，其第 i 位和第 j 位值都是 "1"。\n```\n\n**示例 2:**\n\n```\n输入: "111000"\n输出: [[0,1], [1,2], [2,3], [1,4], [0,5], [1,6], [2,7]]，这些对的数量为 7。\n```\n\n**进阶:**\n你可以设计一个时间复杂度为 O(n) 或者 O(log n) 的解决方案吗？\n\n```javascript\n/**\n * @param {string} s\n * @return {number[][]}\n */\nvar findValidIndexPair = function(s) {\n    let res = []\n    const n = s.length;\n    const bit = Array(n).fill(0); // 记录每个位置的1的数量\n    for (let i = 0, j = 0; i < n; ++i) {\n        if (s[i] === \'1\') {\n            ++bit[j];\n        }\n        if (++j < n && s[j] === \'0\') {\n            --bit[j];\n        }\n        // 此时 [i, j] 为一个有效的区间，如果 i > 0，说明 i-1 不满足条件\n        if (i >= 1 && bit[i - 1] === bit[j]) {\n            res.push([i - 1, j]);\n        }\n    }\n    return res;\n};\n```', images=None, tool_calls=None)
+2025-04-05 02:15:51,005 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:15:51,005 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:15:51,005 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:15:51,005 - root - INFO - AIService initialized successfully
+2025-04-05 02:15:51,005 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:15:51,005 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:15:51,005 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:15:51,039 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:16:04,605 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:16:12,242 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:16:12,243 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:16:12,243 - root - INFO - QnAService initialized successfully
+2025-04-05 02:16:12,243 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:16:12,243 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:16:12,243 - root - INFO - PDFService initialized successfully
+2025-04-05 02:16:12,243 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:16:12,247 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 53.732 seconds
+2025-04-05 02:16:12,249 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=37, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:16:12,257 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:18:39,563 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_2.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 02:18:43,764 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 02:18:55,693 - src.services.rag_service - INFO - Retrieved 100 documents
+2025-04-05 02:19:28,843 - src.services.rag_service - INFO - Retrieved 100 documents
+2025-04-05 02:21:23,630 - src.services.rag_service - INFO - Retrieved 278 documents
+2025-04-05 02:23:55,632 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.189 seconds
+2025-04-05 02:23:55,634 - root - INFO - Starting up the application...
+2025-04-05 02:23:55,634 - root - INFO - Configuration validated successfully
+2025-04-05 02:23:55,634 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:23:55,647 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:23:55,694 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:23:55,694 - root - INFO - RAG service initialized successfully
+2025-04-05 02:23:55,694 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:24:25,550 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:24:25,584 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:54:25.399195Z' done=True done_reason='stop' total_duration=29697886750 load_duration=4083424250 prompt_eval_count=2 prompt_eval_duration=10707990792 eval_count=279 eval_duration=14898460917 message=Message(role='assistant', content=' The Lakeshore School District is seeking to fill a vacancy on its Board of Education.  Interested parties must reside within the district and be at least 18 years old by July 1, 2023.\n\n   The position will serve as an At-Large Representative beginning with the first meeting in August 2023 through June 30, 2026.\n\nTo apply for this position you must complete an application and submit a letter of interest that includes your reasons for seeking a seat on the Board, relevant experience, skills or qualities you would bring to the role, and goals for the district.\n\nApplications can be obtained online at www.lakeshoresd.org or by contacting District Office Administrative Assistant, Kimberly Bierutowski, via email kbierutowski@lakeshoresd.org, phone 920-748-6153 x2113 or mail Lakeshore School District, ATTN: Board of Education Vacancy, W1172 County Road A, Manitowoc, WI  54220\n\nThe deadline for submitting completed applications is 4 p.m. on April 28, 2023.', images=None, tool_calls=None)
+2025-04-05 02:24:25,585 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:24:25,587 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:24:25,587 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:24:25,587 - root - INFO - AIService initialized successfully
+2025-04-05 02:24:25,589 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:24:25,589 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:24:25,589 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:24:25,675 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:24:31,549 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:24:32,254 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:24:32,254 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:24:32,254 - root - INFO - QnAService initialized successfully
+2025-04-05 02:24:32,254 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:24:32,254 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:24:32,254 - root - INFO - PDFService initialized successfully
+2025-04-05 02:24:32,255 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:24:32,257 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 36.622 seconds
+2025-04-05 02:24:32,258 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=40, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:24:32,274 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:24:39,766 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.171 seconds
+2025-04-05 02:24:39,768 - root - INFO - Starting up the application...
+2025-04-05 02:24:39,768 - root - INFO - Configuration validated successfully
+2025-04-05 02:24:39,768 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:24:39,781 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:24:39,842 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:24:39,843 - root - INFO - RAG service initialized successfully
+2025-04-05 02:24:39,843 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:25:14,971 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:25:14,992 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:55:14.937278Z' done=True done_reason='stop' total_duration=35083445209 load_duration=15381834 prompt_eval_count=2 prompt_eval_duration=2488330625 eval_count=651 eval_duration=32571970084 message=Message(role='assistant', content=' A new study by the University of Missouri found that women who get married between the ages 20 and 24 are more likely to be successful in the long term than those who wait until their late 20s or early 30s to marry. The study also suggests that marrying at a younger age could have negative consequences for women’s careers if they do not invest time and effort into building their skills and networks before marriage.\n\nThe study, titled “Marriage and Career Success: The Role of Life Timing and Gendered Resources,” was published in the journal Family Relations. Researchers examined data from the National Longitudinal Survey of Youth 1979 (NLSY79), which followed a nationally representative sample of young people born between 1957 and 1964. The study found that women who married between the ages of 20 and 24 had higher incomes, were more likely to be employed, and were more likely to have attained a college degree than those who married at a later age.\n\nHowever, the study also found that delaying marriage could have positive consequences for women’s careers if they take advantage of the extra time to build their skills and networks before settling down. Women who delayed marriage until their late 20s or early 30s were more likely to hold managerial positions than those who married at a younger age, although they had lower incomes on average.\n\nThe study’s authors suggest that women who wait too long to marry may miss out on the benefits of marriage, such as emotional support and financial stability, which can help them advance in their careers. On the other hand, delaying marriage can provide women with more opportunities to invest in themselves and build their skills and networks, which can lead to greater career success.\n\nThe study’s authors also note that the findings may not apply equally to all women, as factors such as race, ethnicity, and socioeconomic status can influence the relationship between marriage and career success. They suggest that future research should examine how these factors interact with marriage timing to affect women’s careers.\n\nOverall, the study suggests that there is no one-size-fits-all answer to the question of when is the best time for women to get married in terms of their careers. Women who marry at a younger age may be more likely to achieve long-term success, but those who delay marriage until they are older and invest in themselves may also reap career benefits. The study’s authors emphasize the importance of women making informed decisions about when to marry based on their individual circumstances and goals.\n\nThe findings of this study add to a growing body of research that suggests there is no single path to success for women in the workforce. Some studies have found that women who prioritize their careers early on are more likely to achieve success, while others have found that taking time off to raise children or pursue other personal interests can also lead to career advancement. Ultimately, the key is for women to find a balance between their personal and professional lives that works best for them.', images=None, tool_calls=None)
+2025-04-05 02:25:14,992 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:25:14,993 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:25:14,993 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:25:14,993 - root - INFO - AIService initialized successfully
+2025-04-05 02:25:14,994 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:25:14,994 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:25:14,994 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:25:15,041 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:25:24,217 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:25:25,738 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:25:25,739 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:25:25,739 - root - INFO - QnAService initialized successfully
+2025-04-05 02:25:25,739 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:25:25,739 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:25:25,739 - root - INFO - PDFService initialized successfully
+2025-04-05 02:25:25,740 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:25:25,743 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 45.975 seconds
+2025-04-05 02:25:25,746 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=47, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:25:25,756 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:26:06,147 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 02:26:06,148 - root - INFO - Starting up the application...
+2025-04-05 02:26:06,148 - root - INFO - Configuration validated successfully
+2025-04-05 02:26:06,148 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:26:06,161 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:26:06,232 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:26:06,232 - root - INFO - RAG service initialized successfully
+2025-04-05 02:26:06,232 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:26:27,929 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:26:27,995 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:56:27.82835Z' done=True done_reason='stop' total_duration=21585535291 load_duration=15126208 prompt_eval_count=2 prompt_eval_duration=2561400625 eval_count=374 eval_duration=18999983916 message=Message(role='assistant', content=" A little over two years ago, I took my kids to a small amusement park.  There were lots of rides that they enjoyed and at the end we were all happy.\n    As we walked out, they each grabbed their own souvenir from a small trinket shop.  My son got a toy car, which he was very excited about, but it didn't stay that way for long.  It didn't take much for him to lose interest in the car and he left it behind as we walked away.\n    I found myself reflecting on this recently and thinking that many people treat their faith like my son treated his toy car. They are excited about it when they first get it, but then it gets left behind as they go about the business of life.  They lose interest in it and don't think about it anymore until something happens to remind them of it.\n    The problem is that we can't afford to leave our faith behind like that toy car. We need to make sure that our faith is something that stays with us always, no matter what we're doing or where we're going.  This means making a conscious effort to stay connected to God and to the church, even when it might be more convenient to let it slip away.\n    So, my challenge to you this week is to take a look at your own faith and see if there are any areas where it might have become stale or forgotten.  Make a plan to reconnect with God and the church and to keep your faith alive and vibrant in your life.\n    I'll be praying for you as you do this, and I hope that God will bless your efforts and help you to stay connected to Him always.\nSincerely,\nPastor Brian", images=None, tool_calls=None)
+2025-04-05 02:26:27,997 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:26:28,001 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:26:28,001 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:26:28,001 - root - INFO - AIService initialized successfully
+2025-04-05 02:26:28,008 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:26:28,008 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:26:28,008 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:26:28,105 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:26:30,937 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:26:34,029 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:26:34,029 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:26:34,029 - root - INFO - QnAService initialized successfully
+2025-04-05 02:26:34,031 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:26:34,031 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:26:34,031 - root - INFO - PDFService initialized successfully
+2025-04-05 02:26:34,031 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:26:34,033 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 27.885 seconds
+2025-04-05 02:26:34,035 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=50, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:26:34,058 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:26:41,532 - hypercorn.error - ERROR - Error in ASGI Framework
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/task_group.py", line 27, in _handle
+    await app(scope, receive, send, sync_spawn, call_soon)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/app_wrappers.py", line 34, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1735, in __call__
+    await self.asgi_app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1761, in asgi_app
+    await asgi_handler(receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 60, in __call__
+    raise_task_exceptions(done)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py", line 186, in raise_task_exceptions
+    raise task.exception()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 110, in handle_request
+    response = await _handle_exception(self.app, error)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 408, in _handle_exception
+    raise error
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 108, in handle_request
+    response = await self.app.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1468, in handle_request
+    return await self.handle_exception(error)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1464, in handle_request
+    return await self.full_dispatch_request(request_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1502, in full_dispatch_request
+    result = await self.handle_user_exception(error)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1059, in handle_user_exception
+    raise error
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1500, in full_dispatch_request
+    result = await self.dispatch_request(request_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1597, in dispatch_request
+    return await self.ensure_async(handler)(**request_.view_args)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 278, in clear_all_documents
+    confirmation = request.json.get('confirmation')
+                   ^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'get'
+2025-04-05 02:28:12,090 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.162 seconds
+2025-04-05 02:28:12,091 - root - INFO - Starting up the application...
+2025-04-05 02:28:12,091 - root - INFO - Configuration validated successfully
+2025-04-05 02:28:12,092 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:28:12,104 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:28:12,168 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:28:12,168 - root - INFO - RAG service initialized successfully
+2025-04-05 02:28:12,168 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:28:35,764 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:28:35,823 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:58:35.698039Z' done=True done_reason='stop' total_duration=23520601375 load_duration=19325750 prompt_eval_count=2 prompt_eval_duration=4441362667 eval_count=312 eval_duration=19051821958 message=Message(role='assistant', content=" We are a family business, 3 generations now. The farm has been in the family since 1947 when my grandfather bought it and has always grown tobacco and raised beef cattle.  I have been growing and curing my own beef jerky for over 20 years. My sons and grandsons help with the curing process, which is a time consuming and labor intensive operation.  It is very much a hands on process, each batch is unique in its taste and texture due to the different weather conditions when the meat was hung up to age and the slight variations in our seasonings.\n   Our jerky is made of lean beef top round, cured with pure cane sugar, salt, soy sauce, black pepper, garlic powder, and liquid smoke. It has a rich savory flavor that comes from aging for 12-14 days.  It is not overly salty or sweet like some brands you may be used to. We do not use any MSG in our jerky.\n   You can order online through this website, or we have a booth set up at the Raleigh Farmer's Market every Saturday from early April to November.  Please feel free to contact us for more information about our products, or if you would like to request a custom order.\n\nThanks,\n\nJimmy and Kathy Hines\n\nThe farm is located in Wake Forest, North Carolina on the outskirts of Raleigh.", images=None, tool_calls=None)
+2025-04-05 02:28:35,826 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:28:35,830 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:28:35,832 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:28:35,832 - root - INFO - AIService initialized successfully
+2025-04-05 02:28:35,838 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:28:35,838 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:28:35,838 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:28:35,941 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:28:48,982 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:28:50,499 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:28:50,499 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:28:50,500 - root - INFO - QnAService initialized successfully
+2025-04-05 02:28:50,500 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:28:50,500 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:28:50,500 - root - INFO - PDFService initialized successfully
+2025-04-05 02:28:50,500 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:28:50,505 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 38.412 seconds
+2025-04-05 02:28:50,509 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=53, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:28:50,533 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:28:57,922 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.162 seconds
+2025-04-05 02:28:57,923 - root - INFO - Starting up the application...
+2025-04-05 02:28:57,923 - root - INFO - Configuration validated successfully
+2025-04-05 02:28:57,924 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:28:57,936 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:28:58,009 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:28:58,009 - root - INFO - RAG service initialized successfully
+2025-04-05 02:28:58,009 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:29:14,442 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:29:14,467 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T20:59:14.408412Z' done=True done_reason='stop' total_duration=16392696583 load_duration=11581458 prompt_eval_count=2 prompt_eval_duration=2043707500 eval_count=277 eval_duration=14331235958 message=Message(role='assistant', content=' [1/2] The logo of the European Central Bank (ECB) is seen at its headquarters in Frankfurt, Germany, December 18, 2019. REUTERS/Wolfgang Rattay\n\nMADRID, Feb 13 (Reuters) - Spain\'s economy could contract by as much as 4% this year if the European Central Bank stops its bond-buying programme without a replacement, Economy Minister Nadia Calviño warned on Friday.\n\nThe ECB has promised to keep interest rates low and buy bonds until at least December 2021 but some policymakers have expressed doubts about extending its asset purchase programme beyond that point.\n\n"If the ECB ends its purchases without a replacement, we would see negative consequences," Calviño told reporters in Madrid after a video conference with her European counterparts on Thursday.\n\n"We are talking about an impact on Spain\'s GDP of between 2% and 4%. We cannot forget that we have spent the last five years reducing our debt levels, which is one reason why we were spared the worst consequences of the COVID crisis." (Reporting by Paulina Duran; Writing by Nathan Allen) ((Nathan.Allen@thomsonreuters.com))', images=None, tool_calls=None)
+2025-04-05 02:29:14,471 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:29:14,477 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:29:14,477 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:29:14,477 - root - INFO - AIService initialized successfully
+2025-04-05 02:29:14,481 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:29:14,481 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:29:14,481 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:29:14,565 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:29:33,848 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:29:40,463 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:29:40,463 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:29:40,464 - root - INFO - QnAService initialized successfully
+2025-04-05 02:29:40,464 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:29:40,465 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:29:40,465 - root - INFO - PDFService initialized successfully
+2025-04-05 02:29:40,465 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:29:40,468 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 42.544 seconds
+2025-04-05 02:29:40,470 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=56, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:29:40,488 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:30:01,545 - src.services.rag_service - INFO - All documents (278) cleared from the RAG system
+2025-04-05 02:30:31,703 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:30:31,704 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:30:31,821 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:30:33,195 - src.services.rag_service - INFO - Document stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:37:26,165 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.271 seconds
+2025-04-05 02:37:26,192 - src.services.rag_service - INFO - Batch storage successful for 229 documents
+2025-04-05 02:37:26,194 - src.services.qna_service - INFO - Added 229 document chunks to RAG for file: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:37:26,208 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:37:26,309 - src.services.rag_service - INFO - Document metadata updated successfully: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:37:26,315 - src.api.routes - INFO - File uploaded and stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:38:08,457 - src.services.rag_service - INFO - Retrieved 230 documents
+2025-04-05 02:38:25,510 - src.services.rag_service - INFO - Retrieved 230 documents
+2025-04-05 02:39:04,474 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:39:04,474 - src.services.qna_service - INFO - Answering question. Prompt: 'What is the main outcome of this paper?', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 02:39:04,475 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:39:04,475 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:39:04,475 - src.services.qna_service - INFO - Retrieved document. Content length: 63523
+2025-04-05 02:39:04,475 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 02:39:05,544 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 63523
+2025-04-05 02:39:05,544 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 02:39:05,582 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 02:39:05,633 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:39:32,722 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:39:32,906 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:39:33,001 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:39:33,002 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:39:33,040 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:39:33,054 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:39:33,068 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:39:52,178 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:39:52,214 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:39:52,244 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 02:39:52,245 - src.services.qna_service - INFO - LLM response received
+2025-04-05 02:39:52,272 - asyncio - WARNING - Executing <Task finished name='Task-43' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 46.729 seconds
+2025-04-05 02:39:52,301 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:39:52,305 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:40:18,781 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:40:18,782 - src.services.qna_service - INFO - Returning cached answer for prompt: What is the main outcome of this paper?
+2025-04-05 02:40:47,114 - src.services.rag_service - INFO - Retrieved 230 documents
+2025-04-05 02:52:17,196 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.159 seconds
+2025-04-05 02:52:17,198 - root - INFO - Starting up the application...
+2025-04-05 02:52:17,198 - root - INFO - Configuration validated successfully
+2025-04-05 02:52:17,198 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:52:17,210 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:52:17,332 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:52:17,332 - root - INFO - RAG service initialized successfully
+2025-04-05 02:52:17,332 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:52:57,038 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:52:57,060 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:22:57.009515Z' done=True done_reason='stop' total_duration=39674028625 load_duration=4079794542 prompt_eval_count=2 prompt_eval_duration=9678276167 eval_count=521 eval_duration=25909832250 message=Message(role='assistant', content=' (Reuters) - U.S. stock index futures were slightly higher on Tuesday as investors continued to watch political developments in Washington and after the Federal Reserve\'s decision on interest rates earlier in the day.\n\nThe Federal Open Market Committee said it would end its bond-buying program this month, as widely expected, but offered few clues about when it might start raising interest rates from near zero.\n\nThe Fed said in a statement that it will assess "economic conditions" on an ongoing basis to decide when to raise borrowing costs, and did not specify how much time would pass before an increase.\n\nInvestors are watching for clues about the pace of future rate increases after the Fed raised its benchmark interest rate in December for the first time in nearly a decade.\n\nThe focus will shift back to Washington where President Donald Trump\'s administration is facing a critical week, with hearings on his nominee to lead the U.S. Labor Department and the start of a trial for his national security advisor Michael Flynn.\n\nAt 7:25 a.m. ET (1225 GMT), Dow e-minis were up 30 points, or 0.14 percent, S&P 500 e-minis were up 2 points, or 0.08 percent and Nasdaq 100 e-minis were up 7.5 points, or 0.16 percent.\n\nThe Senate is set to vote later on Tuesday on confirmation of Trump\'s labor secretary nominee Andrew Puzder, who faces questions over his business record as the CEO of a fast-food company and past statements about immigration policy.\n\nFlynn, meanwhile, resigned as national security adviser last week after it was revealed he misled Vice President Mike Pence about discussions with the Russian ambassador to Washington.\n\nEconomic reports due on Tuesday include a reading on consumer confidence for this month from the Conference Board at 10 a.m. ET and data on new home sales for December from the Census Bureau at 10:00 a.m. ET.\n\nShares of Blackberry Ltd jumped about 6 percent in premarket trading after the Canadian smartphone maker said it swung to a profit for its fiscal fourth quarter.\n\n(Reporting by Sruthi Shankar in Bengaluru; Editing by Anil D\'Silva)', images=None, tool_calls=None)
+2025-04-05 02:52:57,061 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:52:57,062 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:52:57,062 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:52:57,062 - root - INFO - AIService initialized successfully
+2025-04-05 02:52:57,063 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:52:57,063 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:52:57,063 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:52:57,126 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:53:05,073 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:53:05,772 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:53:05,772 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:53:05,772 - root - INFO - QnAService initialized successfully
+2025-04-05 02:53:05,773 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:53:05,773 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:53:05,773 - root - INFO - PDFService initialized successfully
+2025-04-05 02:53:05,773 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:53:05,775 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 48.581 seconds
+2025-04-05 02:53:05,776 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:53:05,784 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:53:19,161 - src.services.rag_service - INFO - All documents (230) cleared from the RAG system
+2025-04-05 02:53:24,894 - src.services.rag_service - INFO - Retrieved 0 documents
+2025-04-05 02:53:42,960 - src.services.rag_service - INFO - Retrieved 0 documents
+2025-04-05 02:53:51,416 - src.services.rag_service - INFO - Retrieved 0 documents
+2025-04-05 02:54:06,641 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:54:06,641 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:54:06,757 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:54:06,759 - src.services.pdf_service - INFO - Successfully extracted metadata from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:54:06,761 - src.services.rag_service - ERROR - Error storing document in RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 227, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 251, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 726, in validate_metadatas
+    validate_metadata(metadata)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 692, in validate_metadata
+    raise ValueError(
+ValueError: Expected metadata value to be a str, int, float or bool, got None which is a NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 125, in store_document
+    await asyncio.to_thread(self.collection.add, documents=[str(text)], ids=[doc_id], metadatas=[metadata])
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/Collection.py", line 80, in add
+    add_request = self._validate_and_prepare_add_request(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 98, in wrapper
+    raise type(e)(msg).with_traceback(e.__traceback__)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 227, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 251, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 726, in validate_metadatas
+    validate_metadata(metadata)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 692, in validate_metadata
+    raise ValueError(
+ValueError: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in add.
+2025-04-05 02:54:06,765 - src.api.routes - ERROR - Error processing uploaded file: Error storing document in RAG: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in add.
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 227, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 251, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 726, in validate_metadatas
+    validate_metadata(metadata)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 692, in validate_metadata
+    raise ValueError(
+ValueError: Expected metadata value to be a str, int, float or bool, got None which is a NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 125, in store_document
+    await asyncio.to_thread(self.collection.add, documents=[str(text)], ids=[doc_id], metadatas=[metadata])
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/Collection.py", line 80, in add
+    add_request = self._validate_and_prepare_add_request(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 98, in wrapper
+    raise type(e)(msg).with_traceback(e.__traceback__)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 227, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 251, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 726, in validate_metadatas
+    validate_metadata(metadata)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/chromadb/api/types.py", line 692, in validate_metadata
+    raise ValueError(
+ValueError: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in add.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 104, in upload_file
+    doc_id, is_new, doc_info = await rag_service.store_document(text, filename, metadata)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 135, in store_document
+    raise RuntimeError(f"Error storing document in RAG: {str(e)}")
+RuntimeError: Error storing document in RAG: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in add.
+2025-04-05 02:57:13,094 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 02:57:13,095 - root - INFO - Starting up the application...
+2025-04-05 02:57:13,095 - root - INFO - Configuration validated successfully
+2025-04-05 02:57:13,096 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 02:57:13,108 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:57:13,239 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 02:57:13,239 - root - INFO - RAG service initialized successfully
+2025-04-05 02:57:13,239 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 02:58:12,564 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 02:58:12,575 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:28:12.54741Z' done=True done_reason='stop' total_duration=59298918083 load_duration=15242291 prompt_eval_count=2 prompt_eval_duration=4995113125 eval_count=1040 eval_duration=54285653583 message=Message(role='assistant', content=' <template>\n    <div class="m-header">\n        <router-link to="/goodslist" class="logo">\n            <span>京东商城</span>\n        </router-link>\n        <ul class="nav">\n            <li><router-link :to="\'/searches\'">搜索</router-link></li>\n            <li v-for="(item, index) in navlist" :key="index" @mouseover="hover(index)" @mouseleave="leave()"><a href="#">{{ item.name }}</a></li>\n        </ul>\n        <div class="user">\n            <router-link to="/usercenter" class="user-info">\n                <span class="username"></span>\n                <i class="iconfont icon-tubiao"></i>\n            </router-link>\n            <ul class="dropdown">\n                <!-- <li><a href="#">我的京东</a></li> -->\n                <li @click="logout"><a href="#">退出登录</a></li>\n            </ul>\n        </div>\n    </div>\n</template>\n<script>\nimport { mapState } from \'vuex\'\nexport default {\n    name: \'header\',\n    data() {\n        return {\n            navlist: [\n                {name: \'女装\'},\n                {name: \'男装\'},\n                {name: \'数码\'},\n                {name: \'电器\'},\n                {name: \'京东超市\'},\n                {name: \'家用电器\'},\n                {name: \'美妆个护\'}\n            ]\n        }\n    },\n    computed: mapState([\'username\']),\n    methods: {\n        hover(index) {\n            this.navlist[index].flag = true;\n        },\n        leave() {\n            this.navlist.forEach((item, index) => {\n                item.flag = false\n            })\n        },\n        logout() {\n            // 调用action\n            this.$store.dispatch(\'logout\');\n            // 跳转到登录页面\n            this.$router.push(\'/login\');\n        }\n    }\n}\n</script>\n<style lang="stylus" scoped>\n@import \'../../common/stylus/index.styl\'\n.m-header\n    position: relative\n    top: 0\n    left: 0\n    width: 100%\n    height: $headHeight\n    line-height: $headHeight\n    background: $color-f6f6f6\n    color: #333\n    .logo\n        position: absolute\n        top: 0\n        left: 0\n        width: 100%\n        height: $headHeight\n        line-height: $headHeight\n        text-align: center\n        font-size: .2rem\n        color: #fff\n    .nav\n        position: absolute\n        top: 0\n        right: 0\n        width: 7.34rem\n        height: $headHeight\n        line-height: $headHeight\n    .user\n        position: absolute\n        top: 0\n        right: 0\n        height: $headHeight\n        line-height: $headHeight\n        .user-info\n            display: block\n            width: 3.6rem\n            text-align: center\n            position: relative\n            .username\n                font-size: .24rem\n                vertical-align: middle\n            .iconfont\n                position: absolute\n                top: 0\n                right: -1rem\n                line-height: $headHeight\n                font-size: .38rem\n        .dropdown\n            display: none\n            position: absolute\n            width: 4.75rem\n            height: 2.1rem\n            background: #fff\n            border-radius: .06rem\n            box-shadow: 0 0 .2rem rgba(0,0,0,.1)\n            top: 1.38rem\n            left: -2.5rem\n            z-index: 999\n            li\n                height: .44rem\n                line-height: .44rem\n                border-bottom: 1px solid #ddd\n                a\n                    display: block\n                    text-align: center\n</style>', images=None, tool_calls=None)
+2025-04-05 02:58:12,576 - root - INFO - CrewAIService initialized successfully
+2025-04-05 02:58:12,577 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 02:58:12,577 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 02:58:12,577 - root - INFO - AIService initialized successfully
+2025-04-05 02:58:12,578 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 02:58:12,578 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 02:58:12,578 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 02:58:12,606 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 02:58:19,783 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 02:58:24,845 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 02:58:24,845 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 02:58:24,845 - root - INFO - QnAService initialized successfully
+2025-04-05 02:58:24,845 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 02:58:24,845 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 02:58:24,845 - root - INFO - PDFService initialized successfully
+2025-04-05 02:58:24,846 - root - INFO - Services initialized and passed to routes
+2025-04-05 02:58:24,849 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 71.753 seconds
+2025-04-05 02:58:24,851 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 02:58:24,858 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 02:58:34,687 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:34,687 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:34,808 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:34,893 - src.services.pdf_service - INFO - Successfully extracted metadata from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:36,068 - src.services.rag_service - INFO - Document stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:36,068 - src.api.routes - INFO - File uploaded and stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:57,382 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:57,383 - src.services.qna_service - INFO - Answering question. Prompt: 'What is the main outcome of this paper?', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 02:58:57,383 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:57,383 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 02:58:57,383 - src.services.qna_service - INFO - Retrieved document. Content length: 63523
+2025-04-05 02:58:57,383 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 02:58:57,747 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 63523
+2025-04-05 02:58:57,748 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 02:58:57,760 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 02:58:57,781 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:59:22,603 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:59:22,659 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:59:22,693 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:59:22,701 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:59:22,702 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 02:59:22,710 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:59:22,715 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:59:47,174 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 02:59:47,222 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 02:59:47,277 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 02:59:47,279 - src.services.qna_service - INFO - LLM response received
+2025-04-05 02:59:47,370 - asyncio - WARNING - Executing <Task finished name='Task-19' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 49.623 seconds
+2025-04-05 02:59:47,376 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 02:59:47,394 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:06:11,282 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 03:06:11,284 - root - INFO - Starting up the application...
+2025-04-05 03:06:11,284 - root - INFO - Configuration validated successfully
+2025-04-05 03:06:11,284 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 03:06:11,297 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:06:11,416 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 03:06:11,416 - root - INFO - RAG service initialized successfully
+2025-04-05 03:06:11,417 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 03:06:44,228 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 03:06:44,239 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:36:44.214821Z' done=True done_reason='stop' total_duration=32794357958 load_duration=4083244208 prompt_eval_count=2 prompt_eval_duration=6552613833 eval_count=446 eval_duration=22154569834 message=Message(role='assistant', content='2017-04-18 13:00\n\nDear user,\n\nWe would like to inform you that the Beta version of the new platform is now available. You are invited to participate in the test and give us your feedback. The link for testing is provided below.\n\nPlease note that the test environment has been created for a limited period of time.\n\nWe have updated our platform with a user-friendly interface, more intuitive navigation, better functionality and improved security options. We believe that you will find the new version much easier to use as it enables quicker access to your content, as well as offering an upgraded experience overall.\n\nBelow are some of the features in the Beta version:\n\n- User friendly interface for increased usability\n- Improved navigation for faster access to the information you need\n- Upgraded functionality, including a drag and drop feature for easy content organization\n- Enhanced security options, allowing you to create separate workspaces for different projects or collaborations\n- Better document sharing capabilities with new file format compatibility\n- Access to new tools for organizing, editing and managing your content\n\nWe would like to invite you to try the Beta version of the new platform at http://beta.infrastructure.eu/ (the login details have not been changed) and give us your feedback. We encourage you to explore the platform and familiarize yourself with its new features.\n\nIf you encounter any issues or have any questions, please do not hesitate to contact our support team at support@infrastructure.eu.\n\nWe are grateful for your feedback as it will help us make the necessary improvements to ensure that our users receive the best possible experience on our platform.\n\nThank you for using Infrastructure Europe and we look forward to hearing from you soon!\n\nBest regards,\nInfrastructure Europe team\n\nP.S. Please note that the Beta version of our platform will not be available after April 25th, 2017. We encourage you to test it as soon as possible and give us your feedback before this date.', images=None, tool_calls=None)
+2025-04-05 03:06:44,239 - root - INFO - CrewAIService initialized successfully
+2025-04-05 03:06:44,239 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 03:06:44,239 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 03:06:44,239 - root - INFO - AIService initialized successfully
+2025-04-05 03:06:44,239 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 03:06:44,239 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 03:06:44,239 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 03:06:44,269 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:06:50,888 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 03:06:58,223 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 03:06:58,224 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 03:06:58,224 - root - INFO - QnAService initialized successfully
+2025-04-05 03:06:58,224 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 03:06:58,224 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 03:06:58,224 - root - INFO - PDFService initialized successfully
+2025-04-05 03:06:58,225 - root - INFO - Services initialized and passed to routes
+2025-04-05 03:06:58,227 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 46.943 seconds
+2025-04-05 03:06:58,230 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=30, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 03:06:58,235 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 03:07:15,864 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 03:07:26,530 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 03:07:32,806 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 03:10:19,217 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 03:10:19,219 - root - INFO - Starting up the application...
+2025-04-05 03:10:19,219 - root - INFO - Configuration validated successfully
+2025-04-05 03:10:19,219 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 03:10:19,232 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:10:19,287 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 03:10:19,288 - root - INFO - RAG service initialized successfully
+2025-04-05 03:10:19,288 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 03:10:57,874 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 03:10:57,884 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:40:57.857293Z' done=True done_reason='stop' total_duration=38561149334 load_duration=14444917 prompt_eval_count=2 prompt_eval_duration=4809233291 eval_count=630 eval_duration=33731714834 message=Message(role='assistant', content=' The Nexus S is the latest Android 2.3 Gingerbread mobile phone from Samsung and Google, available through T-Mobile USA. In this tutorial I will take you through unlocking your Nexus S using a tool called XDA ROM Toolkit.\n\n1. First download and install XDA ROM Toolkit from the following link:\nhttp://forum.xda-developers.com/showthread.php?t=936204\n\n2. Plug in your Nexus S to your computer, and open up the XDA toolkit. The first step is to unlock the bootloader of your phone by clicking on "Bootstrap".\n\nClick on the arrow button in the top right corner to move forward with the steps to unlock the bootloader. You will get a message saying it might erase all data, if you\'re ok with this click "OK". Your computer will restart and when it starts up again click on "OK" when prompted.\n\n3. After a few seconds, your device should reboot and bring you to the "Fastboot" menu, like so:\n\n4. Go back to XDA ROM Toolkit and click on "Unlock Bootloader", then click on "OK". You will need to type in "YES" (case sensitive) to proceed with the unlocking of the bootloader.\n\n5. It will take a couple seconds and your device should reboot again, this time into the regular Android OS.\n\n6. Download the latest ClockworkMod recovery image for the Nexus S from here: http://www.clockworkmod.com/roms/google-nexuss/\nDownload the Recovery for Gingerbread (Nebula) or the Recovery for Froyo (Ice Cream Sandwich) if you have a custom ROM installed on your phone.\n\n7. Plug in your device and open up XDA ROM Toolkit again, then click on "Flash recovery" in the top menu.\n\n8. Click on the "browse" button, select the ClockworkMod recovery image you downloaded earlier, then click on "Flash Recovery Image" to proceed with the flashing of the recovery image onto your device.\n\n9. Once it\'s finished, restart your phone and press "Volume Down" while booting to get into recovery mode. Once in ClockworkMod recovery, select "install zip from sdcard" followed by "choose zip from SD card". Navigate to the folder containing the ClockworkMod Recovery (.zip) file you downloaded earlier and click on it to install it.\n\n10. After that\'s installed, go back to the recovery menu, select "reboot system now" to boot up your phone again.\n\n11. Congratulations! Your Nexus S is unlocked and ready for custom ROMs and other modifications!', images=None, tool_calls=None)
+2025-04-05 03:10:57,885 - root - INFO - CrewAIService initialized successfully
+2025-04-05 03:10:57,885 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 03:10:57,885 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 03:10:57,885 - root - INFO - AIService initialized successfully
+2025-04-05 03:10:57,885 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 03:10:57,885 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 03:10:57,885 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 03:10:57,915 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:11:12,647 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 03:11:16,008 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 03:11:16,008 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 03:11:16,008 - root - INFO - QnAService initialized successfully
+2025-04-05 03:11:16,008 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 03:11:16,008 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 03:11:16,008 - root - INFO - PDFService initialized successfully
+2025-04-05 03:11:16,009 - root - INFO - Services initialized and passed to routes
+2025-04-05 03:11:16,011 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 56.792 seconds
+2025-04-05 03:11:16,014 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=43, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 03:11:16,024 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 03:11:22,100 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 166, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 03:14:06,871 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-05 03:14:06,873 - root - INFO - Starting up the application...
+2025-04-05 03:14:06,873 - root - INFO - Configuration validated successfully
+2025-04-05 03:14:06,873 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 03:14:06,886 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:14:07,029 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 03:14:07,029 - root - INFO - RAG service initialized successfully
+2025-04-05 03:14:07,029 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 03:14:48,274 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 03:14:48,284 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:44:48.253735Z' done=True done_reason='stop' total_duration=41219620291 load_duration=16666166 prompt_eval_count=2 prompt_eval_duration=4994660041 eval_count=705 eval_duration=36203748417 message=Message(role='assistant', content=' :\n\n  * [Javascript](#javascript)\n    + [ES6/ES7](#es6es7)\n      - [Let and const](#let-and-const)\n      - [Arrow functions](#arrow-functions)\n      - [Template literals](#template-literals)\n      - [Destructuring assignment](#destructuring-assignment)\n      - [Spread operator](#spread-operator)\n      - [Module system (ES6)](#module-system--es6-)\n    + [JavaScript 2017 and Beyond](#javascript-2017-and-beyond)\n      - [Async functions](#async-functions)\n      - [Promises](#promises)\n      - [Classes](#classes)\n      - [Iterables and Iterators](#iterables-and-iterators)\n      - [Symbols](#symbols)\n  * [Node.js](#nodejs)\n    + [Express.js](#expressjs)\n    + [MongoDB](#mongodb)\n    + [Passport.js](#passportjs)\n    + [Gulp](#gulp)\n      - [Tasks with Gulp and Browserify](#tasks-with-gulp-and-browserify)\n  * [jQuery](#jquery)\n  * [CSS](#css)\n    + [Flexbox](#flexbox)\n    + [CSS Grid Layout](#css-grid-layout)\n\n[Javascript]: #javascript\n[ES6/ES7]: #es6es7\n[Let and const]: es6.html#let-and-const\n[Arrow functions]: es6.html#arrow-functions\n[Template literals]: es6.html#template-literals\n[Destructuring assignment]: es6.html#destructuring-assignment\n[Spread operator]: es6.html#spread-operator\n[Module system (ES6)]: es6.html#module-system--es6-\n[JavaScript 2017 and Beyond]: javascript2017.html\n[Async functions]: javascript2017.html#async-functions\n[Promises]: javascript2017.html#promises\n[Classes]: javascript2017.html#classes\n[Iterables and Iterators]: javascript2017.html#iterables-and-iterators\n[Symbols]: javascript2017.html#symbols\n[Node.js]: #nodejs\n[Express.js]: nodejs.html#expressjs\n[MongoDB]: nodejs.html#mongodb\n[Passport.js]: nodejs.html#passportjs\n[Gulp]: nodejs.html#gulp\n[Tasks with Gulp and Browserify]: nodejs.html#tasks-with-gulp-and-browserify\n[jQuery]: #jquery\n[CSS]: #css\n[Flexbox]: css.html#flexbox\n[CSS Grid Layout]: css.html#css-grid-layout', images=None, tool_calls=None)
+2025-04-05 03:14:48,287 - root - INFO - CrewAIService initialized successfully
+2025-04-05 03:14:48,287 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 03:14:48,287 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 03:14:48,287 - root - INFO - AIService initialized successfully
+2025-04-05 03:14:48,287 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 03:14:48,287 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 03:14:48,287 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 03:14:48,316 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:14:51,585 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 03:14:52,683 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 03:14:52,683 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 03:14:52,683 - root - INFO - QnAService initialized successfully
+2025-04-05 03:14:52,684 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 03:14:52,684 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 03:14:52,684 - root - INFO - PDFService initialized successfully
+2025-04-05 03:14:52,684 - root - INFO - Services initialized and passed to routes
+2025-04-05 03:14:52,687 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 45.813 seconds
+2025-04-05 03:14:52,688 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 03:14:52,694 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 03:15:20,182 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:15:20,183 - src.services.rag_service - INFO - Retrieving document from collection: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:15:20,265 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 175, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-05 03:15:20,266 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: False
+2025-04-05 03:16:11,733 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 03:20:30,486 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.167 seconds
+2025-04-05 03:20:30,487 - root - INFO - Starting up the application...
+2025-04-05 03:20:30,487 - root - INFO - Configuration validated successfully
+2025-04-05 03:20:30,487 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 03:20:30,501 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:20:30,640 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 03:20:30,640 - root - INFO - RAG service initialized successfully
+2025-04-05 03:20:30,640 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 03:27:25,712 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 03:27:25,765 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T21:57:25.586626Z' done=True done_reason='stop' total_duration=414956160417 load_duration=4095241125 prompt_eval_count=2 prompt_eval_duration=6281647583 eval_count=6782 eval_duration=404576000834 message=Message(role='assistant', content='1. A = B + C => A - B = C\n  2. A * B = C => A = C / B or B = C / A\n  3. A / B = C => A = C * B or B = C / A\n  4. A % B = C => A = k * B + C, where k is an integer (C >= 0 for positive operands)\n  5. A ^ B = C => log(A) * log(B) = log(C), if A > 0 and B > 0\n  6. A < B => B - A > 0\n  7. A <= B => B - A >= 0\n  8. A > B => -(B - A) > 0\n  9. A >= B => -(A - B) > 0\n  10. A == B => A = B and A != B => A != B\n  11. A && B => if A is false, then return false; otherwise return B (short-circuit evaluation)\n  12. A || B => if A is true, then return A; otherwise return B (short-circuit evaluation)\n  13. !A => not A\n  14. A ? B : C => if A is true, return B; otherwise return C\n  15. for(let i = start; i < end; i++) { /* ... */ } or for(let i of iterable) { /* ... */ }\n  16. while(condition) { /* ... */ }\n  17. do { /* ... */ } while (condition);\n  18. if(condition) { /* ... */ } else if(another_condition) { /* ... */ } else { /* ... */ }\n  19. switch(expression) { case value1: /* ... */ break; case value2: /* ... */ break; default: /* ... */ }\n  20. forEach(iterable, callback);\n  21. reduce(iterable, initialValue, callback);\n  22. filter(iterable, predicate);\n  23. map(iterable, mappingFunction);\n  24. find(iterable, predicate);\n  25. some(iterable, predicate) or any(iterable, predicate) => return true if at least one element in the iterable satisfies the predicate\n  26. every(iterable, predicate) or all(iterable, predicate) => return true if every element in the iterable satisfies the predicate\n  27. sort(iterable, comparator)\n  28. includes(array, value) => returns true if array contains the value, false otherwise (or -1, 1 or a specific index for other types)\n  29. findIndex(array, predicate) => returns the index of the first element in the array that satisfies the predicate, -1 if not found\n  30. lastIndexOf(array, value) => returns the index of the last occurrence of the value in the array, or -1 if not found\n  31. push(array, value) => adds value to the end of the array and returns the new length of the array\n  32. pop(array) => removes the last element from the array and returns it\n  33. shift(array) => removes the first element from the array and returns it\n  34. unshift(array, value1, ..., valuen) => adds values to the beginning of the array and returns the new length of the array\n  35. splice(index, howmany, item1, item2, ..., itemx) => removes items from the array starting at index for however many items specified and optionally inserts new items\n  36. slice(start, end) => returns a shallow copy of a portion of an array (with holes)\n  37. concat(array1, array2, ..., arrayX) => returns a shallow copy of the combined arrays with each element from right to left\n  38. join(separator) => converts an array into a string by joining all its elements into one string using a specified separator\n  39. toString() or valueOf() => convert an object to a primitive value, either a string (if the object has a `toString` method) or a number (if the object can be converted to a primitive number)\n  40. toLocaleString(locale) => converts an object to a string, using locale-specific conventions for dates, numbers, and other culture-specific values\n  41. indexOf(value, fromIndex) => returns the index of the first occurrence of value in array, or -1 if not found\n  42. lastIndexOf(value, fromIndex) => returns the index of the last occurrence of value in array, or -1 if not found\n  43. every(callback) => calls the callback function on each element of the array and returns true if the callback returns true for every element and false otherwise\n  44. some(callback) => calls the callback function on each element of the array and returns true if the callback returns true for at least one element and false otherwise\n  45. forEach(callback) => calls the callback function on each element of the array\n  46. map(mappingFunction) => applies a mapping function to every element in an array, creating a new array with the results\n  47. filter(predicate) => creates a new array with all elements that pass the test implemented by the provided function\n  48. reduce(reducer, initialValue) => reduces the array to a single value by repeatedly applying a binary operator (the reducer function) from left to right over the array starting from an initial value\n  49. findIndex(predicate) => returns the index of the first element in the array that satisfies the provided testing function, or -1 if no values pass the test\n  50. findLastIndex(predicate) => returns the index of the last element in the array that satisfies the provided testing function, or -1 if no values pass the test\n  51. sort(comparator) => sorts the elements of an array in place and returns the array (sorted in ascending order by default)\n  52. reverse() => reverses the order of the elements in an array\n  53. fill(value, startIndex, endIndex) => sets the value of each element in a portion of the array within the specified index range to the provided value, and returns the modified array\n  54. copyWithin(targetIndex, sourceIndex, count) => copies a portion of an array to another position in the same array starting at the target index, and returns the modified array\n  55. includes(searchElement, fromIndex) => checks if an array contains a value equal to searchElement and returns true or false, or the index of the element if found\n  56. indexOf(searchElement, fromIndex) => searches for the first occurrence of searchElement in the array starting at fromIndex, and returns its index or -1 if not found\n  57. lastIndexOf(searchElement, fromIndex) => searches for the last occurrence of searchElement in the array starting at fromIndex, and returns its index or -1 if not found\n  58. reduceRight(reducer, initialValue) => reduces the array to a single value by repeatedly applying a binary operator (the reducer function) from right to left over the array starting from an initial value\n  59. flat(depth) => recursively applies the specified depth of flat() operations to the array, collapsing nested arrays into one dimension\n  60. flatMap(mappingFunction) => applies a mapping function to every element in an array and then flattens the resulting arrays, creating a new array with the results\n  61. concat(array1, array2, ..., arrayX) => returns a shallow copy of the combined arrays (not modifying the original arrays), with each element from right to left\n  62. entries() => returns an iterator that produces an array of key-value pairs for all enumerable properties of an object\n  63. keys() => returns an iterator that produces an array of only the keys (not the values) for all enumerable properties of an object\n  64. values() => returns an iterator that produces an array of only the values for all enumerable properties of an object\n  65. Symbol.iterator => a special property on an object that defines its default iterator method, allowing it to be iterated over using for-of or other looping constructs\n  66. getOwnPropertyDescriptor(property) => retrieves metadata about the specified own (non-inherited) property of an object, including whether it\'s enumerable, configurable, and writable, as well as its value and attributes\n  67. setPrototypeOf(object, prototype) => sets a new prototype object for the specified object\n  68. isExtensible(object) => checks if an object can have new properties added to it (i.e., if it\'s extensible)\n  69. preventExtensions(object) => marks an object as non-extensible, meaning that no new properties can be added to it\n  70. seal(object) => marks an object as sealed, meaning that no new properties or changes to existing properties (except for their own data values) can be made to the object\n  71. Object.create(prototype, propertiesObject) => creates a new object with the specified prototype and additional properties defined in propertiesObject\n  72. Object.defineProperty(object, property, descriptor) => defines or modifies an existing property of an object, allowing you to set its value, enumerability, writability, and configurability\n  73. Object.defineProperties(object, propertiesObject) => defines multiple properties on an object in a single operation\n  74. Object.getOwnPropertyDescriptor(object, property) => retrieves metadata about the specified own (non-inherited) property of an object, including whether it\'s enumerable, configurable, and writable, as well as its value and attributes\n  75. Object.getPrototypeOf(object) => retrieves the prototype object of an object, if it has one\n  76. Object.setPrototypeOf(object, prototype) => sets a new prototype object for the specified object\n  77. Reflect.defineProperty(target, propertyKey, attributes) => defines or modifies an existing property on an object, allowing you to set its value, enumerability, writability, and configurability\n  78. Reflect.deleteProperty(target, propertyKey) => deletes the specified property from an object if it exists\n  79. Reflect.getOwnPropertyDescriptor(target, propertyKey) => retrieves metadata about the specified own (non-inherited) property of an object, including whether it\'s enumerable, configurable, and writable, as well as its value and attributes\n  80. Reflect.getPrototypeOf(target) => retrieves the prototype object of an object, if it has one\n  81. Reflect.setPrototypeOf(target, prototype) => sets a new prototype object for an object\n  82. Symbol() => creates a unique symbol value that can be used as a property key on objects (symbols are automatically non-enumerable and non-writable)\n  83. Symbol(\'name\') => creates a unique symbol with a given description or tag, allowing for easier identification of symbols across different parts of your code\n  84. Object.assign(target, source1, source2, ...sourcesN) => merges the properties of one or more objects into a single target object, overwriting existing properties with new values when they exist in multiple sources\n  85. Object.create(prototype, propertiesObject) => creates a new object with the specified prototype and additional properties defined in propertiesObject\n  86. Reflect.apply(constructor, thisArg, argumentsList) => calls the constructor function with the provided arguments, using the specified this value (thisArg)\n  87. Proxy(target, handler) => creates a new proxy object that intercepts and modifies operations on the target object according to the rules defined in the handler object\n  88. Reflect.get(target, propertyKey, receiver) => retrieves the value of the specified property from a proxy object or the target object if no trap is defined for the operation\n  89. Reflect.set(target, propertyKey, value, receiver) => sets the value of the specified property on a proxy object or the target object if no trap is defined for the operation\n  90. Reflect.defineProperty(target, propertyKey, descriptor, receiver) => defines or modifies an existing property on a proxy object or the target object if no trap is defined for the operation\n  91. Reflect.deleteProperty(target, propertyKey) => deletes the specified property from a proxy object or the target object if no trap is defined for the operation\n  92. Reflect.has(target, propertyKey) => checks whether a specified property exists on a proxy object or the target object, using the provided property key\n  93. Reflect.ownKeys(target) => returns an array of the own and inherited property keys (both symbols and strings) for a proxy object or the target object if no trap is defined for the operation\n  94. Reflect.getOwnPropertyKeys(target) => returns an array of the own property keys (both symbols and strings) for a proxy object or the target object if no trap is defined for the operation\n  95. Reflect.getOwnPropertyDescriptor(target, propertyKey) => retrieves metadata about the specified own property of a proxy object or the target object if no trap is defined for the operation\n  96. Reflect.getPrototypeOf(target) => returns the prototype object of a proxy object or the target object if no trap is defined for the operation\n  97. Reflect.setPrototypeOf(target, prototype) => sets a new prototype object for a proxy object or the target object if no trap is defined for the operation\n  98. Reflect.construct(constructor, argumentsList, newTarget) => constructs a new object using the specified constructor and arguments, optionally setting a new target for the operation\n  99. Map() => creates an empty map object, which stores key-value pairs where each key is unique and of any data type (including objects and symbols), and can be iterated over in insertion order\n 100. Set() => creates an empty set object, which stores unique values of any data type (including objects and symbols), and can be iterated over in insertion order\n 101. WeakMap() => creates an empty map-like object that only stores key-value pairs where each key is an object and can\'t be iterated over or accessed directly\n 102. WeakSet() => creates an empty set-like object that only stores unique values as objects, which can\'t be iterated over or accessed directly\n 103. Map.prototype.set(key, value) => adds a new key-value pair to a map object, updating existing values if the key already exists\n 104. Map.prototype.get(key) => retrieves the value associated with the specified key from a map object\n 105. Map.prototype.has(key) => checks whether a specified key exists in a map object\n 106. Map.prototype.delete(key) => removes the specified key and its corresponding value from a map object\n 107. Map.prototype.clear() => removes all key-value pairs from a map object\n 108. Map.prototype.forEach(callback[, thisArg]) => executes the provided callback function once for each key-value pair in a map object, with no iteration order guarantee\n 109. Map.prototype.keys() => returns an iterable of the keys (in insertion order) for a map object\n 110. Map.prototype.values() => returns an iterable of the values (in insertion order) for a map object\n 111. Map.prototype.entries() => returns an iterable of the key-value pairs (in insertion order) for a map object\n 112. Set.prototype.add(value) => adds a new unique value to a set object, updating existing values if it already exists\n 113. Set.prototype.has(value) => checks whether a specified value exists in a set object\n 114. Set.prototype.delete(value) => removes the first occurrence of the specified value from a set object, returning true if the operation was successful or false otherwise\n 115. Set.prototype.clear() => removes all values from a set object\n 116. Set.prototype.forEach(callback[, thisArg]) => executes the provided callback function once for each value in a set object, with no iteration order guarantee\n 117. Set.prototype.keys() => returns an iterable of the keys (in insertion order) for a set object; since sets only store unique values, all keys will be equivalent to \'0\' or \'1\' (or any other boolean value)\n 118. Set.prototype.values() => returns an iterable of the values (in insertion order) for a set object\n 119. Set.prototype.entries() => returns an iterable of the key-value pairs (in insertion order) for a set object, where each key is equivalent to \'0\' or \'1\' (or any other boolean value) and the corresponding value is the actual value stored in the set\n 120. WeakMap.prototype.set(key, value) => adds a new key-value pair to a weak map object, updating existing values if the key already exists\n 121. WeakMap.prototype.get(key) => retrieves the value associated with the specified key from a weak map object, or undefined if the key doesn\'t exist\n 122. WeakMap.prototype.has(key) => checks whether a specified key exists in a weak map object\n 123. WeakMap.prototype.delete(key) => removes the specified key and its corresponding value from a weak map object, returning true if the operation was successful or false otherwise\n 124. WeakMap.prototype.clear() => removes all key-value pairs from a weak map object\n 125. WeakMap.prototype.forEach(callback[, thisArg]) => executes the provided callback function once for each key-value pair in a weak map object, with no iteration order guarantee\n 126. WeakSet.prototype.add(value) => adds a new unique value to a weak set object, updating existing values if it already exists\n 127. WeakSet.prototype.has(value) => checks whether a specified value exists in a weak set object\n 128. WeakSet.prototype.delete(value) => removes the first occurrence of the specified value from a weak set object, returning true if the operation was successful or false otherwise\n 129. WeakSet.prototype.clear() => removes all values from a weak set object\n 130. WeakSet.prototype.forEach(callback[, thisArg]) => executes the provided callback function once for each value in a weak set object, with no iteration order guarantee\n 131. Symbol() => creates a new unique symbol instance (symbols can\'t be duplicated or modified)\n 132. Symbol(\'description\') => creates a new symbol instance with an optional description string\n 133. Object.getOwnPropertyDescriptor(object, propertyKey) => retrieves the descriptor object for the specified property of an object, including properties like value, writable, enumerable, and configurable\n 134. Object.defineProperty(object, propertyKey, descriptorObject) => defines or modifies a property on an object based on the provided descriptor object\n 135. Object.create(prototype[, propertiesObject]) => creates a new object with the specified prototype and optional properties (key-value pairs)\n 136. Reflect.getPrototypeOf(object) => retrieves the prototype of an object\n 137. Reflect.setPrototypeOf(object, prototype) => sets the prototype of an object to the provided prototype\n 138. Reflect.defineProperty(object, propertyKey, descriptorObject) => defines or modifies a property on an object based on the provided descriptor object\n 139. Reflect.deleteProperty(object, propertyKey) => removes the specified property from an object, returning true if the operation was successful or false otherwise\n 140. Reflect.getOwnPropertyDescriptor(object, propertyKey) => retrieves the descriptor object for the specified property of an object, including properties like value, writable, enumerable, and configurable\n 141. Reflect.ownKeys(object) => returns an array containing the own and inherited keys (symbols, strings, and symbols-as-strings) of an object in any order\n 142. Reflect.hasOwnProperty(object, propertyKey) => checks whether a specified property is an own property of an object or not\n 143. Reflect.isExtensible(object) => checks if an object is extensible (i.e., if new properties can be added to it)\n 144. Reflect.preventExtensions(object) => prevents additional properties from being added to an object, making it non-extensible\n 145. Reflect.get(target, key[, receiver]) => retrieves the value of a property or method on a target object, optionally using a receiver object as context\n 146. Reflect.set(target, key, value[, receiver]) => sets the value of a property or method on a target object, optionally using a receiver object as context\n 147. Reflect.apply(target, thisArg, argumentsList) => calls a function with the specified this value and arguments, optionally overriding the original this binding if necessary\n 148. Reflect.construct(constructor, argumentsList[, newTarget]) => constructs a new object using the specified constructor and arguments, optionally setting a new target for the operation\n 149. Promise.resolve(value) => creates a resolved promise that immediately resolves with the provided value\n 150. Promise.reject(reason) => creates a rejected promise that immediately rejects with the provided reason\n 151. Promise.all([iterable]) => returns a new promise that resolves when all the provided iterable\'s values have been resolved or rejected, and returns an array containing the resolved values in the same order as the iterable\n 152. Promise.race([iterable]) => returns a new promise that resolves or rejects with the first value from the iterable to resolve or reject, respectively\n 153. Promise.finally(callback) => adds a callback function that will be called once, regardless of whether the promise is resolved or rejected, when the promise completes\n 154. async function() {...} => defines an asynchronous function using the async keyword\n 155. await expression => pauses the execution of the current asynchronous function and waits for the specified expression to resolve before continuing\n 156. try...catch...finally blocks => allows for error handling in JavaScript, with a catch block to handle errors and an optional finally block to execute code after the try/catch block has completed\n 157. import and export statements => allow modules to be imported and exported in JavaScript, making it possible to modularize and reuse code\n 158. class definitions and constructor functions => define custom classes and create instances of those classes using the new keyword\n 159. destructuring assignments => extract specific values from arrays or objects and assign them to variables with a concise syntax\n 160. rest parameters (...) => capture an arbitrary number of arguments in a single variable\n 161. spread operators (...array) => copy the elements of one array into another, or pass elements as separate arguments in function calls\n 162. template literals (backtick quotes) => create strings that can contain expressions and variables using ${...} syntax\n 163. arrow functions (=>) => define functions more concisely using a shorter syntax with implicit return values and lexical this binding\n 164. for-of loops => iterate over arrays, strings, or any iterable object using the for-of loop syntax\n 165. nullish coalescing operator (??) => returns the first non-null value of two operands, or the second operand if both are null or undefined\n 166. nullish spreading operator (...NULLISH_UNDERFined) => spreads only non-null values from an array into another array or object\n 167. logical AND and logical OR operators (&& and ||) with short-circuit evaluation\n 168. optional chaining (?. and ?[]) => access nested properties or elements of an object without causing errors if some parts of the path are null or undefined\n 169. object spread syntax (...object) => copy properties from one object to another, merging them together\n 170. optional catch binding (catch (error) {...}) => allows for multiple catch blocks with optional error parameter, allowing for error objects to be passed as parameters instead of the default "error" name\n 171. static class methods — methods that can be called directly on a class without creating an instance of it\n 172. module.exports — exports a single value or object from a module when using the CommonJS module system\n 173. import.meta — provides information about the current module, including its URL and the URLs of other modules that it imports\n 174. dynamic imports (import() {...}) — allow for asynchronous loading of modules on demand\n 175. top-level await — allows the use of the await keyword outside of an async function, enabling asynchronous code to be written more concisely in certain cases\n 176. BigInt and Number.MAX_SAFE_INTEGER — support for large integers with the BigInt data type and a maximum safe integer value (Number.MAX\\_SAFE\\_INTEGER)\n 177. Array.from, Array.of, and array spread syntax — create new arrays from various sources using different methods and syntaxes\n 178. Object.values, Object.entries, and object spread syntax — work with arrays of key-value pairs in objects more easily\n 179. Map and Set data structures — collections that allow for the storage of key-value pairs and unique values, respectively\n 180. Symbol.asyncIterator and async iterators/generators — enable asynchronous iteration over iterables using the async and await keywords\n 181. RegExp Unicode property escapes (\\p{...}) — match character properties based on their Unicode properties\n 182. RegExp lookbehind assertions (?=) — check if a pattern matches immediately preceding the current position in the string, without consuming any characters\n 183. String.prototype.matchAll() and String.prototype.split() with a RegExp object as argument — perform global matching or splitting on strings using regular expressions\n 184. Set.prototype.forEach(), Map.prototype.forEach(), and Array.prototype.reduce() with the thisArg parameter — allow for easier chaining of methods and passing of custom contexts to callback functions\n 185. Typed arrays (Int8Array, Uint8Array, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array) — low-level data structures for working with binary data in JavaScript\n 186. ArrayBuffer and DataView objects — handle raw binary data as typed arrays or with custom offsets and byte order\n 187. SharedArrayBuffer and Atomics — enable multi-threaded programming in JavaScript by allowing multiple threads to access and manipulate shared memory regions atomically\n 188. JSON.parse() and JSON.stringify() methods — parse and stringify JavaScript objects as JSON strings, making it easier to transfer data between different environments\n 189. ArrayBufferView interfaces (DataView, Int8Array, Uint8Array, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array) — allow for efficient manipulation of binary data in typed arrays\n 190. Web APIs (Fetch API, Promises, Async/Await, XMLHttpRequest, Canvas API, SVG, WebSockets, WebWorkers, Service Workers, Web Components, Custom Elements, Shadow DOM) — enable the development of dynamic and interactive web applications using modern JavaScript features\n 191. ES Modules (import and export statements) — allow for modularization and reusability of code in JavaScript, improving organization and performance\n 192. Babel and Webpack — popular tools for compiling and bundling JavaScript code, making it possible to use modern JavaScript features in older browsers or environments that don\'t support them natively\n 193. TypeScript — a statically typed superset of JavaScript that enables stronger type checking and development tooling for larger projects\n 194. React, Angular, Vue.js, and other popular front-end frameworks — libraries and tools for building modern web applications with reusable components and efficient data handling\n 195. Node.js — a platform for executing JavaScript on the server side, enabling the development of server-side applications using JavaScript\n 196. Deno — a secure runtime for TypeScript and JavaScript that focuses on improving developer productivity and security\n 197. Jest, Mocha, and other testing frameworks — tools for writing tests and ensuring the correctness of JavaScript code\n 198. Browsersync, Gulp, Grunt, Webpack, and other build tools — automate the development workflow by handling tasks such as compiling, minification, concatenation, and serving files\n 199. Git, GitHub, Bitbucket, and other version control systems — manage the source code of projects and collaborate with others on open-source or proprietary projects\n 200. npm (Node Package Manager) — a package manager for Node.js that makes it easy to install, publish, and share JavaScript libraries and tools.', images=None, tool_calls=None)
+2025-04-05 03:27:25,769 - root - INFO - CrewAIService initialized successfully
+2025-04-05 03:27:25,776 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 03:27:25,776 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 03:27:25,776 - root - INFO - AIService initialized successfully
+2025-04-05 03:27:25,786 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 03:27:25,786 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 03:27:25,786 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 03:27:25,909 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:27:34,280 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 03:27:35,615 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 03:27:35,615 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 03:27:35,615 - root - INFO - QnAService initialized successfully
+2025-04-05 03:27:35,617 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 03:27:35,617 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 03:27:35,617 - root - INFO - PDFService initialized successfully
+2025-04-05 03:27:35,617 - root - INFO - Services initialized and passed to routes
+2025-04-05 03:27:35,622 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 425.150 seconds
+2025-04-05 03:27:35,624 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 03:27:35,647 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 03:28:05,726 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:28:05,727 - src.services.rag_service - INFO - Retrieving document from collection: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:28:05,827 - src.services.rag_service - WARNING - Retrieved document 10.1371journal.pone.0231708.pdf has no text content
+2025-04-05 03:28:05,827 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: False
+2025-04-05 03:28:11,534 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 03:28:21,186 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:28:21,186 - src.services.rag_service - INFO - Retrieving document from collection: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:28:21,187 - src.services.rag_service - WARNING - Retrieved document 10.1371journal.pone.0231708.pdf has no text content
+2025-04-05 03:28:21,187 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: False
+2025-04-05 03:31:56,681 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.169 seconds
+2025-04-05 03:31:56,682 - root - INFO - Starting up the application...
+2025-04-05 03:31:56,683 - root - INFO - Configuration validated successfully
+2025-04-05 03:31:56,683 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 03:31:56,695 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:31:56,829 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 03:31:56,829 - root - INFO - RAG service initialized successfully
+2025-04-05 03:31:56,829 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 03:32:16,188 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 03:32:16,201 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T22:02:16.167885Z' done=True done_reason='stop' total_duration=19333454791 load_duration=16995708 prompt_eval_count=2 prompt_eval_duration=7185043750 eval_count=176 eval_duration=12127675834 message=Message(role='assistant', content=' <template>\n    <div id="app">\n       <router-view></router-view>\n    </div>\n  </template>\n\n  <script>\n  export default {\n    name: \'App\'\n  }\n  </script>\n\n  <style>\n  #app {\n    font-family: \'Avenir\', Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    text-align: center;\n    color: #2c3e50;\n  }\n  h1,h2 {\n    text-align: left;\n  }\n  </style>', images=None, tool_calls=None)
+2025-04-05 03:32:16,201 - root - INFO - CrewAIService initialized successfully
+2025-04-05 03:32:16,203 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 03:32:16,203 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 03:32:16,203 - root - INFO - AIService initialized successfully
+2025-04-05 03:32:16,203 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 03:32:16,203 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 03:32:16,203 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 03:32:16,234 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 03:32:20,888 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 03:32:37,760 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 03:32:37,760 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 03:32:37,760 - root - INFO - QnAService initialized successfully
+2025-04-05 03:32:37,761 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 03:32:37,761 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 03:32:37,761 - root - INFO - PDFService initialized successfully
+2025-04-05 03:32:37,761 - root - INFO - Services initialized and passed to routes
+2025-04-05 03:32:37,764 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 41.081 seconds
+2025-04-05 03:32:37,766 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 03:32:37,779 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 03:33:28,207 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,207 - src.services.rag_service - INFO - Retrieving document from collection: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,292 - src.services.rag_service - WARNING - Retrieved document 10.1371journal.pone.0231708.pdf has no text content
+2025-04-05 03:33:28,292 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 03:33:28,292 - src.services.rag_service - INFO - Full document content found in all documents: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,292 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: True
+2025-04-05 03:33:28,292 - src.services.qna_service - INFO - Answering question. Prompt: 'What is the main outcome of this paper?', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 03:33:28,293 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,293 - src.services.rag_service - INFO - Retrieving document from collection: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,293 - src.services.rag_service - WARNING - Retrieved document 10.1371journal.pone.0231708.pdf has no text content
+2025-04-05 03:33:28,294 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 03:33:28,294 - src.services.rag_service - INFO - Full document content found in all documents: 10.1371journal.pone.0231708.pdf
+2025-04-05 03:33:28,294 - src.services.qna_service - INFO - Retrieved document. Content length: 63523
+2025-04-05 03:33:28,294 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 03:33:28,612 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 63523
+2025-04-05 03:33:28,612 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 03:33:28,628 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 03:33:28,650 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 03:33:51,167 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 03:33:51,240 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 03:33:51,300 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:33:51,300 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:33:51,348 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 03:33:51,354 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:33:51,362 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:34:13,027 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 03:34:13,063 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 03:34:13,089 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 03:34:13,089 - src.services.qna_service - INFO - LLM response received
+2025-04-05 03:34:13,121 - asyncio - WARNING - Executing <Task finished name='Task-11' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 44.509 seconds
+2025-04-05 03:34:13,140 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 03:34:13,147 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"

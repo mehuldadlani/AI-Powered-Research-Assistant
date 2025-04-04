@@ -92,28 +92,23 @@ async def upload_file():
                 return jsonify({
                     "message": "File already exists in the system",
                     "doc_id": existing_doc['id'],
-                    "original_filename": filename,
-                    "chunks": existing_doc.get('chunks', 0)
+                    "original_filename": filename
                 }), 200
 
-            # Store document in RAG service
-            doc_id, is_new, doc_info = await rag_service.store_document(text, filename)
+            # Extract metadata
+            metadata = await pdf_service.extract_pdf_metadata(filepath)
+            metadata['file_name'] = filename
+            metadata['content_hash'] = content_hash
 
-            # Process document
-            with open(filepath, 'rb') as f:
-                file_content = f.read()
-            splits = await qna_service.process_document(file_content, doc_id)
-            
-            # Update the document with the number of chunks
-            await rag_service.update_document_metadata(doc_id, {'chunks': len(splits)})
+            # Store document in RAG service
+            doc_id, is_new, doc_info = await rag_service.store_document(text, filename, metadata)
             
             action = "stored" if is_new else "updated"
             logger.info(f"File uploaded and {action}: {doc_id}")
             return jsonify({
                 "message": f"File uploaded and {action}",
                 "doc_id": doc_id,
-                "original_filename": filename,
-                "chunks": len(splits)
+                "original_filename": filename
             }), 200
         except FileNotFoundError:
             logger.error(f"File not found after saving: {filepath}")
@@ -128,9 +123,14 @@ async def upload_file():
             if os.path.exists(filepath):
                 os.remove(filepath)
             return jsonify({"error": f"Error processing file: {str(e)}"}), 500
+        finally:
+            # Clean up the temporary file
+            if os.path.exists(filepath):
+                os.remove(filepath)
     
     logger.warning(f"Invalid file type attempted: {file.filename}")
     return jsonify({"error": "Invalid file type"}), 400
+
 
 @api.route('/ask_question', methods=['POST'])
 @validate_input(['question'])
@@ -138,26 +138,23 @@ async def ask_question():
     global qna_service
     data = await request.json
     question = data['question']
-    doc_id = data.get('doc_id')  # This will be None if not provided
+    doc_id = data.get('doc_id')
     
     try:
         if qna_service is None:
             raise ValueError("QnAService is not initialized")
         
-        full_answer = await qna_service.answer_question(question, doc_id)
+        if doc_id:
+            exists = await qna_service.document_exists(doc_id)
+            if not exists:
+                return jsonify({"error": f"Document with ID '{doc_id}' not found"}), 404
         
-        # Extract only the answer part
-        if isinstance(full_answer, dict):
-            answer = full_answer.get('answer') or full_answer.get('result', str(full_answer))
-        else:
-            answer = str(full_answer)
+        result = await qna_service.answer_question(question, doc_id)
         
+        if "error" in result:
+            return jsonify(result), 500
         
-        response = {"answer": answer}
-        return jsonify(response), 200
-    except ValueError as ve:
-        logger.error(f"Value error: {str(ve)}")
-        return jsonify({"error": str(ve)}), 400
+        return jsonify(result), 200
     except Exception as e:
         logger.exception(f"Error answering question: {str(e)}")
         return jsonify({"error": "An unexpected error occurred while processing your question"}), 500
@@ -261,3 +258,35 @@ async def debug_services():
         "ai_service": str(ai_service),
         "pdf_service": str(pdf_service)
     }), 200
+    
+@api.route('/get_all_documents', methods=['GET'])
+async def get_all_documents():
+    try:
+        limit = request.args.get('limit', default=1000, type=int)
+        documents = await rag_service.get_all_documents(limit)
+        return jsonify({"documents": documents}), 200
+    except Exception as e:
+        logger.exception(f"Error retrieving all documents: {str(e)}")
+        return jsonify({"error": "An unexpected error occurred while retrieving documents"}), 500
+
+@api.route('/clear_all_documents', methods=['POST'])
+async def clear_all_documents():
+    if not Config.ALLOW_CLEAR_ALL_DOCUMENTS:
+        return jsonify({"error": "Clearing all documents is not allowed in this environment"}), 403
+
+    # Await the json data
+    data = await request.json
+    confirmation = data.get('confirmation')
+
+    if confirmation != "I understand the consequences":
+        return jsonify({"error": "Confirmation phrase is incorrect"}), 400
+
+    try:
+        result = await rag_service.clear_all_documents()
+        if result:
+            return jsonify({"message": "All documents have been cleared from the RAG system"}), 200
+        else:
+            return jsonify({"message": "No documents to clear from the RAG system"}), 200
+    except Exception as e:
+        logger.exception(f"Error clearing all documents: {str(e)}")
+        return jsonify({"error": "An unexpected error occurred while clearing documents"}), 500

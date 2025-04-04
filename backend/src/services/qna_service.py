@@ -44,29 +44,34 @@ class QnAService:
         self.cache.clear()
         logger.info("QnAService cleaned up")
 
-    async def process_document(self, file_content: bytes, file_name: str) -> List[Document]:
-        with tempfile.NamedTemporaryFile("wb", suffix=".pdf", delete=False) as temp_file:
-            temp_file.write(file_content)
-            temp_file_path = temp_file.name
-
+    async def store_document(self, text: str, doc_id: str, metadata: Optional[Dict[str, Any]] = None) -> Tuple[str, bool, Dict[str, Any]]:
+        await self._ensure_initialized()
         try:
-            loader = PyMuPDFLoader(temp_file_path)
-            docs = await asyncio.to_thread(loader.load)
+            content_hash = self.compute_content_hash(text)
             
-            text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=Config.CHUNK_SIZE,
-                chunk_overlap=Config.CHUNK_OVERLAP,
-                separators=["\n\n", "\n", ".", "?", "!", " ", ""],
-            )
-            splits = await asyncio.to_thread(text_splitter.split_documents, docs)
+            # Check if a document with the same content hash already exists
+            existing_doc = await self.get_document_by_content_hash(content_hash)
+
+            if existing_doc:
+                logger.info(f"Document with same content already exists: {existing_doc['id']}")
+                return existing_doc['id'], False, existing_doc
+
+            if metadata is None:
+                metadata = {}
+            metadata['content_hash'] = content_hash
+            metadata['original_filename'] = doc_id
+
+            await asyncio.to_thread(self.collection.add, documents=[text], ids=[doc_id], metadatas=[metadata])
+            doc_info = {"id": doc_id, "text": text, "metadata": metadata, "content_hash": content_hash}
+            self.cache[doc_id] = doc_info
             
-            await self.add_to_vector_collection(splits, file_name)
-            return splits
+            logger.info(f"Document stored: {doc_id}")
+            
+            return doc_id, True, doc_info
+
         except Exception as e:
-            logger.error(f"Error processing document {file_name}: {str(e)}")
-            raise
-        finally:
-            os.unlink(temp_file_path)
+            logger.exception(f"Error storing document in RAG: {doc_id}")
+            raise RuntimeError(f"Error storing document in RAG: {str(e)}")
 
     async def add_to_vector_collection(self, splits: List[Document], file_name: str):
         try:
@@ -163,28 +168,36 @@ class QnAService:
     async def answer_question(self, prompt: str, doc_id: Optional[str] = None) -> Dict[str, Any]:
         cache_key = f"answer_{prompt}_{doc_id}"
         if cache_key in self.cache:
+            logger.info(f"Returning cached answer for prompt: {prompt}")
             return self.cache[cache_key]
 
         try:
-            logger.info(f"Querying collection for prompt: {prompt}")
-            if doc_id:
-                context = await self.rag_service.retrieve_document(doc_id)
-                if context is None:
-                    return {"answer": f"I'm sorry, but I couldn't find any document with the ID {doc_id}."}
-                context = [context['text']]
-            else:
-                context = await self.query_collection(prompt)
+            logger.info(f"Answering question. Prompt: '{prompt}', Doc ID: '{doc_id}'")
             
-            logger.info(f"Query results received: {len(context)} documents")
+            if doc_id:
+                logger.info(f"Retrieving specific document: {doc_id}")
+                doc = await self.rag_service.retrieve_document(doc_id)
+                if doc is None or 'text' not in doc or not doc['text']:
+                    logger.warning(f"Document not found or has no content: {doc_id}")
+                    return {"answer": f"I'm sorry, but I couldn't find any document with the ID {doc_id} or it has no content."}
+                
+                context = [doc['text']]
+                logger.info(f"Retrieved document. Content length: {len(context[0])}")
+            else:
+                logger.info("Querying collection for relevant documents")
+                context = await self.query_collection(prompt)
+                logger.info(f"Query results received: {len(context)} documents")
             
             if not context:
+                logger.warning("No relevant documents found")
                 return {"answer": "I'm sorry, but I couldn't find any relevant information to answer your question."}
-            
+        
             logger.info("Re-ranking documents with cross-encoder")
             relevant_text, relevant_text_ids = await self.re_rank_cross_encoders(context, prompt)
             logger.info(f"Re-ranking complete. Relevant text length: {len(relevant_text)}")
             
             if not relevant_text:
+                logger.warning("No relevant text after re-ranking")
                 return {"answer": "I'm sorry, but I couldn't find any relevant information to answer your question."}
             
             logger.info("Calling LLM for response")
@@ -202,3 +215,14 @@ class QnAService:
         except Exception as e:
             logger.error(f"Error answering question: {str(e)}", exc_info=True)
             return {"error": f"An error occurred while processing your question: {str(e)}"}
+        
+    async def document_exists(self, doc_id: str) -> bool:
+        try:
+            logger.info(f"Checking existence of document: {doc_id}")
+            doc = await self.rag_service.retrieve_document(doc_id)
+            exists = doc is not None and 'text' in doc and doc['text'] is not None
+            logger.info(f"Document {doc_id} exists: {exists}")
+            return exists
+        except Exception as e:
+            logger.error(f"Error checking document existence: {str(e)}")
+            return False

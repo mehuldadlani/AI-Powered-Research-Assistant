@@ -102,7 +102,7 @@ class RAGService:
             logger.exception(f"Error checking document existence: {doc_id}")
             return False
 
-    async def store_document(self, text: str, base_doc_id: str, metadata: Optional[Dict[str, Any]] = None) -> Tuple[str, bool, Dict[str, Any]]:
+    async def store_document(self, text: str, doc_id: str, metadata: Optional[Dict[str, Any]] = None) -> Tuple[str, bool, Dict[str, Any]]:
         await self._ensure_initialized()
         try:
             content_hash = self.compute_content_hash(text)
@@ -114,26 +114,26 @@ class RAGService:
                 logger.info(f"Document with same content already exists: {existing_doc['id']}")
                 return existing_doc['id'], False, existing_doc
 
-            # If no existing document with same content, proceed to store
-            doc_id = await self._generate_unique_doc_id(base_doc_id)
-            
             if metadata is None:
                 metadata = {}
-            metadata['content_hash'] = content_hash
-            metadata['original_filename'] = base_doc_id
+            
+            # Filter out None values from metadata
+            filtered_metadata = {k: v for k, v in metadata.items() if v is not None}
+            
+            # Ensure required metadata fields are present
+            filtered_metadata['content_hash'] = content_hash
+            filtered_metadata['original_filename'] = doc_id
 
-            await asyncio.to_thread(self.collection.add, documents=[str(text)], ids=[doc_id], metadatas=[metadata])
-            doc_info = {"id": doc_id, "text": str(text), "metadata": metadata, "content_hash": content_hash}
+            await asyncio.to_thread(self.collection.add, documents=[text], ids=[doc_id], metadatas=[filtered_metadata])
+            doc_info = {"id": doc_id, "text": text, "metadata": filtered_metadata, "content_hash": content_hash}
             self.cache[doc_id] = doc_info
             
-            is_new = doc_id == base_doc_id
-            action = "stored" if is_new else "stored with a new unique ID"
-            logger.info(f"Document {action}: {doc_id}")
+            logger.info(f"Document stored: {doc_id}")
             
-            return doc_id, is_new, doc_info
+            return doc_id, True, doc_info
 
         except Exception as e:
-            logger.exception(f"Error storing document in RAG: {base_doc_id}")
+            logger.exception(f"Error storing document in RAG: {doc_id}")
             raise RuntimeError(f"Error storing document in RAG: {str(e)}")
 
 
@@ -153,21 +153,48 @@ class RAGService:
         try:
             if doc_id in self.cache:
                 logger.info(f"Document retrieved from cache: {doc_id}")
-                return self.cache[doc_id]
+                cached_doc = self.cache[doc_id]
+                if not cached_doc.get('text'):
+                    logger.warning(f"Cached document {doc_id} has no text content")
+                    return None
+                return cached_doc
 
+            logger.info(f"Retrieving document from collection: {doc_id}")
             results = await asyncio.to_thread(self.collection.get, ids=[doc_id], include=['metadatas'])
-            if results is not None and results.get("ids"):
-                doc = {
-                    "id": doc_id,
-                    "text": results.get("documents", [None])[0] if results.get("documents") else None,
-                    "metadata": results.get("metadatas", [{}])[0] if results.get("metadatas") else {},
-                    "content_hash": (results.get("metadatas", [{}])[0] or {}).get('content_hash')
-                }
-                self.cache[doc_id] = doc
-                logger.info(f"Document retrieved successfully: {doc_id}")
-                return doc
-            logger.warning(f"Document not found: {doc_id}")
-            return None
+            
+            logger.debug(f"Raw results from collection.get: {results}")  # Add this line for debugging
+
+            if not results or not results.get("ids"):
+                logger.warning(f"Document not found in collection: {doc_id}")
+                # Fallback to searching all documents
+                all_docs = await self.get_all_documents()
+                doc = next((d for d in all_docs if d['id'] == doc_id), None)
+                if doc:
+                    logger.info(f"Document found in all documents: {doc_id}")
+                    return doc
+                return None
+
+            doc = {
+                "id": doc_id,
+                "text": results.get("documents", [None])[0] if results.get("documents") else None,
+                "metadata": results.get("metadatas", [{}])[0] if results.get("metadatas") else {},
+                "content_hash": (results.get("metadatas", [{}])[0] or {}).get('content_hash')
+            }
+
+            if not doc['text']:
+                logger.warning(f"Retrieved document {doc_id} has no text content")
+                # Fallback to searching all documents
+                all_docs = await self.get_all_documents()
+                full_doc = next((d for d in all_docs if d['id'] == doc_id), None)
+                if full_doc and full_doc.get('text'):
+                    logger.info(f"Full document content found in all documents: {doc_id}")
+                    return full_doc
+                return None
+
+            self.cache[doc_id] = doc
+            logger.info(f"Document retrieved successfully: {doc_id}")
+            return doc
+
         except Exception as e:
             logger.exception(f"Error retrieving document from RAG: {doc_id}")
             return None
@@ -270,3 +297,23 @@ class RAGService:
         except Exception as e:
             logger.exception("Error getting collection stats")
             raise RuntimeError(f"Error getting collection stats: {str(e)}")
+        
+    async def get_all_documents(self, limit: int = 1000) -> List[Dict[str, Any]]:
+        await self._ensure_initialized()
+        try:
+            results = await asyncio.to_thread(
+                self.collection.get,
+                limit=limit
+            )
+            documents = []
+            for id, text, metadata in zip(results["ids"], results["documents"], results["metadatas"]):
+                documents.append({
+                    "id": id,
+                    "text": text,
+                    "metadata": metadata
+                })
+            logger.info(f"Retrieved {len(documents)} documents")
+            return documents
+        except Exception as e:
+            logger.exception("Error retrieving all documents")
+            raise RuntimeError(f"Error retrieving all documents: {str(e)}")
