@@ -206,9 +206,20 @@ async def search_papers():
 async def search_author():
     data = await request.json
     author_name = data['author_name']
+    summarize = data.get('summarize', False)
+    level = data.get('level', 'intermediate')
+    
+    if level not in Config.ALLOWED_LEVELS:
+        logger.warning(f"Invalid summarization level requested: {level}")
+        return jsonify({"error": "Invalid summarization level"}), 400
     
     try:
         results = await paper_search_service.search_author(author_name)
+        
+        if summarize:
+            summary = await paper_search_service.summarize_author_profile(author_name, level)
+            results['summary'] = summary
+        
         return jsonify({"results": results}), 200
     except Exception as e:
         logger.exception(f"Error searching author: {str(e)}")

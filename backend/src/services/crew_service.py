@@ -1,5 +1,5 @@
 import logging
-from typing import Tuple, Any
+from typing import Tuple, Any, Dict, List
 from crewai import Task, Agent, Crew, LLM
 import ollama
 from src.config import Config
@@ -160,3 +160,118 @@ class CrewAIService:
         except Exception as e:
             logger.exception(f"Error in CrewAI summarization process: {str(e)}")
             raise RuntimeError(f"Error in CrewAI summarization process: {str(e)}")
+        
+    async def summarize_profile_with_crew(self, author_info: dict, level: str) -> str:
+        try:
+            llm = self.create_ollama_llm()
+            
+            profile_analyst = Agent(
+                role='Academic Profile Analyst',
+                goal='Provide a comprehensive and insightful analysis of academic researcher profiles',
+                backstory="""You are a distinguished expert in analyzing academic profiles and research outputs. 
+                With years of experience in bibliometrics and scientometrics, you excel at identifying key trends, 
+                assessing research impact, and providing nuanced insights into a researcher's career trajectory.""",
+                allow_delegation=False,
+                llm=llm,
+                model_name=self.model
+            )
+
+            recent_papers = self._format_paper_list(author_info.get('recent_papers', []))
+            top_cited_papers = self._format_paper_list(author_info.get('top_cited', []))
+
+            profile_summary_task = Task(
+                description=f"""
+                Conduct a thorough analysis of the following academic profile and provide a detailed, insightful summary:
+
+                Author: {author_info['name']}
+                Affiliation: {author_info['affiliation']}
+                Total Publications: {len(author_info.get('publications', []))}
+                Total Citations: {author_info.get('total_citations', 0)}
+                
+                Recent Papers (last 5):
+                {recent_papers}
+                
+                Top Cited Papers (top 5):
+                {top_cited_papers}
+
+                Provide a comprehensive summary that addresses the following aspects:
+
+                1. Research Focus and Expertise:
+                - Identify and describe the main research areas the author specializes in.
+                - Highlight any interdisciplinary aspects of their work.
+                - Discuss the depth and breadth of their expertise based on their publication history.
+
+                2. Key Contributions and Impact:
+                - Analyze their most cited works and explain their significance to the field.
+                - Discuss any groundbreaking or novel approaches introduced by the author.
+                - Evaluate the overall impact of their research using citation metrics and the nature of their publications.
+
+                3. Research Evolution and Trajectory:
+                - Trace the evolution of their research interests over time.
+                - Identify any shifts in focus or methodology throughout their career.
+                - Discuss how their recent work builds upon or diverges from their earlier research.
+
+                4. Collaboration and Academic Influence:
+                - Highlight any notable collaborations or co-authorships.
+                - Discuss the author's role in their research community (e.g., thought leader, pioneer in a specific area).
+                - Mention any evident influence on other researchers or subfields.
+
+                5. Future Research Directions:
+                - Based on their recent work and research trends, predict potential future research directions.
+                - Identify any emerging themes or technologies they might be moving towards.
+
+                6. Academic Standing and Achievements:
+                - Comment on their publication rate and the quality of venues they publish in.
+                - Mention any awards, grants, or special recognitions, if available.
+                - Provide context on how their work fits into broader academic or industry trends.
+
+                7. Methodological Approaches:
+                - Identify the primary research methodologies or techniques they employ.
+                - Discuss any unique or innovative approaches they've developed or frequently use.
+
+                Tailor the summary to a {level} level of expertise, ensuring that the language and depth of analysis 
+                are appropriate for readers at that level. For a beginner level, focus on explaining concepts clearly 
+                and avoiding jargon. For an expert level, delve into more technical details and nuanced analysis.
+
+                Synthesize all this information into a coherent, well-structured narrative that gives a comprehensive 
+                view of the researcher's profile, achievements, and potential future impact in their field.
+                """,
+                agent=profile_analyst ,
+                expected_output="A comprehensive, well-structured analysis of the researcher's profile, including their main research areas, key contributions, impact, research evolution, collaborations, future directions, academic standing, and methodological approaches, tailored to the specified expertise level."
+            )
+
+            crew = Crew(
+                agents=[profile_analyst],
+                tasks=[profile_summary_task],
+                verbose=Config.CREW_VERBOSE
+            )
+
+            result = crew.kickoff()
+            
+            if isinstance(result, str):
+                return result
+            elif hasattr(result, 'task_output'):
+                return str(result.task_output)
+            else:
+                return str(result)
+
+        except Exception as e:
+            logger.exception(f"Error in CrewAI profile summarization: {str(e)}")
+            raise RuntimeError(f"Error in CrewAI profile summarization: {str(e)}")
+
+
+
+    def _format_paper_list(self, papers: List[Dict]) -> str:
+        formatted_papers = []
+        for paper in papers[:5]:  # Limit to top 5 papers for brevity
+            title = paper.get('title', 'Unknown Title')
+            citations = paper.get('num_citations', 'N/A')
+            year = 'N/A'
+            if 'bib' in paper:
+                year = paper['bib'].get('pub_year', 'N/A')
+            elif isinstance(paper, dict):
+                year = paper.get('year', 'N/A')
+            
+            formatted_papers.append(f"- {title} (Citations: {citations}, Year: {year})")
+        
+        return "\n".join(formatted_papers)

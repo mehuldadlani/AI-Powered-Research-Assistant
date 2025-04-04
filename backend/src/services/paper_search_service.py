@@ -7,17 +7,31 @@ from typing import List, Dict, Any, Optional
 from src.config import Config
 from src.services.rag_service import RAGService
 from src.services.crew_service import CrewAIService
+from src.services.ai_service import AIService
+from collections import Counter
+from nltk.corpus import stopwords
+import nltk
 
 logger = logging.getLogger(__name__)
 
+def setup_nltk():
+    try:
+        nltk.data.find('corpora/stopwords')
+    except LookupError:
+        nltk.download('stopwords')
+
+setup_nltk()
+STOPWORDS = set(stopwords.words('english'))
+
 class PaperSearchService:
-    def __init__(self, rag_service: RAGService, crew_service: CrewAIService):
+    def __init__(self, rag_service: RAGService, crew_service: CrewAIService, ai_service: AIService):
         self.rag_service = rag_service
         self.crew_service = crew_service
+        self.ai_service = ai_service
 
     async def initialize(self):
+        global summarize_text
         logger.info("Initializing PaperSearchService...")
-        # Add any initialization logic if needed
         logger.info("PaperSearchService initialized successfully")
 
     async def cleanup(self):
@@ -60,19 +74,69 @@ class PaperSearchService:
                 logger.warning(f"Author not found: {author_name}")
                 return None
             scholarly.fill(author)
-            top_cited = sorted(author['publications'], key=lambda x: x.get('num_citations', 0), reverse=True)[:Config.AUTHOR_TOP_CITED_COUNT]
-            recent_papers = sorted(author['publications'], key=lambda x: x['bib'].get('year', 0), reverse=True)[:Config.AUTHOR_RECENT_PAPERS_COUNT]
+            
+            publications = author.get('publications', [])
+            top_cited = sorted(publications, key=lambda x: x.get('num_citations', 0), reverse=True)[:Config.AUTHOR_TOP_CITED_COUNT]
+            recent_papers = sorted(publications, key=lambda x: x['bib'].get('year', 0), reverse=True)[:Config.AUTHOR_RECENT_PAPERS_COUNT]
+            
             author_details = {
                 "name": author['name'],
                 "affiliation": author.get('affiliation', 'Unknown'),
-                "top_cited": [paper['bib']['title'] for paper in top_cited],
-                "recent_papers": [paper['bib']['title'] for paper in recent_papers],
+                "top_cited": [{'title': paper['bib']['title'], 'num_citations': paper.get('num_citations', 0)} for paper in top_cited],
+                "recent_papers": [{'title': paper['bib']['title'], 'num_citations': paper.get('num_citations', 0)} for paper in recent_papers],
+                "publications": publications,
+                "total_citations": author.get('citedby', 0),
+                "awards": author.get('awards', []),
+                "co_authors": author.get('co_authors', [])
             }
             logger.info(f"Fetched details for author: {author_name}")
             return author_details
         except Exception as e:
             logger.error(f"Error fetching author details: {str(e)}")
             return None
+        
+    async def summarize_author_profile(self, author_name: str, level: str = 'intermediate') -> str:
+        author_info = await self.search_author(author_name)
+        if not author_info:
+            raise ValueError(f"No information found for author: {author_name}")
+
+        # Use fallback summary for beginner level
+        if level.lower() == 'beginner':
+            return self.generate_fallback_summary(author_info, level)
+
+        try:
+            # Use CrewAI to generate the summary for intermediate and expert levels
+            summary = await self.crew_service.summarize_profile_with_crew(author_info, level)
+            return summary
+        except Exception as e:
+            logger.error(f"Error in CrewAI profile summarization: {str(e)}")
+            # Fallback to a simpler summary method if CrewAI fails
+            return self.generate_fallback_summary(author_info, level)
+
+    def generate_fallback_summary(self, author_info: dict, level: str) -> str:
+        # A simple fallback method to generate a basic summary
+        name = author_info['name']
+        affiliation = author_info['affiliation']
+        total_pubs = len(author_info.get('publications', []))
+        total_citations = author_info.get('total_citations', 0)
+        
+        summary = f"{name} is a researcher affiliated with {affiliation}. "
+        summary += f"They have published {total_pubs} papers, which have been cited {total_citations} times in total. "
+        
+        if author_info.get('top_cited'):
+            top_paper = author_info['top_cited'][0]
+            summary += f"Their most cited work is '{top_paper['title']}' with {top_paper.get('num_citations', 0)} citations. "
+        
+        if author_info.get('recent_papers'):
+            recent_paper = author_info['recent_papers'][0]
+            summary += f"Their most recent work is titled '{recent_paper['title']}'. "
+        
+        if level.lower() == 'beginner':
+            summary += "This summary provides a basic overview of the researcher's work."
+        else:
+            summary += "This summary is a basic overview due to limitations in generating a more comprehensive analysis."
+        
+        return summary
 
     async def search_papers(self, query: str) -> List[str]:
         scholar_results = await self.fetch_google_scholar(query)

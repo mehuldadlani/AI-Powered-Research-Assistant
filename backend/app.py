@@ -58,7 +58,11 @@ async def startup():
         await crew_service.initialize()
         logger.info("CrewAIService initialized successfully")
         
-        paper_search_service = PaperSearchService(rag_service, crew_service)
+        ai_service = AIService(crew_service)
+        await ai_service.initialize()
+        logger.info("AIService initialized successfully")
+        
+        paper_search_service = PaperSearchService(rag_service, crew_service, ai_service)
         await paper_search_service.initialize()
         logger.info("PaperSearchService initialized successfully")
         
@@ -66,9 +70,6 @@ async def startup():
         await qna_service.initialize()
         logger.info("QnAService initialized successfully")
         
-        ai_service = AIService(crew_service)
-        await ai_service.initialize()
-        logger.info("AIService initialized successfully")
         
         pdf_service = PDFService()
         await pdf_service.initialize()

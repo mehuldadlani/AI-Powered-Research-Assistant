@@ -31,7 +31,9 @@ class RAGService:
             raise RuntimeError(f"Failed to initialize RAG service: {str(e)}")
         
     def compute_content_hash(self, text: str) -> str:
-        return hashlib.md5(text.encode()).hexdigest()
+        if text is None:
+            return ''  
+        return hashlib.md5(str(text).encode()).hexdigest()
     
     async def get_document_by_content_hash(self, content_hash: str) -> Optional[Dict[str, Any]]:
         await self._ensure_initialized()
@@ -120,8 +122,8 @@ class RAGService:
             metadata['content_hash'] = content_hash
             metadata['original_filename'] = base_doc_id
 
-            await asyncio.to_thread(self.collection.add, documents=[text], ids=[doc_id], metadatas=[metadata])
-            doc_info = {"id": doc_id, "text": text, "metadata": metadata, "content_hash": content_hash}
+            await asyncio.to_thread(self.collection.add, documents=[str(text)], ids=[doc_id], metadatas=[metadata])
+            doc_info = {"id": doc_id, "text": str(text), "metadata": metadata, "content_hash": content_hash}
             self.cache[doc_id] = doc_info
             
             is_new = doc_id == base_doc_id
@@ -159,7 +161,7 @@ class RAGService:
                     "id": doc_id,
                     "text": results.get("documents", [None])[0] if results.get("documents") else None,
                     "metadata": results.get("metadatas", [{}])[0] if results.get("metadatas") else {},
-                    "content_hash": results.get("metadatas", [{}])[0].get('content_hash') if results.get("metadatas") else None
+                    "content_hash": (results.get("metadatas", [{}])[0] or {}).get('content_hash')
                 }
                 self.cache[doc_id] = doc
                 logger.info(f"Document retrieved successfully: {doc_id}")
