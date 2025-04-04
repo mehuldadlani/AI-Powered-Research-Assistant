@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'paper_model.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+PaperModel _$PaperModelFromJson(Map<String, dynamic> json) => PaperModel(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      abstract: json['abstract'] as String,
+      authors:
+          (json['authors'] as List<dynamic>).map((e) => e as String).toList(),
+    );
+
+Map<String, dynamic> _$PaperModelToJson(PaperModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'abstract': instance.abstract,
+      'authors': instance.authors,
+    };

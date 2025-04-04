@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'paper_providers.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$paperRepositoryHash() => r'a72a0193e106c35f6f58a5aa0c44c5101fb1326c';
+
+/// See also [paperRepository].
+@ProviderFor(paperRepository)
+final paperRepositoryProvider = AutoDisposeProvider<PaperRepository>.internal(
+  paperRepository,
+  name: r'paperRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$paperRepositoryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef PaperRepositoryRef = AutoDisposeProviderRef<PaperRepository>;
+String _$papersHash() => r'9840596a41b009b502710303532efe74afd37695';
+
+/// See also [Papers].
+@ProviderFor(Papers)
+final papersProvider =
+    AutoDisposeAsyncNotifierProvider<Papers, List<Paper>>.internal(
+  Papers.new,
+  name: r'papersProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$papersHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$Papers = AutoDisposeAsyncNotifier<List<Paper>>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

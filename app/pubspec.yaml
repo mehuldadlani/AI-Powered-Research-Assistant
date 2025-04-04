@@ -1,0 +1,42 @@
+name: scholascan
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.18.0
+  cupertino_icons: ^1.0.2
+  dash_chat_2: ^0.0.20
+  chat_gpt_sdk: ^2.2.5
+  riverpod_annotation: ^2.6.1
+  freezed_annotation: ^3.0.0
+  flutter_riverpod: ^2.6.1
+  dartz: ^0.10.1
+  equatable: ^2.0.7
+  json_annotation: ^4.9.0
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.15
+  riverpod_generator: ^2.6.1
+  freezed: ^3.0.0
+  json_serializable: ^6.6.2
+
+# dependency_overrides:
+#   url_launcher: ^6.2.4
+#   url_launcher_ios: ^6.2.4
+#   url_launcher_android: ^6.2.4
+#   url_launcher_platform_interface: ^2.2.0
+
+flutter:
+  uses-material-design: true
