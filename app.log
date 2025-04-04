@@ -3592,3 +3592,758 @@ LiteLLM completion() model= mistral; provider = ollama
 2025-04-04 17:57:25,996 - asyncio - WARNING - Executing <Task pending name='Task-68' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 11.322 seconds
 2025-04-04 17:57:26,269 - src.services.rag_service - INFO - Document stored successfully: author_Swathy R SRM 
 2025-04-04 17:57:26,269 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM 
+2025-04-04 20:27:30,716 - root - INFO - Starting up the application...
+2025-04-04 20:27:30,716 - root - INFO - Configuration validated successfully
+2025-04-04 20:27:30,716 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 20:27:30,728 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 20:27:30,784 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 20:27:30,784 - root - INFO - RAG service initialized successfully
+2025-04-04 20:27:30,784 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 20:28:40,868 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 20:28:40,879 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T14:58:40.846156Z' done=True done_reason='stop' total_duration=70056159375 load_duration=4084406000 prompt_eval_count=2 prompt_eval_duration=7127485625 eval_count=1107 eval_duration=58840034709 message=Message(role='assistant', content=' [JPEG image -- 3KB]\n\nThis is my son, John (2 years old in this photo). He was diagnosed with Autism Spectrum Disorder at the age of 18 months. Since that time we have been on a journey to understand his needs and how we can best support him as he grows. We have worked with many doctors, specialists and therapists to help John make progress towards achieving his goals. Although he is very bright and has incredible strengths, his autism affects many areas of functioning, including communication, social interaction and behavior. Despite these challenges, I am confident that he will lead a happy, productive life.\n\nAs a family, we have faced many obstacles in our quest to provide John with the support and education he needs to succeed. Accessing services has been difficult, as there is often a wait list for therapy appointments or funding for specialized equipment, such as communication devices. In addition, we have struggled to find educational programs that are appropriate for his unique needs and learning style.\n\nHowever, despite these challenges, I have learned so much about my son, myself and the world around us during this journey. I have also been fortunate to meet many wonderful people who share similar experiences and offer encouragement and support. Together, we are creating a brighter future for our children and helping to change the way society views autism.\n\n[JPEG image -- 3KB]\n\nThis is my daughter, Emily (10 years old in this photo). She has always been very protective of her little brother John and wants to do everything she can to help him. In school, Emily excels academically and is a natural leader among her peers. However, she struggles with anxiety and often becomes upset when she sees John struggling or when he receives negative attention from others due to his autism.\n\nAs a family, we have worked hard to teach Emily about empathy, patience and understanding. We have also encouraged her to pursue her interests and talents, as we believe that she has an important role to play in helping to change the world for people with autism. Together, we are learning more about ourselves and our community, and working towards a brighter future for everyone.\n\n[JPEG image -- 3KB]\n\nThis is me (age 40) with my son John. As his mother, I am deeply committed to helping him reach his full potential and live the best life possible. To this end, I have become an advocate for autism awareness, education and support. I have also become involved in various organizations that work to improve the lives of people with autism, such as the Autism Society of America and the Autism Speaks organization.\n\nIn addition to my advocacy work, I am a writer and artist who uses her creativity to raise awareness about autism and promote acceptance and understanding. Through my writing and art, I hope to inspire others to embrace their differences and work towards a more inclusive world for all.\n\n[JPEG image -- 3KB]\n\nThis is our family (me, my husband John, Emily and John) on a recent trip to the beach. Despite the challenges we face, we are grateful for the love, support and joy that we share as a family. We are also optimistic about the future and believe that with continued advocacy, education and support, we can create a brighter world for people with autism.\n\n[JPEG image -- 3KB]\n\nThis is our son John at his preschool graduation. Despite the many challenges he has faced, John has made incredible progress over the past two years. He has learned to communicate using a communication device, make friends and participate in group activities, and even speak a few words. We are so proud of all that he has accomplished and excited to see what the future holds for him.\n\nAs we continue on our journey, we will face many challenges and obstacles, but we will also find joy, love and hope. Together, as a family and as a community, we can create a brighter future for people with autism and help to change the way society views and supports individuals with this complex and beautiful condition.\n\n[JPEG image -- 3KB]\n\nThis is my son John at his first day of school. Despite the many challenges he faces, John is eager to learn and explore the world around him. We are so grateful for the opportunities he has been given and excited to see what the future holds for him. As a family, we will continue to advocate for autism awareness, education and support, and work towards creating a more inclusive and accepting world for all.\n\n[JPEG image -- 3KB]\n\nThis is my daughter Emily at her fifth-grade graduation. Despite her struggles with anxiety, Emily has persevered and thrived in school. She is an intelligent, compassionate young woman who is deeply committed to helping others. We are so proud of all that she has accomplished and excited to see what the future holds for her.\n\nAs a family, we will continue to support and encourage each other as we navigate the challenges of life with autism. Together, we will work towards creating a brighter future for our children and helping to change the world for people with autism.', images=None, tool_calls=None)
+2025-04-04 20:28:40,880 - root - INFO - CrewAIService initialized successfully
+2025-04-04 20:28:40,881 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 20:28:40,881 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 20:28:40,881 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 20:28:40,911 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 20:28:46,494 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 20:28:55,746 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 20:28:55,746 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 20:28:55,746 - root - INFO - QnAService initialized successfully
+2025-04-04 20:28:55,746 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 20:28:55,746 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 20:28:55,746 - root - INFO - AIService initialized successfully
+2025-04-04 20:28:55,767 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 20:28:55,767 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 20:28:55,767 - root - INFO - PDFService initialized successfully
+2025-04-04 20:28:55,768 - root - INFO - Services initialized and passed to routes
+2025-04-04 20:28:55,770 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 85.054 seconds
+2025-04-04 20:28:55,772 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=49, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 20:28:55,777 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 20:30:14,169 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM%20
+2025-04-04 20:30:18,429 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM%20 "HTTP/1.1 200 OK"
+2025-04-04 20:30:18,456 - scholarly - INFO - Found 1 authors
+2025-04-04 20:30:18,457 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100
+2025-04-04 20:30:24,681 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-04 20:30:24,771 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100
+2025-04-04 20:30:27,700 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-04 20:30:27,712 - src.services.paper_search_service - INFO - Fetched details for author: Swathy R SRM 
+2025-04-04 20:30:27,720 - asyncio - WARNING - Executing <Task pending name='Task-11' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 13.552 seconds
+2025-04-04 20:30:28,589 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.778 seconds
+2025-04-04 20:30:28,904 - src.services.rag_service - INFO - Document stored successfully: author_Swathy R SRM 
+2025-04-04 20:30:28,904 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM 
+2025-04-04 21:16:01,723 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 1.690 seconds
+2025-04-04 21:18:54,841 - root - INFO - Starting up the application...
+2025-04-04 21:18:54,841 - root - INFO - Configuration validated successfully
+2025-04-04 21:18:54,841 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 21:18:54,853 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:18:54,925 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 21:18:54,925 - root - INFO - RAG service initialized successfully
+2025-04-04 21:18:54,925 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 21:25:33,113 - root - INFO - Starting up the application...
+2025-04-04 21:25:33,113 - root - INFO - Configuration validated successfully
+2025-04-04 21:25:33,113 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 21:25:33,126 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:25:33,248 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 21:25:33,248 - root - INFO - RAG service initialized successfully
+2025-04-04 21:25:33,248 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 21:35:39,745 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.157 seconds
+2025-04-04 21:35:39,747 - root - INFO - Starting up the application...
+2025-04-04 21:35:39,747 - root - INFO - Configuration validated successfully
+2025-04-04 21:35:39,747 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 21:35:39,760 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:35:39,908 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 21:35:39,908 - root - INFO - RAG service initialized successfully
+2025-04-04 21:35:39,908 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 21:36:09,536 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 21:36:09,544 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T16:06:09.521369Z' done=True done_reason='stop' total_duration=29600480292 load_duration=12869584 prompt_eval_count=2 prompt_eval_duration=1905436667 eval_count=556 eval_duration=27679830667 message=Message(role='assistant', content='0\n\nBy Sarah Sekula, Contributing Writer; Photo Credit: David Lundgren, Florida Tech Athletics\n\nWhen it comes to the top NCAA Division II sports programs in the nation, Florida Institute of Technology (Florida Tech) is on top. For years, this small, independent tech school has been quietly making waves—and it’s about time everyone knows about its successes.\n\nSo what’s all the fuss about? Here are five reasons why Florida Tech deserves recognition as an elite sports program:\n\n1. It consistently ranks high in Division II. For three years running, Florida Tech has been named among the top 10 programs in NCAA Division II for total All-Americans (as of May 2014). In fact, according to the Association of College Press Service, Florida Tech’s student athletes have earned 65 All-American honors since 2009.\n\n2. It has a state-of-the-art athletics facility. The Clemente Center opened in August 2013 and is one of the finest facilities for Division II intercollegiate sports competition in the country, according to Florida Tech’s website. It includes four regulation basketball courts, a six-lane, 200-meter track and field surface and a 15,000-square-foot fitness center.\n\n3. The school is a member of the Sunshine State Conference (SSC). In 2012, Florida Tech became the seventh institution to join the SSC, which boasts a reputation for academic rigor and competitive athletics. Among its alumni are 18 Olympic athletes, two Rhodes Scholars and countless Division I coaches and executives.\n\n4. It has had numerous individual honors over the years. Take Michael Hundley, for example. He was named to the College Sports Information Directors of America (CoSIDA) Academic All-American first team in 2013. Or there’s volleyball player Morgan DeLaune, who broke the Florida Tech career kills record on Nov. 23, 2014.\n\n5. It provides a top-tier education. The school boasts one of the highest job placement rates in the state and is home to the largest engineering program in Central Florida. In fact, it has been named a “Best Regional University” by U.S. News & World Report every year since 1998.\n\nFor more information about Florida Tech’s athletics department, visit fitpanthers.com.', images=None, tool_calls=None)
+2025-04-04 21:36:09,545 - root - INFO - CrewAIService initialized successfully
+2025-04-04 21:36:09,545 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 21:36:09,545 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 21:36:09,545 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 21:36:09,573 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:36:16,245 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 21:36:20,723 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 21:36:20,723 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 21:36:20,723 - root - INFO - QnAService initialized successfully
+2025-04-04 21:36:20,723 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 21:36:20,723 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 21:36:20,723 - root - INFO - AIService initialized successfully
+2025-04-04 21:36:20,737 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 21:36:20,738 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 21:36:20,738 - root - INFO - PDFService initialized successfully
+2025-04-04 21:36:20,738 - root - ERROR - Error during startup: 'PDFService' object has no attribute 'is_valid_pdf'
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 77, in startup
+    init_services(rag_service, crew_service, paper_search_service, qna_service, ai_service, pdf_service)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 37, in init_services
+    is_valid_pdf = pdf_service.is_valid_pdf
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PDFService' object has no attribute 'is_valid_pdf'
+2025-04-04 21:36:20,756 - app - ERROR - Exception
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 77, in startup
+    init_services(rag_service, crew_service, paper_search_service, qna_service, ai_service, pdf_service)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 37, in init_services
+    is_valid_pdf = pdf_service.is_valid_pdf
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PDFService' object has no attribute 'is_valid_pdf'
+2025-04-04 21:36:20,758 - asyncio - WARNING - Executing <Task finished name='Task-3' coro=<Lifespan.handle_lifespan() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:42> exception=LifespanFailureError("Lifespan failure in startup. ''PDFService' object has no attribute 'is_valid_pdf''") created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 41.010 seconds
+2025-04-04 21:36:20,760 - root - CRITICAL - Unhandled exception in main app: Lifespan failure in startup. ''PDFService' object has no attribute 'is_valid_pdf''
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 365, in __call__
+    await self.app.startup()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 77, in startup
+    init_services(rag_service, crew_service, paper_search_service, qna_service, ai_service, pdf_service)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 37, in init_services
+    is_valid_pdf = pdf_service.is_valid_pdf
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PDFService' object has no attribute 'is_valid_pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 113, in <module>
+    app.run(debug=Config.DEBUG, host=Config.HOST, port=Config.PORT)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 878, in run
+    loop.run_until_complete(asyncio.gather(*tasks))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/__init__.py", line 44, in serve
+    await worker_serve(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py", line 88, in worker_serve
+    raise exception
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 55, in handle_lifespan
+    await self.app(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/app_wrappers.py", line 34, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1735, in __call__
+    await self.asgi_app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1761, in asgi_app
+    await asgi_handler(receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 367, in __call__
+    await send(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 119, in asgi_send
+    raise LifespanFailureError("startup", message.get("message", ""))
+hypercorn.utils.LifespanFailureError: Lifespan failure in startup. ''PDFService' object has no attribute 'is_valid_pdf''
+2025-04-04 21:45:35,845 - root - INFO - Starting up the application...
+2025-04-04 21:45:35,846 - root - INFO - Configuration validated successfully
+2025-04-04 21:45:35,846 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 21:45:35,859 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:45:35,997 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 21:45:35,997 - root - INFO - RAG service initialized successfully
+2025-04-04 21:45:35,997 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 21:45:57,913 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 21:45:57,920 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T16:15:57.904621Z' done=True done_reason='stop' total_duration=21901552042 load_duration=4081818167 prompt_eval_count=2 prompt_eval_duration=4673164208 eval_count=268 eval_duration=13143472959 message=Message(role='assistant', content=' <tr>\n    <th>{{$loop->iteration}}</th>\n    <td>{{$producto[\'id\']}}</td>\n    <td><img src="{{url(\'/storage/app/public/\'.$producto[\'foto\'])}}" width="100px"></td>\n    <td>{{$producto[\'nombre\']}}</td>\n    <td>{{$producto[\'precio\']}}</td>\n    <td>{{$producto[\'descripcion\']}}</td>\n    <td>\n      <a href="{{route(\'productos.edit\', $producto->id)}}" class="btn btn-warning">Editar</a>\n      <button type="submit" onclick="return confirm(\'Estas seguro de eliminar\')" class="btn btn-danger" wire:click="delete({{$producto->id}})" >Eliminar</button>\n    </td>\n  </tr>\n\n<script>\n    //Confirmar eliminación\n    function confirmDelete(message, event) {\n        if (!confirm(message)) {\n            event.preventDefault();\n        }\n    }\n</script>', images=None, tool_calls=None)
+2025-04-04 21:45:57,921 - root - INFO - CrewAIService initialized successfully
+2025-04-04 21:45:57,921 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 21:45:57,921 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 21:45:57,921 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 21:45:57,943 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 21:46:05,435 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 21:46:09,977 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 21:46:09,977 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 21:46:09,977 - root - INFO - QnAService initialized successfully
+2025-04-04 21:46:09,977 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 21:46:09,977 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 21:46:09,977 - root - INFO - AIService initialized successfully
+2025-04-04 21:46:10,001 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 21:46:10,002 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 21:46:10,002 - root - INFO - PDFService initialized successfully
+2025-04-04 21:46:10,002 - root - INFO - Services initialized and passed to routes
+2025-04-04 21:46:10,004 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 34.159 seconds
+2025-04-04 21:46:10,008 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=41, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 21:46:10,017 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 21:51:57,208 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 21:51:57,209 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 21:51:57,211 - src.services.pdf_service - ERROR - Error extracting text from PDF: uploads/10.1371journal.pone.0231708.pdf
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+    obj = _ForkingPickler.dumps(obj)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: cannot pickle '_thread.lock' object
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/pdf_service.py", line 92, in extract_text_from_pdf
+    text = await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+    obj = _ForkingPickler.dumps(obj)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: cannot pickle '_thread.lock' object
+2025-04-04 21:51:57,211 - src.api.routes - ERROR - Error processing uploaded file: Error extracting text from PDF: cannot pickle '_thread.lock' object
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+    obj = _ForkingPickler.dumps(obj)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: cannot pickle '_thread.lock' object
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/pdf_service.py", line 92, in extract_text_from_pdf
+    text = await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/queues.py", line 264, in _feed
+    obj = _ForkingPickler.dumps(obj)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: cannot pickle '_thread.lock' object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 81, in upload_file
+    text = await pdf_service.extract_text_from_pdf(filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/pdf_service.py", line 110, in extract_text_from_pdf
+    raise RuntimeError(f"Error extracting text from PDF: {str(e)}")
+RuntimeError: Error extracting text from PDF: cannot pickle '_thread.lock' object
+2025-04-04 22:20:11,079 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.154 seconds
+2025-04-04 22:20:11,080 - root - INFO - Starting up the application...
+2025-04-04 22:20:11,081 - root - INFO - Configuration validated successfully
+2025-04-04 22:20:11,081 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 22:20:11,094 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 22:20:11,225 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 22:20:11,226 - root - INFO - RAG service initialized successfully
+2025-04-04 22:20:11,226 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 22:21:05,249 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 22:21:05,260 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T16:51:05.235489Z' done=True done_reason='stop' total_duration=54001210750 load_duration=4088265417 prompt_eval_count=2 prompt_eval_duration=7943944792 eval_count=828 eval_duration=41963006041 message=Message(role='assistant', content=" This is a replication of [the original post](https://www.reddit.com/r/CompetitiveOverwatch/comments/86dq9h/i_need_help_making_a_team/) by u/DarthSorak\n\n---\n\n# Looking for a Team\n\nHey all! I'm DarthSorak, but you can call me Sorak. I've recently come from the world of Smash 4 (where I mained Pikachu in competitive), and have decided to get into Overwatch after hearing how fun it is! I've watched a lot of videos, read some guides, and played about 10 hours in quickplay. I would really love to start getting better and actually playing some comp, but unfortunately, I do not know anyone else who plays or watches Overwatch.\n\n**A little bit about me:** I am 22 years old and live in the United States (Central Time). I'm a huge fan of team games like Smash, CS:GO, Hearthstone, and Overwatch! I love having a good time with my friends, and I can guarantee that I will be very chill during scrims/matches.\n\nI am currently looking for a team to join, so if you have an opening for someone (preferably in the support role), then please let me know! I would also be down to start a new 5-man with anyone, or even just find some friendly people to play comp games and scrims against.\n\n**I currently have these heroes I am comfortable with:** Lucio, Mercy, Zenyatta, Moira, Tracer, Soldier:76, Widowmaker, McCree, Mei, Ana, Hanzo, D.Va, Reinhardt, and Roadhog. If you know anything about Smash 4, I would consider my main to be Luigi (Goooood Nights)\n\nHere is a link to my Overbuff profile as well: [Overbuff Profile](https://overbuff.com/player/pc/DarthSorak-3168)\n\nIf you're interested, or have any questions, please feel free to post here or PM me! Thanks for reading :)\n\n---\n\n# Reaction GIFs\n\nInspired by the wonderful [overwatchreaction.com](http://overwatchreaction.com/), I made this website with reaction GIFs from Overwatch. Check it out: [DarthSorak's Reactions](https://soraksreactions.herokuapp.com/)\n\n---\n\n# Contact Information\n\nHere is my [Overbuff profile](https://overbuff.com/player/pc/DarthSorak-3168) for more information, and I can be reached by PM here on Reddit or by email at [darthsorak@gmail.com](mailto:darthsorak@gmail.com).\n\n---\n\n# Additional Resources\n\nHere are some resources for getting started with Overwatch:\n\n* [Overbuff's Beginner Guide](http://overbuff.com/guides/beginners-guide)\n* [Roadhog's YouTube Tutorials](https://www.youtube.com/channel/UC9623jc1gLWy7zMU_0fYvMA/playlists)\n* [Competitive Overwatch Discord Server](https://discord.gg/compoverwatch)\n\n---\n\n# Contact\n\nYou can contact me in the following ways:\n\n* Reddit PM: u/DarthSorak\n* Email: [darthsorak@gmail.com](mailto:darthsorak@gmail.com)", images=None, tool_calls=None)
+2025-04-04 22:21:05,261 - root - INFO - CrewAIService initialized successfully
+2025-04-04 22:21:05,261 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 22:21:05,261 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 22:21:05,261 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 22:21:05,289 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 22:21:14,898 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 22:21:18,832 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 22:21:18,833 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 22:21:18,833 - root - INFO - QnAService initialized successfully
+2025-04-04 22:21:18,833 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 22:21:18,833 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 22:21:18,833 - root - INFO - AIService initialized successfully
+2025-04-04 22:21:18,833 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 22:21:18,834 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 22:21:18,834 - root - INFO - PDFService initialized successfully
+2025-04-04 22:21:18,834 - root - INFO - Services initialized and passed to routes
+2025-04-04 22:21:18,837 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 67.756 seconds
+2025-04-04 22:21:18,840 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 22:21:18,845 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 22:21:23,708 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:21:23,708 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:21:23,833 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:21:25,090 - src.services.rag_service - INFO - Document stored successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:28:16,081 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.198 seconds
+2025-04-04 22:28:16,232 - src.services.rag_service - INFO - Batch storage successful for 229 documents
+2025-04-04 22:28:16,235 - src.services.qna_service - INFO - Added 229 document chunks to RAG for file: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:28:16,284 - src.api.routes - INFO - File uploaded and processed successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:28:16,592 - asyncio - WARNING - Executing <Task finished name='Task-11' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.434 seconds
+2025-04-04 22:29:45,807 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:29:45,807 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:29:45,808 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:29:46,503 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.692 seconds
+2025-04-04 22:29:46,810 - src.services.rag_service - INFO - Document stored successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:36:33,113 - src.services.rag_service - INFO - Batch storage successful for 229 documents
+2025-04-04 22:36:33,122 - src.services.qna_service - INFO - Added 229 document chunks to RAG for file: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:36:33,131 - src.api.routes - INFO - File uploaded and processed successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:37:59,508 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.157 seconds
+2025-04-04 22:37:59,510 - root - INFO - Starting up the application...
+2025-04-04 22:37:59,510 - root - INFO - Configuration validated successfully
+2025-04-04 22:37:59,510 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 22:37:59,522 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 22:37:59,606 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 22:37:59,606 - root - INFO - RAG service initialized successfully
+2025-04-04 22:37:59,607 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 22:45:52,334 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.158 seconds
+2025-04-04 22:45:52,336 - root - INFO - Starting up the application...
+2025-04-04 22:45:52,336 - root - INFO - Configuration validated successfully
+2025-04-04 22:45:52,336 - root - ERROR - Error during startup: TTLCache.__init__() missing 1 required positional argument: 'maxsize'
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 53, in startup
+    rag_service = RAGService()
+                  ^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 18, in __init__
+    self.cache = TTLCache(ttl=3600)
+                ^^^^^^^^^^^^^^^^^^
+TypeError: TTLCache.__init__() missing 1 required positional argument: 'maxsize'
+2025-04-04 22:45:52,337 - app - ERROR - Exception
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 53, in startup
+    rag_service = RAGService()
+                  ^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 18, in __init__
+    self.cache = TTLCache(ttl=3600)
+                ^^^^^^^^^^^^^^^^^^
+TypeError: TTLCache.__init__() missing 1 required positional argument: 'maxsize'
+2025-04-04 22:45:52,338 - root - CRITICAL - Unhandled exception in main app: Lifespan failure in startup. 'TTLCache.__init__() missing 1 required positional argument: 'maxsize''
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 365, in __call__
+    await self.app.startup()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 53, in startup
+    rag_service = RAGService()
+                  ^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 18, in __init__
+    self.cache = TTLCache(ttl=3600)
+                ^^^^^^^^^^^^^^^^^^
+TypeError: TTLCache.__init__() missing 1 required positional argument: 'maxsize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 113, in <module>
+    app.run(debug=Config.DEBUG, host=Config.HOST, port=Config.PORT)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 878, in run
+    loop.run_until_complete(asyncio.gather(*tasks))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/__init__.py", line 44, in serve
+    await worker_serve(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py", line 88, in worker_serve
+    raise exception
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 55, in handle_lifespan
+    await self.app(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/app_wrappers.py", line 34, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1735, in __call__
+    await self.asgi_app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1761, in asgi_app
+    await asgi_handler(receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 367, in __call__
+    await send(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 119, in asgi_send
+    raise LifespanFailureError("startup", message.get("message", ""))
+hypercorn.utils.LifespanFailureError: Lifespan failure in startup. 'TTLCache.__init__() missing 1 required positional argument: 'maxsize''
+2025-04-04 22:48:39,043 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.161 seconds
+2025-04-04 22:48:39,046 - root - INFO - Starting up the application...
+2025-04-04 22:48:39,046 - root - INFO - Configuration validated successfully
+2025-04-04 22:48:39,046 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 22:48:39,058 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 22:48:39,189 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 22:48:39,189 - root - INFO - RAG service initialized successfully
+2025-04-04 22:48:39,189 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 22:50:45,513 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 22:50:45,597 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T17:20:45.430366Z' done=True done_reason='stop' total_duration=126230912791 load_duration=3837757791 prompt_eval_count=2 prompt_eval_duration=12585797542 eval_count=1933 eval_duration=109798353375 message=Message(role='assistant', content='1.1.1\n\tA) Tabela Hash (Chaining)\n\n\tPrecisamos de uma tabela para armazenar as chaves e seus valores, além de um método de pesquisa que seja rápido e não use muito espaço.\n\n\tComo a chave será uma palavra/frase, ela poderá ter vários valores diferentes. Portanto, precisamos de um método que percorra a tabela e verifique se existe alguma correspondência entre as chaves e os valores armazenados na tabela.\n\n\tUm método popular para resolver este problema é a Tabela Hash com Chaining. Essa estrutura armazena o valor de cada chave em um bucket ou slot da tabela. Se o valor da chave não existir no slot, então usamos uma lista encadeada para armazenar as chaves/valores repetidas, que se chama chaining.\n\n\tAo inserir uma chave/valor na tabela, primeiro verificamos se já existe algum valor no mesmo slot da tabela (utilizando a função de hash). Se existir, então acrescentamos a lista encadeada com o novo par chave/valor.\n\n\tCaso não exista nenhuma chave/valor no bucket da tabela, então armazenamos diretamente na lista encadeada do bucket.\n\n\tA pesquisa de uma determinada chave será feita pelo método hash para achar o bucket com o slot correto, e então percorreremos a lista encadeada até encontrarmos a chave desejada ou não.\n\n  1.1.2\n\n\tA) Criação da estrutura Tabela Hash:\n\n\tPara criar uma tabela hash com chaining, precisamos de duas funções principais:\n\n\t- `createTable(int size)`: Essa função é responsável por criar a tabela com o número de buckets passado como parâmetro. Cada bucket deve ser inicializado como uma lista vazia.\n\n\t- `hashFunction(String key)`: Essa função deve receber uma string e retornar o índice que será usado para armazenar a chave/valor na tabela hash (utilizando um método de hash como SJF, RSH ou DH).\n\n\tTambém precisaremos das seguintes funções auxiliares:\n\n\t- `add(String key, String value)`: Essa função recebe uma chave e seu valor, cria a estrutura de dados com o valor correspondente e armazena na tabela hash.\n\n\t- `get(String key)`: Essa função é responsável por percorrer a lista encadeada do bucket da tabela e procurar a chave passada como parâmetro. Se achar, então retorna o valor correspondente. Caso não encontre, então retorna null.\n\n\t- `remove(String key)`: Essa função é responsável por remover uma determinada chave e seu valor da tabela hash.\n\n\tB) Implementação do método de busca:\n\n\tComo estamos utilizando chaining, precisaremos de duas variáveis auxiliares para armazenar o índice da tabela e a lista encadeada:\n\n\t- `index`: Esta variável representa o índice da tabela que vai ser usado para percorrer ela.\n\n\t- `list`: Essa lista é responsável por armazenar os valores da chave que foram armazenados na mesma tabela de hash com a mesma chave.\n\n\tAo iniciar a função get, verificaremos se o índice atual da tabela não é maior que o número total de buckets (ou seja, se já chegamos no final da lista). Em seguida, percorreremos a lista encadeada passada como parâmetro e procuraremos pela chave buscada.\n\n\tCaso a chave não exista na tabela hash, então podemos retornar null ou lançar uma exceção (dependendo do que for mais adequado para o caso).\n\n  1.2.1\n\n\tA) A função `hashFunction(String key)` recebe uma string como parâmetro e retorna um inteiro entre 0 e o número total de buckets da tabela hash menos 1 (que representam os índices das entradas da tabela).\n\n\tComo não possuimos informação sobre a string, podemos escolher qualquer método que nos permita converter uma string em um inteiro. Um exemplo é o método de hash DH (Divisão com Módulo), na qual dividimos a chave por 10 e arredondamos para baixo.\n\n\tExemplo: Se tivermos uma tabela com 5 buckets, então:\n\n\t- "abc" -> hashFunction("abc") = 3 (3 representa o índice da tabela que será usado para armazenar a chave/valor)\n\n  1.2.2\n\n\tA) Criação de uma função `findCollision(String key, int index, Table table)`:\n\n\tEssa função deve receber uma chave, o índice da tabela, e a tabela hash em si e retornar um inteiro que representa o índice da colisão encontrada.\n\n\tPara isso, podemos criar uma lista vazia e percorrer todos os buckets da tabela e comparar as chaves com a chave passada como parâmetro (utilizando um loop for). Caso encontremos uma chave iguais à chave buscada, então retornaremos o índice dessa colisão.\n\n\tCaso não encontremos nenhuma colisão na tabela hash, então retornaremos -1 (ou lançar uma exceção de erro).\n\n  1.3.1\n\n\tA) Criação da função `add(String key, String value, Table table)`:\n\n\tEssa função recebe uma chave e um valor, bem como a tabela hash em si e deve adicionar o par chave/valor à tabela.\n\n\tPara isso, precisamos primeiro calcular o índice da tabela com a função `hashFunction(String key)`. Então, verificaremos se já existe alguma chave igual naquele mesmo bucket da tabela hash (usando uma variável auxiliar para percorrer a lista encadeada e comparar as chaves). Caso exista, então adicionamos o novo valor à lista encadeada.\n\n\tCaso não exista nenhuma chave igual no bucket da tabela hash, então criaremos uma lista vazia (ou utilizar uma variável auxiliar que represente a lista encadeada) e adicionaremos o par chave/valor nela.\n\n\tB) Implementação do método de busca:\n\n\tCriaremos duas variáveis auxiliares para armazenar o índice da tabela e a lista encadeada: `index` e `list`. Ao iniciar a função get, verificaremos se o índice atual da tabela não é maior que o número total de buckets (ou seja, se já chegamos no final da lista). Em seguida, percorreremos a lista encadeada passada como parâmetro e procuraremos pela chave buscada.\n\n\tCaso a chave não exista na tabela hash, então podemos retornar null ou lançar uma exceção (dependendo do que for mais adequado para o caso).', images=None, tool_calls=None)
+2025-04-04 22:50:45,600 - root - INFO - CrewAIService initialized successfully
+2025-04-04 22:50:45,606 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 22:50:45,606 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 22:50:45,606 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 22:50:45,703 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 22:50:48,377 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 22:50:49,064 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 22:50:49,064 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 22:50:49,064 - root - INFO - QnAService initialized successfully
+2025-04-04 22:50:49,064 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 22:50:49,065 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 22:50:49,065 - root - INFO - AIService initialized successfully
+2025-04-04 22:50:49,065 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 22:50:49,065 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 22:50:49,065 - root - INFO - PDFService initialized successfully
+2025-04-04 22:50:49,065 - root - INFO - Services initialized and passed to routes
+2025-04-04 22:50:49,068 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 130.022 seconds
+2025-04-04 22:50:49,070 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 22:50:49,086 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 22:51:03,135 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:51:03,136 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:51:03,265 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:51:04,588 - src.services.rag_service - INFO - Document stored with a new unique ID: 10.1371journal.pone.0231708_1.pdf
+2025-04-04 22:51:10,915 - asyncio - WARNING - Executing <TimerHandle when=37004.406287 _set_result_unless_cancelled(<Future finis...events.py:448>, None) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:313 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:661> took 0.734 seconds
+2025-04-04 22:58:12,108 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.313 seconds
+2025-04-04 22:58:12,184 - src.services.rag_service - INFO - Batch storage successful for 229 documents
+2025-04-04 22:58:12,186 - src.services.qna_service - INFO - Added 229 document chunks to RAG for file: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:58:12,198 - src.api.routes - INFO - File uploaded and updated successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 22:58:12,278 - asyncio - WARNING - Executing <Task finished name='Task-11' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.121 seconds
+2025-04-04 22:58:36,342 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:58:36,342 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:58:36,343 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 22:58:37,297 - src.services.rag_service - INFO - Document stored with a new unique ID: 10.1371journal.pone.0231708_2.pdf
+2025-04-04 22:58:42,783 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.347 seconds
+2025-04-04 23:05:18,472 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.110 seconds
+2025-04-04 23:05:18,500 - src.services.rag_service - INFO - Batch storage successful for 229 documents
+2025-04-04 23:05:18,503 - src.services.qna_service - INFO - Added 229 document chunks to RAG for file: 10.1371journal.pone.0231708.pdf
+2025-04-04 23:05:18,512 - src.api.routes - INFO - File uploaded and updated successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 23:08:46,962 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.154 seconds
+2025-04-04 23:08:46,964 - root - INFO - Starting up the application...
+2025-04-04 23:08:46,964 - root - INFO - Configuration validated successfully
+2025-04-04 23:08:46,964 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:08:46,976 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:08:47,107 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:08:47,107 - root - INFO - RAG service initialized successfully
+2025-04-04 23:08:47,107 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:10:45,407 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:10:45,426 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T17:40:45.373772Z' done=True done_reason='stop' total_duration=118257643042 load_duration=4086991542 prompt_eval_count=2 prompt_eval_duration=6480323792 eval_count=1971 eval_duration=107684193792 message=Message(role='assistant', content=' * [Introducción](#introduccion)\n   * [Conceptos](#conceptos)\n      + [Filtros de carga](#filtros-de-carga)\n         - [Tipo de filtro](#tipo-de-filtro)\n         - [Criterio de filtro](#criterio-de-filtro)\n      + [Acciones sobre un recurso](#acciones-sobre-un-recurso)\n      + [Propiedades y campos](#propiedades-y-campos)\n   * [Pruebas de funcionamiento](#pruebas-de-funcionamiento)\n\n<a name="introduccion"></a>\n\n# Introducción\n\nLa tarea se trata de realizar un test unitario para la clase `Filter` que se encuentra en el paquete com.tecnicas.api.models.filter. En esta tarea hemos usado Java 8 y JUnit 5.\n\n<a name="conceptos"></a>\n\n# Conceptos\n\n### Filtros de carga\n\nSe trata de una clase de la que heredan otras, siendo estas `QueryFilter` y `UpdateFilter`. Se utilizan para filtrar y modificar los datos en una colección de forma que coincidan con un determinado criterio.\n\n#### Tipo de filtro\n\nHay tres tipos de filtros:\n- **StringFilter**: Filtra por un campo del tipo String, es decir, que puede tener cualquier valor alfanumérico. El tipo de comparación que se puede hacer es `equals` y se pueden añadir más de uno para indicar los valores a cumplir el filtro (por ejemplo, si se usa un campo con nombre `name`, el filtro podría indicar `StringFilter.equal("Juan")`, pero también podría ser `StringFilter.equal("Pedro").or(StringFilter.equal("Miguel"))`).\n- **NumberFilter**: Filtra por un campo del tipo Numérico, es decir, que puede tener cualquier valor numérico (por ejemplo, 10 o 3.14). El tipo de comparación que se puede hacer es `equals` y se pueden añadir más de uno para indicar los valores a cumplir el filtro (por ejemplo, si se usa un campo con nombre `age`, el filtro podría indicar `NumberFilter.equal(18)`, pero también podría ser `NumberFilter.greaterThan(30).or(NumberFilter.lessThan(40))` para que coincidan edades mayores a 30 o menores a 40).\n- **DateTimeFilter**: Filtra por un campo del tipo DateTime, es decir, que puede tener cualquier valor en formato de fecha y hora (por ejemplo, `2021-09-08T00:00:00` o `2021/09/08 08:30:00`). El tipo de comparación que se puede hacer es `equals`, pero también hay muchas más formas de comparar fechas y horas (ver [Documentación de Java](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalComparator.html)).\n\n#### Criterio de filtro\n\nPara indicar el criterio de filtrado se puede usar:\n- `and(Filter filter)` : Se cumplen las condiciones que indican el criterio de filtrado y el otro filtro. Es decir, si se usa `and()`, todos los elementos tienen que coincidir con el criterio de filtrado y el otro filtro para pasar dicho filtrado.\n- `or(Filter filter)` : Se cumple la condición del primero filtro o la segunda. Es decir, si se usa `or()`, al menos algunos elementos tienen que coincidir con el criterio de filtrado o el otro para pasar dicho filtrado.\n- `not(Filter filter)` : No coincide con el criterio de filtrado indicado en el parámetro. Es decir, si se usa `not()`, ningún elemento coincide con ese criterio de filtrado.\n\n### Acciones sobre un recurso\n\n- **Crear**: Para crear un recurso es necesario utilizar la clase `CreateRequest` que hereda del `Filter`. Se crea un nuevo recurso, se le asignan los valores por defecto o los que se hayan proporcionado.\n- **Leer**: Para obtener información de un recurso es necesario utilizar la clase `QueryRequest`. Se obtiene toda la información del recurso que coincide con el criterio de filtrado indicado.\n- **Modificar**: Para modificar un recurso es necesario utilizar la clase `UpdateRequest` que hereda del `Filter`. Se actualiza la información del recurso con la nueva que se ha proporcionado.\n- **Eliminar**: No hay una clase específica para eliminar un recurso, se elimina un recurso mediante la acción `delete()` del recurso, pero esta función debería estar dentro de alguna clase `DeleteRequest`.\n\n### Propiedades y campos\n\n- **getFieldName()**: Devuelve el nombre del campo que se está filtrando. Por ejemplo, si se usa un campo con nombre `name`, el método devuelve `"name"`.\n- **getName()**: Devuelve el nombre de la clase del filtro. Por ejemplo, si se trata de un filtro de tipo StringFilter, este método devuelve `"StringFilter"`.\n- **getCriteria()**: Devuelve la condición con la que se va a filtrar los datos. Por ejemplo, si se usa el método `and(StringFilter filter)`, esta función devuelve `List<Filter>` donde el primer elemento es el filtro de tipo StringFilter pasado en el parámetro y el segundo elemento sería la condición para el resto del criterio.\n\n<a name="pruebas-de-funcionamiento"></a>\n\n# Pruebas de funcionamiento\n\nPara realizar las pruebas de funcionamiento se ha creado un fichero en el paquete com.tecnicas.api.models.filter.test llamado `FilterTest.java` y una interfaz en el paquete com.tecnicas.api.models.filter para que todas las pruebas se puedan aislar:\n\n```java\npublic interface TestModel {\n    String getId();\n    String getName();\n    Integer getAge();\n    LocalDateTime getDateCreated();\n}\n```\n\nSe ha creado una clase que hereda de `TestModel` y se utiliza en las pruebas:\n\n```java\npublic class TestObject implements TestModel {\n    private String id;\n    private String name;\n    private Integer age;\n    private LocalDateTime dateCreated;\n\n    // getters and setters\n}\n```\n\nSe han creado pruebas para las clases `QueryFilter`, `UpdateFilter` y `CreateRequest`. A continuación se muestra la estructura de cada una de ellas:\n\n```java\npublic class QueryFilterTest extends TestBase {\n    @Test\n    void testQueryFilter() { ... }\n}\n\npublic class UpdateFilterTest extends TestBase {\n    @Test\n    void testUpdateFilter() { ... }\n}\n\npublic class CreateRequestTest extends TestBase {\n    @Test\n    void testCreateRequest() { ... }\n}\n```\n\nSe ha creado una clase para que las pruebas se puedan aislar:\n\n```java\npublic abstract class TestBase {\n    protected List<TestObject> data;\n\n    @BeforeEach\n    void setup() {\n        // Se inicializa el listado de datos de los test.\n    }\n\n    @AfterEach\n    void teardown() {\n        // Se limpia el listado de datos de los test.\n    }\n}\n```', images=None, tool_calls=None)
+2025-04-04 23:10:45,428 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:10:45,430 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:10:45,430 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:10:45,430 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:10:45,464 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:10:53,508 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:11:14,065 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:11:14,065 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:11:14,065 - root - INFO - QnAService initialized successfully
+2025-04-04 23:11:14,066 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:11:14,066 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:11:14,066 - root - INFO - AIService initialized successfully
+2025-04-04 23:11:14,067 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:11:14,067 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:11:14,067 - root - INFO - PDFService initialized successfully
+2025-04-04 23:11:14,067 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:11:14,071 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 147.107 seconds
+2025-04-04 23:11:14,073 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:11:14,085 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:11:24,534 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:11:24,534 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:11:24,663 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:11:24,729 - src.services.rag_service - INFO - Document with same content already exists: 10.1371journal.pone.0231708_1.pdf
+2025-04-04 23:17:05,488 - asyncio - WARNING - Executing <Task cancelling name='Task-9' coro=<_handle() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/task_group.py:33> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[TaskGroup._on_task_done(), gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/taskgroups.py:184> took 0.307 seconds
+2025-04-04 23:17:12,545 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.154 seconds
+2025-04-04 23:17:12,548 - root - INFO - Starting up the application...
+2025-04-04 23:17:12,548 - root - INFO - Configuration validated successfully
+2025-04-04 23:17:12,548 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:17:12,561 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:17:12,664 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:17:12,665 - root - INFO - RAG service initialized successfully
+2025-04-04 23:17:12,665 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:23:05,688 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.156 seconds
+2025-04-04 23:23:05,690 - root - INFO - Starting up the application...
+2025-04-04 23:23:05,690 - root - INFO - Configuration validated successfully
+2025-04-04 23:23:05,691 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:23:05,703 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:23:05,830 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:23:05,830 - root - INFO - RAG service initialized successfully
+2025-04-04 23:23:05,830 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:24:14,508 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:24:14,538 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T17:54:14.441513Z' done=True done_reason='stop' total_duration=68600695250 load_duration=4081174167 prompt_eval_count=2 prompt_eval_duration=6200585125 eval_count=1109 eval_duration=58313746166 message=Message(role='assistant', content=' [Back](../README.md)\n\n<a href="https://github.com/Ricardo-James/MATH215-SP2023" target="_blank">\n    <img src="https://camo.githubusercontent.com/c7b34e6be89e578d9c3adcdb7caa3637dfb5828f/687474703a2f2f692e696d6775722e636f6d2f646174615468756e69636174696f6e732e6e65742f6769746875622f6c6f676f302d312d332d61362d332d362e706e67" width="200px"/>\n</a>\n\n# MATH 215: Discrete Mathematics\n\nWinter Term 2023\n\n**Instructor:** Dr. Ricardo James\n\n**TA:** Mr. David Chan\n\n**Section:** Section 2\n\n**Office Hours**: Monday & Wednesday 9 AM - 10 AM, Friday 10 AM - 11 AM (or by appointment)\n\n**Location:** ACC 631\n\n**Email:** ricardo.james@sheridancollege.ca or david.chan24@gmail.com\n\n## Course Description\nThis is a course in Discrete Mathematics, with an emphasis on Propositional Logic, Predicate Logic, Set Theory and Combinatorics. The course includes a component of Problem Solving Skills as an integral part of the curriculum.\n\n## Important Dates\n| Date          | Event                                     |\n|--------------|-----------------------------------------|\n| January 17   | Class starts                             |\n| February 20-23| Reading Week                              |\n| March 6       | Last day to drop the course              |\n| April 18      | Final Exam (TBA)                         |\n\n## Course Outline\n\n**Unit 1: Propositional Logic and Problem Solving Skills**\n- 1.1 Truth tables, Tautologies, Contradictions, and Conditional Statements\n- 1.2 The Rules of Inference and Reasoning with Propositions\n- 1.3 Problem Solving Strategies: Breaking Down Complex Tasks, Decomposition, and Algorithmic Thinking\n- 1.4 Logical Equivalences\n\n**Unit 2: Predicate Logic**\n- 2.1 Quantifiers and Statements with Variables\n- 2.2 Truth tables for Quantified Formulas, Tautologies, Contradictions and Conditional Statements in Predicate Logic\n- 2.3 Rules of Inference for Predicate Logic\n- 2.4 Translating English Sentences into Predicate Calculus\n- 2.5 Logical Equivalences in Predicate Logic\n- 2.6 Problem Solving Strategies for Quantified Formulas\n\n**Unit 3: Set Theory and Combinatorics**\n- 3.1 Definitions of Sets, Pigeonhole Principle, De Morgan\'s Laws\n- 3.2 Intersection, Union, Power Set, Subset Relation\n- 3.3 Cartesian Products and Relations\n- 3.4 Combinatorics: Counting Principle, Permutations, Combinations, Inclusion-Exclusion Principle\n- 3.5 Graph Theory: Directed and Undirected Graphs, Degree of a Vertex, Paths and Cycles, Connectivity\n\n## Evaluation\n| Component                 | Weight |\n|---------------------------|-------|\n| Midterm Exam              | 25%   |\n| Assignments               | 30%   |\n| Final Exam                | 45%   |\n\n## Academic Integrity\nAs a student in this class, you are expected to adhere to Sheridan\'s Academic Honesty Policy. Any violation of the policy will be dealt with under the appropriate academic misconduct procedures as outlined in the Student Code. Plagiarism and cheating are not tolerated.\n\n## Accessibility\nSheridan is committed to providing a barrier-free environment for all students, faculty, staff, and visitors. If you require accommodations please contact your instructor and/or Sheridan\'s Accessibility Services.\n\n**Note:** This syllabus is subject to change. Please check the course website regularly for updates.\n\n---\n\n<p align="right">(c) 2023 Ricardo James</p>', images=None, tool_calls=None)
+2025-04-04 23:24:14,540 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:24:14,542 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:24:14,542 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:24:14,542 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:24:14,596 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:24:31,519 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:24:37,195 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:24:37,195 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:24:37,195 - root - INFO - QnAService initialized successfully
+2025-04-04 23:24:37,196 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:24:37,196 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:24:37,196 - root - INFO - AIService initialized successfully
+2025-04-04 23:24:37,196 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:24:37,196 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:24:37,196 - root - INFO - PDFService initialized successfully
+2025-04-04 23:24:37,197 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:24:37,202 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 91.511 seconds
+2025-04-04 23:24:37,206 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:24:37,223 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:24:47,304 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:24:47,304 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:24:47,431 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:24:47,513 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:24:47,518 - src.api.routes - ERROR - Error processing uploaded file: Error retrieving document by content hash: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 89, in upload_file
+    existing_doc = await rag_service.get_document_by_content_hash(content_hash)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 57, in get_document_by_content_hash
+    raise RuntimeError(f"Error retrieving document by content hash: {str(e)}")
+RuntimeError: Error retrieving document by content hash: 'NoneType' object is not subscriptable
+2025-04-04 23:25:35,820 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:25:35,821 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:25:35,821 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:25:35,841 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:25:35,841 - src.api.routes - ERROR - Error processing uploaded file: Error retrieving document by content hash: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 89, in upload_file
+    existing_doc = await rag_service.get_document_by_content_hash(content_hash)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 57, in get_document_by_content_hash
+    raise RuntimeError(f"Error retrieving document by content hash: {str(e)}")
+RuntimeError: Error retrieving document by content hash: 'NoneType' object is not subscriptable
+2025-04-04 23:29:12,626 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.157 seconds
+2025-04-04 23:29:12,628 - root - INFO - Starting up the application...
+2025-04-04 23:29:12,628 - root - INFO - Configuration validated successfully
+2025-04-04 23:29:12,628 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:29:12,641 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:29:12,770 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:29:12,770 - root - INFO - RAG service initialized successfully
+2025-04-04 23:29:12,770 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:29:31,440 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:29:31,449 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T17:59:31.429345Z' done=True done_reason='stop' total_duration=18653288333 load_duration=18593833 prompt_eval_count=2 prompt_eval_duration=4435545084 eval_count=274 eval_duration=14196691416 message=Message(role='assistant', content=' <!DOCTYPE html>\n<html lang="en">\n\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="stylesheet" href="style.css">\n    <title>Document</title>\n</head>\n\n<body class="container">\n    <div class="header">\n        <h2>Sign up</h2>\n    </div>\n\n    <form action="register.php" method="post">\n        <input type="text" name="fullname" placeholder="Your Full Name" required>\n        <input type="email" name="email" placeholder="Your Email" required>\n        <input type="password" name="password" placeholder="Password" required>\n        <button type="submit">Sign up</button>\n    </form>\n\n    <div class="footer">\n        Already have an account?\n        <a href="index.php"> Login here.</a>\n    </div>\n</body>\n\n</html>', images=None, tool_calls=None)
+2025-04-04 23:29:31,449 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:29:31,450 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:29:31,450 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:29:31,450 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:29:31,472 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:29:37,273 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:29:57,622 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:29:57,622 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:29:57,623 - root - INFO - QnAService initialized successfully
+2025-04-04 23:29:57,623 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:29:57,623 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:29:57,623 - root - INFO - AIService initialized successfully
+2025-04-04 23:29:57,623 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:29:57,623 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:29:57,624 - root - INFO - PDFService initialized successfully
+2025-04-04 23:29:57,624 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:29:57,625 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 44.997 seconds
+2025-04-04 23:29:57,629 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:29:57,632 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:30:02,786 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:30:02,786 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:30:02,910 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:30:02,978 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:30:02,988 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:30:02,989 - src.services.rag_service - INFO - Document retrieved successfully: 10.1371journal.pone.0231708.pdf
+2025-04-04 23:30:02,989 - src.services.rag_service - ERROR - Error storing document in RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 116, in store_document
+    doc_id = await self._generate_unique_doc_id(base_doc_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 84, in _generate_unique_doc_id
+    if existing_doc and existing_doc['metadata'].get('content_hash') == self._compute_content_hash(existing_doc['text']):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-04-04 23:30:02,989 - src.api.routes - ERROR - Error processing uploaded file: Error storing document in RAG: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 116, in store_document
+    doc_id = await self._generate_unique_doc_id(base_doc_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 84, in _generate_unique_doc_id
+    if existing_doc and existing_doc['metadata'].get('content_hash') == self._compute_content_hash(existing_doc['text']):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/api/routes.py", line 100, in upload_file
+    doc_id, is_new, doc_info = await rag_service.store_document(text, filename)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 135, in store_document
+    raise RuntimeError(f"Error storing document in RAG: {str(e)}")
+RuntimeError: Error storing document in RAG: 'NoneType' object has no attribute 'get'
+2025-04-04 23:33:34,632 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.156 seconds
+2025-04-04 23:33:34,634 - root - INFO - Starting up the application...
+2025-04-04 23:33:34,634 - root - INFO - Configuration validated successfully
+2025-04-04 23:33:34,634 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:33:34,647 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:33:34,781 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:33:34,781 - root - INFO - RAG service initialized successfully
+2025-04-04 23:33:34,781 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:33:49,863 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:33:49,872 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T18:03:49.85144Z' done=True done_reason='stop' total_duration=15063796750 load_duration=16619916 prompt_eval_count=2 prompt_eval_duration=4219330042 eval_count=186 eval_duration=10824273667 message=Message(role='assistant', content='\t.data\n  \t\tnum1: .word 20\n         num2: .word 35\n\tsum : .word 0\n.text\n        li $t0, 10\n\taddi $sp, $sp, -4\n        sw $ra, 0($sp)\n\tsw $t0, 4($sp)\n\n\tlw $t0, num1($zero)\n\tlw $t1, num2($zero)\n\tadd $s0, $t0, $t1\n\n        addi $v0, $zero, 10\n        syscall\n\n\n    sum:\tli $v0, 1\n\tmove $a0, $s0\n\tsyscall\n\tjr $ra\n\n\t#--------------------------------------------------', images=None, tool_calls=None)
+2025-04-04 23:33:49,873 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:33:49,873 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:33:49,873 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:33:49,873 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:33:49,892 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:34:00,194 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:34:05,468 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:34:05,468 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:34:05,468 - root - INFO - QnAService initialized successfully
+2025-04-04 23:34:05,468 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:34:05,468 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:34:05,468 - root - INFO - AIService initialized successfully
+2025-04-04 23:34:05,469 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:34:05,469 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:34:05,469 - root - INFO - PDFService initialized successfully
+2025-04-04 23:34:05,469 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:34:05,470 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 30.836 seconds
+2025-04-04 23:34:05,473 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:34:05,478 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:34:24,556 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:34:24,556 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:34:24,679 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:34:24,761 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:34:24,770 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:34:24,771 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:34:24,772 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_1.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:34:24,773 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_2.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results["documents"][0],
+            ~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:34:25,958 - src.services.rag_service - INFO - Document stored with a new unique ID: 10.1371journal.pone.0231708_3.pdf
+2025-04-04 23:37:15,953 - asyncio - WARNING - Executing <Task cancelling name='Task-9' coro=<_handle() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/task_group.py:33> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[TaskGroup._on_task_done(), gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/taskgroups.py:184> took 0.269 seconds
+2025-04-04 23:39:31,136 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.155 seconds
+2025-04-04 23:39:31,137 - root - INFO - Starting up the application...
+2025-04-04 23:39:31,137 - root - INFO - Configuration validated successfully
+2025-04-04 23:39:31,138 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:39:31,151 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:39:31,281 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:39:31,281 - root - INFO - RAG service initialized successfully
+2025-04-04 23:39:31,281 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:39:52,076 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:39:52,089 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T18:09:52.062918Z' done=True done_reason='stop' total_duration=20771835417 load_duration=4081041667 prompt_eval_count=2 prompt_eval_duration=4604431458 eval_count=247 eval_duration=12082433125 message=Message(role='assistant', content=' The Tulane University School of Public Health and Tropical Medicine (SPHTM) will be hosting an Open House in the new building on the uptown campus, this Friday October 25th from 10am-3pm.\n\nThe new home of SPHTM at 1440 Canal Street is a state-of-the-art teaching and research facility that includes an active learning classroom (with 68 movable workstations), a flexible lecture hall, and spaces for student collaboration and faculty offices.\n\nThis event is open to the public and will include a ribbon cutting ceremony at 10:45am, campus tours, refreshments, and opportunities to talk with students, faculty and staff about the school’s programs and initiatives. For more information on the Open House visit the SPHTM website: http://sph.tulane.edu/open-house/\n\nIf you would like a tour of the building at a time that is more convenient for you please email Dr. Lamar Haslett at lhaslett@tulane.edu with your preferred date and time and he will be happy to accommodate you.', images=None, tool_calls=None)
+2025-04-04 23:39:52,089 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:39:52,090 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:39:52,090 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:39:52,090 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:39:52,119 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:40:00,842 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:40:02,434 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:40:02,435 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:40:02,435 - root - INFO - QnAService initialized successfully
+2025-04-04 23:40:02,435 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:40:02,435 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:40:02,435 - root - INFO - AIService initialized successfully
+2025-04-04 23:40:02,436 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:40:02,436 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:40:02,436 - root - INFO - PDFService initialized successfully
+2025-04-04 23:40:02,436 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:40:02,438 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 31.300 seconds
+2025-04-04 23:40:02,441 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:40:02,446 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:40:07,873 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:40:07,873 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:40:07,976 - asyncio - WARNING - Executing <Task pending name='Task-11' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.103 seconds
+2025-04-04 23:40:08,025 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:40:08,091 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:08,104 - src.services.rag_service - ERROR - Error retrieving document by content hash: 2c2ed540f07a4bcdab56e767b1c65306
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 48, in get_document_by_content_hash
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:08,105 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:08,107 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_1.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:08,108 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_2.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:08,109 - src.services.rag_service - ERROR - Error retrieving document from RAG: 10.1371journal.pone.0231708_3.pdf
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py", line 160, in retrieve_document
+    "text": results.get("documents", [None])[0],
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-04-04 23:40:09,179 - src.services.rag_service - INFO - Document stored with a new unique ID: 10.1371journal.pone.0231708_4.pdf
+2025-04-04 23:41:45,311 - asyncio - WARNING - Executing <Task cancelling name='Task-9' coro=<_handle() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/task_group.py:33> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[TaskGroup._on_task_done(), gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/taskgroups.py:184> took 0.216 seconds
+2025-04-04 23:44:01,513 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.157 seconds
+2025-04-04 23:44:01,515 - root - INFO - Starting up the application...
+2025-04-04 23:44:01,515 - root - INFO - Configuration validated successfully
+2025-04-04 23:44:01,515 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-04 23:44:01,528 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:44:01,660 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-04 23:44:01,661 - root - INFO - RAG service initialized successfully
+2025-04-04 23:44:01,661 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-04 23:44:35,097 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-04 23:44:35,107 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-04T18:14:35.086547Z' done=True done_reason='stop' total_duration=33416939125 load_duration=20915208 prompt_eval_count=2 prompt_eval_duration=4478096416 eval_count=551 eval_duration=28913767250 message=Message(role='assistant', content=' A few years ago I wrote a post about the way that my dad, who had been an English teacher all his life, would sometimes get flustered when reading out loud to us at home.  He’d hesitate, stumble over words, repeat himself or skip a sentence without noticing he had done so. It was something I noticed as a child and continued to see into my adulthood.\n\nHe explained once, that teaching all his life, he had gotten used to being the one who knew what was coming next in a piece of writing.  As a reader, that knowledge is stripped away, leaving you to rely on instinct alone – something at which my dad admitted he has never been very good.\n\nI think about that often because I’m learning to trust my instincts again, and it’s hard.\n\nWhen I was in school, if I didn’t know the answer or if I got something wrong, I would feel that sharp sting of failure that everyone experiences.  In college, though, when I didn’t understand a concept, I would ask for help instead of pretending to have it all figured out.\n\nWhen I went to work in an office, I started to see how little I actually knew about how the world really works and how much I had taken things at face value.  It was a humbling experience that led me to question so many of my previously held beliefs.\n\nI have learned a lot over the years, but I have also come to realize how very much I don’t know or understand.  And it’s scary.\n\nWhen faced with difficult situations, instead of reacting as I used to, which was often out of fear and not based on any true knowledge of what needed to be done, I pause now and take a deep breath.\n\nI try to let go of my instinctive reactions – those things that have kept me from taking risks in the past – and instead listen to my inner voice.  And it’s quiet and soft.\n\nI try not to question its wisdom because more often than not, I know that it’s right.  It is that still small voice inside of us all that knows what we need to do, says what we need to say, sees what is right in front of us even when it takes a minute for our brains to catch up.\n\nWe are hardwired to survive and thrive – our instincts have been refined over millions of years of evolution.  If we listen to them, they will guide us through even the darkest times.\n\nAnd I trust that more and more each day.', images=None, tool_calls=None)
+2025-04-04 23:44:35,108 - root - INFO - CrewAIService initialized successfully
+2025-04-04 23:44:35,108 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-04 23:44:35,108 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-04 23:44:35,108 - root - INFO - PaperSearchService initialized successfully
+2025-04-04 23:44:35,138 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-04 23:44:50,688 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-04 23:44:58,391 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-04 23:44:58,392 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-04 23:44:58,392 - root - INFO - QnAService initialized successfully
+2025-04-04 23:44:58,392 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-04 23:44:58,392 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-04 23:44:58,392 - root - INFO - AIService initialized successfully
+2025-04-04 23:44:58,392 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-04 23:44:58,392 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-04 23:44:58,392 - root - INFO - PDFService initialized successfully
+2025-04-04 23:44:58,392 - root - INFO - Services initialized and passed to routes
+2025-04-04 23:44:58,395 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 56.879 seconds
+2025-04-04 23:44:58,396 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-04 23:44:58,400 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-04 23:45:01,707 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:45:01,707 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:45:01,831 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-04 23:45:01,926 - src.api.routes - INFO - File already exists in the system: 10.1371journal.pone.0231708_1.pdf

@@ -5,14 +5,18 @@ import asyncio
 import re
 import unicodedata
 from typing import Dict, Any, Optional, List, AsyncGenerator
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from src.config import Config
+from cachetools import TTLCache
+import threading
 
 logger = logging.getLogger(__name__)
 
 class PDFService:
     def __init__(self):
-        self.executor = ProcessPoolExecutor()
+        self.executor = ThreadPoolExecutor(max_workers=4)  # Adjust the number of workers as needed
+        self.cache = TTLCache(maxsize=1000, ttl=3600)
+        self.cache_lock = threading.Lock()
 
     async def initialize(self):
         logger.info("Initializing PDFService...")
@@ -30,7 +34,6 @@ class PDFService:
 
     @staticmethod
     def clean_text(text: str) -> str:
-        # Remove control characters and normalize whitespace
         text = ''.join(ch for ch in text if unicodedata.category(ch)[0] != 'C')
         return re.sub(r'\s+', ' ', text).strip()
 
@@ -43,12 +46,25 @@ class PDFService:
             logger.error(f"Error opening PDF: {file_path}. Error: {str(e)}")
             return False
 
-    @staticmethod
-    def extract_text(pdf_path: str, start_page: int = 0, end_page: Optional[int] = None) -> List[str]:
+    def extract_text(self, pdf_path: str, start_page: int = 0, end_page: Optional[int] = None) -> str:
         with fitz.open(pdf_path) as doc:
             total_pages = len(doc)
             end = end_page if end_page is not None else total_pages
-            return [PDFService.extract_text_from_page(doc[i]) for i in range(start_page, end)]
+            text_list = [self.extract_text_from_page(doc[i]) for i in range(start_page, end)]
+            return "\n".join(text_list)
+
+    def cached_extract_text(self, pdf_path: str, start_page: int = 0, end_page: Optional[int] = None) -> str:
+        cache_key = f"{pdf_path}:{start_page}:{end_page}"
+        with self.cache_lock:
+            if cache_key in self.cache:
+                return self.cache[cache_key]
+        
+        text = self.extract_text(pdf_path, start_page, end_page)
+        
+        with self.cache_lock:
+            self.cache[cache_key] = text
+        
+        return text
 
     async def extract_text_from_pdf(self, pdf_path: str, start_page: int = 0, end_page: Optional[int] = None) -> str:
         if not os.path.exists(pdf_path):
@@ -58,10 +74,9 @@ class PDFService:
         try:
             logger.info(f"Starting text extraction from PDF: {pdf_path}")
             
-            pages = await asyncio.get_running_loop().run_in_executor(
-                self.executor, self.extract_text, pdf_path, start_page, end_page
+            text = await asyncio.get_running_loop().run_in_executor(
+                self.executor, self.cached_extract_text, pdf_path, start_page, end_page
             )
-            text = "\n".join(pages)
 
             if not text:
                 logger.warning(f"No text extracted from PDF: {pdf_path}")
@@ -76,6 +91,7 @@ class PDFService:
             logger.exception(f"Error extracting text from PDF: {pdf_path}")
             raise RuntimeError(f"Error extracting text from PDF: {str(e)}")
 
+        
     async def is_valid_pdf(self, file_path: str) -> bool:
         """Checks if the given file is a valid PDF."""
         if not os.path.exists(file_path):
@@ -92,6 +108,9 @@ class PDFService:
         except Exception as e:
             logger.exception(f"Unexpected error checking PDF validity: {file_path}. Error: {str(e)}")
             return False
+
+    
+
 
     @staticmethod
     def extract_metadata(pdf_path: str) -> Dict[str, Any]:

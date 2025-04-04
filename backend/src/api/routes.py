@@ -84,16 +84,35 @@ async def upload_file():
                 os.remove(filepath)
                 return jsonify({"error": "No text could be extracted from the PDF"}), 400
 
-            await rag_service.store_document(text, filename)
-            
+            content_hash = rag_service.compute_content_hash(text)
+            existing_doc = await rag_service.get_document_by_content_hash(content_hash)
+
+            if existing_doc:
+                logger.info(f"File already exists in the system: {existing_doc['id']}")
+                return jsonify({
+                    "message": "File already exists in the system",
+                    "doc_id": existing_doc['id'],
+                    "original_filename": filename,
+                    "chunks": existing_doc.get('chunks', 0)
+                }), 200
+
+            # Store document in RAG service
+            doc_id, is_new, doc_info = await rag_service.store_document(text, filename)
+
+            # Process document
             with open(filepath, 'rb') as f:
                 file_content = f.read()
-            splits = await qna_service.process_document(file_content, filename)
+            splits = await qna_service.process_document(file_content, doc_id)
             
-            logger.info(f"File uploaded and processed successfully: {filename}")
+            # Update the document with the number of chunks
+            await rag_service.update_document_metadata(doc_id, {'chunks': len(splits)})
+            
+            action = "stored" if is_new else "updated"
+            logger.info(f"File uploaded and {action}: {doc_id}")
             return jsonify({
-                "message": "File uploaded and processed successfully", 
-                "doc_id": filename,
+                "message": f"File uploaded and {action}",
+                "doc_id": doc_id,
+                "original_filename": filename,
                 "chunks": len(splits)
             }), 200
         except FileNotFoundError:
