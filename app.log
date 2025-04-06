@@ -5989,3 +5989,494 @@ LiteLLM completion() model= mistral; provider = ollama
 2025-04-05 03:34:13,121 - asyncio - WARNING - Executing <Task finished name='Task-11' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 44.509 seconds
 2025-04-05 03:34:13,140 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
 2025-04-05 03:34:13,147 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 09:54:52,126 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.169 seconds
+2025-04-05 09:54:52,128 - root - INFO - Starting up the application...
+2025-04-05 09:54:52,128 - root - INFO - Configuration validated successfully
+2025-04-05 09:54:52,128 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 09:54:52,141 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 09:54:52,274 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 09:54:52,274 - root - INFO - RAG service initialized successfully
+2025-04-05 09:54:52,274 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 09:54:52,276 - src.services.crew_service - WARNING - Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-04-05 09:54:52,276 - src.services.crew_service - INFO - Attempting to pull the model: mistral
+2025-04-05 09:54:52,276 - src.services.crew_service - ERROR - Failed to pull and initialize the model: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-04-05 09:54:52,276 - root - ERROR - Error during startup: Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 23, in initialize
+    ollama.pull(model=self.model)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 422, in pull
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 178, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 124, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 58, in startup
+    await crew_service.initialize()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 29, in initialize
+    raise RuntimeError(f"Failed to initialize CrewAI service: {str(pull_error)}")
+RuntimeError: Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-04-05 09:54:52,277 - app - ERROR - Exception
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 23, in initialize
+    ollama.pull(model=self.model)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 422, in pull
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 178, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 124, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 58, in startup
+    await crew_service.initialize()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 29, in initialize
+    raise RuntimeError(f"Failed to initialize CrewAI service: {str(pull_error)}")
+RuntimeError: Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-04-05 09:54:52,278 - asyncio - WARNING - Executing <Task finished name='Task-3' coro=<Lifespan.handle_lifespan() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:42> exception=LifespanFailureError("Lifespan failure in startup. 'Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download'") created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 0.150 seconds
+2025-04-05 09:54:52,279 - root - CRITICAL - Unhandled exception in main app: Lifespan failure in startup. 'Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download'
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 23, in initialize
+    ollama.pull(model=self.model)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 422, in pull
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 178, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/ollama/_client.py", line 124, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 365, in __call__
+    await self.app.startup()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1768, in startup
+    await self.ensure_async(func)()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 58, in startup
+    await crew_service.initialize()
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/crew_service.py", line 29, in initialize
+    raise RuntimeError(f"Failed to initialize CrewAI service: {str(pull_error)}")
+RuntimeError: Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/backend/app.py", line 114, in <module>
+    app.run(debug=Config.DEBUG, host=Config.HOST, port=Config.PORT)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 878, in run
+    loop.run_until_complete(asyncio.gather(*tasks))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/__init__.py", line 44, in serve
+    await worker_serve(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py", line 88, in worker_serve
+    raise exception
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 55, in handle_lifespan
+    await self.app(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/app_wrappers.py", line 34, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1735, in __call__
+    await self.asgi_app(scope, receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py", line 1761, in asgi_app
+    await asgi_handler(receive, send)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py", line 367, in __call__
+    await send(
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py", line 119, in asgi_send
+    raise LifespanFailureError("startup", message.get("message", ""))
+hypercorn.utils.LifespanFailureError: Lifespan failure in startup. 'Failed to initialize CrewAI service: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download'
+2025-04-05 09:56:40,364 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.160 seconds
+2025-04-05 09:56:40,365 - root - INFO - Starting up the application...
+2025-04-05 09:56:40,365 - root - INFO - Configuration validated successfully
+2025-04-05 09:56:40,365 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-05 09:56:40,377 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 09:56:40,506 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-05 09:56:40,506 - root - INFO - RAG service initialized successfully
+2025-04-05 09:56:40,506 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-05 09:57:22,758 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-05 09:57:22,767 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-05T04:27:22.744859Z' done=True done_reason='stop' total_duration=42237031458 load_duration=4072928958 prompt_eval_count=2 prompt_eval_duration=10114301916 eval_count=566 eval_duration=28042973500 message=Message(role='assistant', content=" The most important aspect of running a successful business is marketing. Marketing can bring in new customers, increase customer loyalty and establish your brand within the marketplace. If you are looking to grow your business, here are 10 tips for effective marketing that will help you get started:\n\n1. Know Your Target Audience: It is essential to know who your target audience is before starting any marketing campaign. Understanding their needs, preferences, and behaviors will help you create messaging that resonates with them and increases the chances of success.\n2. Set Clear Goals: Setting clear goals for your marketing campaigns helps you measure success and make necessary adjustments along the way. Your goals should be specific, measurable, achievable, relevant, and time-bound (SMART).\n3. Create a Marketing Strategy: A marketing strategy outlines how you plan to achieve your marketing goals. It includes elements like budget allocation, messaging, channels, target audience, and timeline.\n4. Use Multiple Channels: Don't rely on just one channel for marketing. Use multiple channels like social media, email, content marketing, advertising, and events to reach a wider audience and increase your chances of success.\n5. Consistency is Key: Consistency in messaging, branding, and tone across all channels is crucial for building brand recognition and trust with your audience.\n6. Personalize Your Marketing Efforts: Personalization makes customers feel valued and increases the chances of engagement. Use data to personalize emails, offers, and messages to individual customers.\n7. Leverage User-Generated Content (UGC): UGC is a powerful tool for building trust and credibility with your audience. Encourage customers to share their experiences with your brand and use their content in marketing efforts.\n8. Measure and Analyze Results: Regularly measuring and analyzing the results of your marketing campaigns will help you identify what's working and what's not, so you can adjust your strategy accordingly.\n9. Test and Iterate: Testing different messaging, channels, and approaches helps you find what works best for your audience. Continuously iterate based on feedback and data to optimize your marketing efforts.\n10. Collaborate with Influencers: Partnering with influencers in your industry can help you reach a wider audience and increase brand visibility. Look for influencers who align with your brand values and have a following that matches your target audience.\n\nBy implementing these tips, you can create an effective marketing strategy that drives growth and success for your business. Keep testing, iterating, and refining your approach to stay ahead of the competition and continue to grow your customer base.", images=None, tool_calls=None)
+2025-04-05 09:57:22,768 - root - INFO - CrewAIService initialized successfully
+2025-04-05 09:57:22,768 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-05 09:57:22,768 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-05 09:57:22,768 - root - INFO - AIService initialized successfully
+2025-04-05 09:57:22,768 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-05 09:57:22,768 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-05 09:57:22,768 - root - INFO - PaperSearchService initialized successfully
+2025-04-05 09:57:22,793 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-05 09:57:25,210 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-05 09:57:26,068 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-05 09:57:26,068 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-05 09:57:26,068 - root - INFO - QnAService initialized successfully
+2025-04-05 09:57:26,069 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-05 09:57:26,069 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-05 09:57:26,069 - root - INFO - PDFService initialized successfully
+2025-04-05 09:57:26,069 - root - INFO - Services initialized and passed to routes
+2025-04-05 09:57:26,071 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 45.705 seconds
+2025-04-05 09:57:26,072 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-05 09:57:26,077 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-05 10:06:50,059 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:06:50,059 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:06:50,179 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:06:50,294 - src.api.routes - INFO - File already exists in the system: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:09:55,093 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 10:11:17,949 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM
+2025-04-05 10:11:21,667 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM "HTTP/1.1 200 OK"
+2025-04-05 10:11:21,902 - scholarly - INFO - Found 1 authors
+2025-04-05 10:11:21,904 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100
+2025-04-05 10:11:23,920 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:11:24,172 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100
+2025-04-05 10:11:26,070 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:11:26,216 - src.services.paper_search_service - INFO - Fetched details for author: Swathy R SRM
+2025-04-05 10:11:26,220 - asyncio - WARNING - Executing <Task pending name='Task-27' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 8.272 seconds
+2025-04-05 10:11:27,121 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.686 seconds
+2025-04-05 10:11:27,413 - src.services.rag_service - INFO - Document stored: author_Swathy R SRM
+2025-04-05 10:11:27,413 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM
+2025-04-05 10:13:30,873 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM
+2025-04-05 10:13:34,686 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM "HTTP/1.1 200 OK"
+2025-04-05 10:13:34,974 - scholarly - INFO - Found 1 authors
+2025-04-05 10:13:34,975 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100
+2025-04-05 10:13:37,082 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:13:37,414 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100
+2025-04-05 10:13:39,223 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:13:39,466 - src.services.paper_search_service - INFO - Fetched details for author: Swathy R SRM
+2025-04-05 10:13:39,468 - asyncio - WARNING - Executing <Task pending name='Task-35' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 8.594 seconds
+2025-04-05 10:13:39,473 - src.services.rag_service - INFO - Document with same content already exists: author_Swathy R SRM
+2025-04-05 10:13:39,474 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM
+2025-04-05 10:14:22,412 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM
+2025-04-05 10:14:25,377 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM "HTTP/1.1 200 OK"
+2025-04-05 10:14:25,580 - scholarly - INFO - Found 1 authors
+2025-04-05 10:14:25,581 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100
+2025-04-05 10:14:27,628 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:14:27,888 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100
+2025-04-05 10:14:29,844 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:14:30,083 - src.services.paper_search_service - INFO - Fetched details for author: Swathy R SRM
+2025-04-05 10:14:30,085 - asyncio - WARNING - Executing <Task pending name='Task-43' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 7.675 seconds
+2025-04-05 10:14:30,091 - src.services.rag_service - INFO - Document with same content already exists: author_Swathy R SRM
+2025-04-05 10:14:30,091 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM
+2025-04-05 10:14:30,092 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM
+2025-04-05 10:14:31,853 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Swathy%20R%20SRM "HTTP/1.1 200 OK"
+2025-04-05 10:14:32,059 - scholarly - INFO - Found 1 authors
+2025-04-05 10:14:32,060 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100
+2025-04-05 10:14:34,382 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&user=SEfqCcUAAAAJ&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:14:34,494 - scholarly - INFO - Getting https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100
+2025-04-05 10:14:36,786 - httpx - INFO - HTTP Request: GET https://scholar.google.com/citations?hl=en&tzom=300&user=SEfqCcUAAAAJ&view_op=list_mandates&pagesize=100 "HTTP/1.1 200 OK"
+2025-04-05 10:14:36,811 - src.services.paper_search_service - INFO - Fetched details for author: Swathy R SRM
+2025-04-05 10:14:36,812 - asyncio - WARNING - Executing <Task pending name='Task-43' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 6.721 seconds
+2025-04-05 10:14:36,815 - src.services.rag_service - INFO - Document with same content already exists: author_Swathy R SRM
+2025-04-05 10:14:36,815 - src.services.paper_search_service - INFO - Stored author details in RAG for: Swathy R SRM
+2025-04-05 10:14:36,853 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:15:39,500 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:15:39,549 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:15:39,613 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:15:39,614 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:15:39,629 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:15:39,643 - asyncio - WARNING - Executing <Task finished name='Task-43' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 62.828 seconds
+2025-04-05 10:15:39,645 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:18:06,222 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:18:06,225 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:18:06,225 - src.services.rag_service - WARNING - Cached document 10.1371journal.pone.0231708.pdf has no text content
+2025-04-05 10:18:06,226 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: False
+2025-04-05 10:22:20,886 - src.services.rag_service - INFO - All documents (2) cleared from the RAG system
+2025-04-05 10:22:24,894 - src.services.rag_service - INFO - Retrieved 0 documents
+2025-04-05 10:22:44,719 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:44,719 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:44,719 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:44,722 - src.services.pdf_service - INFO - Successfully extracted metadata from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:45,800 - src.services.rag_service - INFO - Document stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:45,800 - src.api.routes - INFO - File uploaded and stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:52,527 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:52,527 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:52,528 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: True
+2025-04-05 10:22:52,528 - src.services.qna_service - INFO - Answering question. Prompt: 'Here what is main outcome of this paper', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 10:22:52,528 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:52,528 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:22:52,528 - src.services.qna_service - INFO - Retrieved document. Content length: 63523
+2025-04-05 10:22:52,528 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 10:22:53,358 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 63523
+2025-04-05 10:22:53,358 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 10:22:53,376 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 10:22:53,384 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:23:24,159 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:23:24,205 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:23:24,220 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:23:24,239 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:23:24,245 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:23:48,621 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:23:48,651 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:23:48,695 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 10:23:48,696 - src.services.qna_service - INFO - LLM response received
+2025-04-05 10:23:48,696 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:23:48,722 - asyncio - WARNING - Executing <Task finished name='Task-79' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 55.364 seconds
+2025-04-05 10:23:48,726 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:26:38,922 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:26:38,924 - src.services.ai_service - INFO - Starting summarization with level: intermediate
+2025-04-05 10:26:38,949 - src.services.crew_service - INFO - Starting CrewAI summarization process for level: intermediate
+2025-04-05 10:26:38,969 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:27:07,622 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:27:07,657 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:27:07,690 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:27:07,700 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:27:07,706 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:27:30,722 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:27:30,745 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:27:30,771 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:27:30,785 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:27:30,791 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:27:56,573 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:27:56,596 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:27:56,614 - src.services.crew_service - INFO - CrewAI summarization process completed
+2025-04-05 10:27:56,619 - src.services.ai_service - INFO - Summarization completed successfully in 77.70 seconds
+2025-04-05 10:27:56,620 - src.api.routes - INFO - Successfully summarized document: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:27:56,636 - asyncio - WARNING - Executing <Task finished name='Task-87' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 77.717 seconds
+2025-04-05 10:27:56,658 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:27:56,664 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:28:19,323 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:28:19,324 - src.services.ai_service - INFO - Starting summarization with level: expert
+2025-04-05 10:28:19,338 - src.services.crew_service - INFO - Starting CrewAI summarization process for level: expert
+2025-04-05 10:28:19,350 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:28:56,272 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:28:56,336 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:28:56,386 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:28:56,403 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:28:56,411 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:29:21,205 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:29:21,225 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:29:21,252 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 10:29:21,275 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:29:21,283 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:29:48,092 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 10:29:48,117 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 10:29:48,141 - src.services.crew_service - INFO - CrewAI summarization process completed
+2025-04-05 10:29:48,147 - src.services.ai_service - INFO - Summarization completed successfully in 88.82 seconds
+2025-04-05 10:29:48,147 - src.api.routes - INFO - Successfully summarized document: 10.1371journal.pone.0231708.pdf
+2025-04-05 10:29:48,169 - asyncio - WARNING - Executing <Task finished name='Task-95' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 88.848 seconds
+2025-04-05 10:29:48,175 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:29:48,183 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 10:32:03,389 - scholarly - INFO - Getting https://scholar.google.com/scholar?hl=en&q=machine%20learning%20in%20healthcare&as_vis=0&as_sdt=0,33
+2025-04-05 10:32:06,881 - httpx - INFO - HTTP Request: GET https://scholar.google.com/scholar?hl=en&q=machine%20learning%20in%20healthcare&as_vis=0&as_sdt=0,33 "HTTP/1.1 200 OK"
+2025-04-05 10:32:07,210 - scholarly - INFO - Getting https://scholar.google.com/scholar?start=10&q=machine+learning+in+healthcare&hl=en&as_sdt=0,33
+2025-04-05 10:32:08,924 - httpx - INFO - HTTP Request: GET https://scholar.google.com/scholar?start=10&q=machine+learning+in+healthcare&hl=en&as_sdt=0,33 "HTTP/1.1 200 OK"
+2025-04-05 10:32:09,265 - src.services.paper_search_service - INFO - Fetched 20 results from Google Scholar
+2025-04-05 10:32:09,284 - asyncio - WARNING - Executing <Task pending name='Task-103' coro=<ASGIHTTPConnection.handle_request() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:108> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:922, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[_wait.<locals>._on_completion() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:534] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 5.904 seconds
+2025-04-05 10:32:10,484 - src.services.paper_search_service - INFO - Fetched 20 results from ArXiv
+2025-04-05 10:32:11,269 - asyncio - WARNING - Executing <Handle BaseSelectorEventLoop._read_from_self()> took 0.693 seconds
+2025-04-05 10:32:15,003 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...returned dict>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 3.145 seconds
+2025-04-05 10:32:17,913 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...returned dict>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 2.908 seconds
+2025-04-05 10:32:19,838 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...returned dict>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 1.582 seconds
+2025-04-05 10:32:24,189 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...returned dict>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 4.215 seconds
+2025-04-05 10:32:25,507 - asyncio - WARNING - Executing <Task pending name='Task-133' coro=<RAGService.store_document() running at /Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py:127> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.610 seconds
+2025-04-05 10:32:28,078 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...returned dict>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 2.123 seconds
+2025-04-05 10:32:28,257 - asyncio - WARNING - Executing <Task pending name='Task-134' coro=<RAGService.store_document() running at /Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py:127> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.178 seconds
+2025-04-05 10:32:28,713 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.425 seconds
+2025-04-05 10:32:28,919 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.124 seconds
+2025-04-05 10:32:29,335 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.416 seconds
+2025-04-05 10:32:29,874 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.539 seconds
+2025-04-05 10:32:30,501 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.533 seconds
+2025-04-05 10:32:31,417 - asyncio - WARNING - Executing <Task pending name='Task-139' coro=<RAGService.store_document() running at /Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py:127> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.914 seconds
+2025-04-05 10:32:32,444 - asyncio - WARNING - Executing <Task pending name='Task-143' coro=<RAGService.store_document() running at /Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py:127> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 0.874 seconds
+2025-04-05 10:32:33,566 - asyncio - WARNING - Executing <Task pending name='Task-141' coro=<RAGService.store_document() running at /Volumes/T7 Shield/Codes/Python/Major Project/backend/src/services/rag_service.py:127> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:389, Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 1.121 seconds
+2025-04-05 10:32:34,255 - asyncio - WARNING - Executing <Handle _chain_future.<locals>._set_state(<Future finis...events.py:448>, <Future at 0x...rned NoneType>) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:383 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:405> took 0.492 seconds
+2025-04-05 10:32:34,258 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_3
+2025-04-05 10:32:34,258 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_0
+2025-04-05 10:32:34,258 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_10
+2025-04-05 10:32:34,258 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_4
+2025-04-05 10:32:34,258 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_9
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_1
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_2
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_5
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_8
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_6
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_11
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_7
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_13
+2025-04-05 10:32:34,259 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_14
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_18
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_15
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_17
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_19
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_20
+2025-04-05 10:32:34,260 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_12
+2025-04-05 10:32:34,261 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_23
+2025-04-05 10:32:34,261 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_22
+2025-04-05 10:32:34,261 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_16
+2025-04-05 10:32:34,261 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_21
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_25
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_27
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_26
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_28
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_24
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_29
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_31
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_32
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_33
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_30
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_34
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_35
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_39
+2025-04-05 10:32:34,262 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_38
+2025-04-05 10:32:34,263 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_36
+2025-04-05 10:32:34,431 - src.services.rag_service - INFO - Document stored: search_result_machine learning in healthcare_37
+2025-04-05 10:32:34,431 - src.services.paper_search_service - INFO - Completed paper search for query: machine learning in healthcare
+2025-04-05 10:33:02,530 - src.services.rag_service - INFO - Retrieved 41 documents
+2025-04-05 11:01:41,763 - src.services.rag_service - INFO - All documents (41) cleared from the RAG system
+2025-04-05 11:01:45,414 - src.services.rag_service - INFO - Retrieved 0 documents
+2025-04-05 11:25:04,771 - src.services.pdf_service - INFO - Valid PDF file: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 11:25:04,772 - src.services.pdf_service - INFO - Starting text extraction from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 11:25:04,933 - src.services.pdf_service - INFO - Successfully extracted and cleaned text from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 11:25:04,998 - src.services.pdf_service - INFO - Successfully extracted metadata from PDF: uploads/10.1371journal.pone.0231708.pdf
+2025-04-05 11:25:06,365 - src.services.rag_service - INFO - Document stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:25:06,365 - src.api.routes - INFO - File uploaded and stored: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:26:15,581 - src.services.qna_service - INFO - Checking existence of document: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:26:15,581 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:26:15,582 - src.services.qna_service - INFO - Document 10.1371journal.pone.0231708.pdf exists: True
+2025-04-05 11:26:15,582 - src.services.qna_service - INFO - Answering question. Prompt: 'what are the results', Doc ID: '10.1371journal.pone.0231708.pdf'
+2025-04-05 11:26:15,582 - src.services.qna_service - INFO - Retrieving specific document: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:26:15,582 - src.services.rag_service - INFO - Document retrieved from cache: 10.1371journal.pone.0231708.pdf
+2025-04-05 11:26:15,582 - src.services.qna_service - INFO - Retrieved document. Content length: 63523
+2025-04-05 11:26:15,582 - src.services.qna_service - INFO - Re-ranking documents with cross-encoder
+2025-04-05 11:26:16,468 - src.services.qna_service - INFO - Re-ranking complete. Relevant text length: 63523
+2025-04-05 11:26:16,469 - src.services.qna_service - INFO - Calling LLM for response
+2025-04-05 11:26:16,523 - src.services.crew_service - INFO - Starting CrewAI analysis process
+2025-04-05 11:26:16,562 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 11:26:47,868 - opentelemetry.sdk.trace.export - ERROR - Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1430, in getresponse
+    response.begin()
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='telemetry.crewai.com', port=4319): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/opentelemetry/sdk/trace/export/__init__.py", line 360, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/opentelemetry/exporter/otlp/proto/http/trace_exporter/__init__.py", line 189, in export
+    return self._export_serialized_spans(serialized_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/opentelemetry/exporter/otlp/proto/http/trace_exporter/__init__.py", line 159, in _export_serialized_spans
+    resp = self._export(serialized_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/opentelemetry/exporter/otlp/proto/http/trace_exporter/__init__.py", line 133, in _export
+    return self._session.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='telemetry.crewai.com', port=4319): Read timed out. (read timeout=30)
+2025-04-05 11:27:35,384 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 11:27:35,985 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 11:27:36,165 - LiteLLM - INFO - 
+LiteLLM completion() model= mistral; provider = ollama
+2025-04-05 11:27:36,323 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 11:27:36,330 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 11:28:16,154 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-05 11:28:16,650 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-04-05 11:28:16,956 - src.services.crew_service - INFO - CrewAI analysis process completed
+2025-04-05 11:28:16,960 - src.services.qna_service - INFO - LLM response received
+2025-04-05 11:28:17,088 - asyncio - WARNING - Executing <Task finished name='Task-180' coro=<ASGIHTTPConnection.handle_request() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/asgi.py:106> result=None created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:695> took 120.619 seconds
+2025-04-05 11:28:17,171 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 11:28:17,185 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-04-05 11:28:53,755 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.110 seconds
+2025-04-05 11:37:14,069 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-05 12:32:59,299 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 1.705 seconds
+2025-04-05 16:11:55,714 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 1.707 seconds
+2025-04-05 18:30:18,276 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:125> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 1.702 seconds
+2025-04-05 21:13:18,104 - asyncio - WARNING - Executing <TimerHandle when=35728.758484791 _set_result_unless_cancelled(<Future finis...events.py:448>, None) at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/futures.py:313 created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:661> took 0.102 seconds
+2025-04-05 21:59:36,046 - root - INFO - Shutting down the application...
+2025-04-05 21:59:36,050 - src.services.rag_service - INFO - Cleaning up RAG service...
+2025-04-05 21:59:36,058 - src.services.rag_service - INFO - RAG service cleaned up
+2025-04-05 21:59:36,058 - root - INFO - RAG service cleaned up successfully
+2025-04-05 21:59:36,060 - src.services.paper_search_service - INFO - Cleaning up PaperSearchService...
+2025-04-05 21:59:36,060 - src.services.paper_search_service - INFO - PaperSearchService cleaned up
+2025-04-05 21:59:36,060 - root - INFO - PaperSearchService cleaned up successfully
+2025-04-05 21:59:36,061 - src.services.qna_service - INFO - Cleaning up QnAService...
+2025-04-05 21:59:36,063 - src.services.qna_service - INFO - QnAService cleaned up
+2025-04-05 21:59:36,063 - root - INFO - QnAService cleaned up successfully
+2025-04-05 21:59:36,064 - src.services.crew_service - INFO - Cleaning up CrewAI service...
+2025-04-05 21:59:36,064 - src.services.crew_service - INFO - CrewAI service cleaned up
+2025-04-05 21:59:36,064 - root - INFO - CrewAIService cleaned up successfully
+2025-04-05 21:59:36,065 - src.services.ai_service - INFO - Cleaning up AIService...
+2025-04-05 21:59:36,065 - src.services.ai_service - INFO - AIService cleaned up
+2025-04-05 21:59:36,065 - root - INFO - AIService cleaned up successfully
+2025-04-05 21:59:36,065 - src.services.pdf_service - INFO - Cleaning up PDFService...
+2025-04-05 21:59:36,068 - src.services.pdf_service - INFO - PDFService cleaned up
+2025-04-05 21:59:36,068 - root - INFO - PDFService cleaned up successfully
+2025-04-05 21:59:37,264 - asyncio - WARNING - Executing <Task finished name='Task-2' coro=<observe_changes() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:105> result=None created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.297 seconds
