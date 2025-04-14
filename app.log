@@ -6480,3 +6480,35 @@ LiteLLM completion() model= mistral; provider = ollama
 2025-04-05 21:59:36,068 - src.services.pdf_service - INFO - PDFService cleaned up
 2025-04-05 21:59:36,068 - root - INFO - PDFService cleaned up successfully
 2025-04-05 21:59:37,264 - asyncio - WARNING - Executing <Task finished name='Task-2' coro=<observe_changes() done, defined at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:105> result=None created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.297 seconds
+2025-04-14 18:28:05,916 - asyncio - WARNING - Executing <Task pending name='Task-2' coro=<observe_changes() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/utils.py:120> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py:767] created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/quart/app.py:873> took 0.199 seconds
+2025-04-14 18:28:05,918 - root - INFO - Starting up the application...
+2025-04-14 18:28:05,918 - root - INFO - Configuration validated successfully
+2025-04-14 18:28:05,918 - src.services.rag_service - INFO - Initializing RAG service...
+2025-04-14 18:28:05,933 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-14 18:28:06,664 - src.services.rag_service - INFO - RAG service initialized with storage path: rag_db
+2025-04-14 18:28:06,665 - root - INFO - RAG service initialized successfully
+2025-04-14 18:28:06,665 - src.services.crew_service - INFO - Initializing CrewAI service...
+2025-04-14 18:28:57,433 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-14 18:28:57,550 - src.services.crew_service - INFO - CrewAI service initialized successfully. Response: model='mistral' created_at='2025-04-14T12:58:57.024175Z' done=True done_reason='stop' total_duration=50337541042 load_duration=4593298125 prompt_eval_count=2 prompt_eval_duration=17657497625 eval_count=333 eval_duration=28065089959 message=Message(role='assistant', content=' <html>\n   <head>\n     <title>My First PHP Script</title>\n   </head>\n   <body>\n      <?php\n         $servername = "localhost";\n         $username = "root";\n         $password = "";\n         $dbname = "user";\n\n         // Create connection\n         $conn = new mysqli($servername, $username, $password, $dbname);\n\n         // Check connection\n         if ($conn->connect_error) {\n            die("Connection failed: " . $conn->connect_error);\n         }\n\n         echo "<p>Connected successfully</p>";\n\n         //$sql = "INSERT INTO myguests (firstname, lastname, email)\n         //VALUES (\'John\', \'Doe\', \'john@example.com\')";\n\n         $sql = "SELECT id, firstname, lastname FROM myguests";\n         $result = $conn->query($sql);\n\n         if ($result->num_rows > 0) {\n            // output data of each row\n            while($row = $result->fetch_assoc()) {\n               echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";\n            }\n         } else {\n            echo "0 results";\n         }\n         $conn->close();\n      ?>\n   </body>\n</html>', images=None, tool_calls=None)
+2025-04-14 18:28:57,557 - root - INFO - CrewAIService initialized successfully
+2025-04-14 18:28:57,566 - src.services.ai_service - INFO - Initializing AIService...
+2025-04-14 18:28:57,571 - src.services.ai_service - INFO - AIService initialized successfully
+2025-04-14 18:28:57,571 - root - INFO - AIService initialized successfully
+2025-04-14 18:28:57,579 - src.services.paper_search_service - INFO - Initializing PaperSearchService...
+2025-04-14 18:28:57,579 - src.services.paper_search_service - INFO - PaperSearchService initialized successfully
+2025-04-14 18:28:57,579 - root - INFO - PaperSearchService initialized successfully
+2025-04-14 18:28:57,760 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-14 18:28:59,353 - sentence_transformers.cross_encoder.CrossEncoder - WARNING - You are trying to use a model that was created with Sentence Transformers version 4.1.0.dev0, but you're currently using version 4.0.2. This might cause unexpected behavior or errors. In that case, try to update to the latest version.
+2025-04-14 18:29:04,868 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-04-14 18:29:05,577 - src.services.qna_service - INFO - Initializing QnAService...
+2025-04-14 18:29:05,577 - src.services.qna_service - INFO - QnAService initialized successfully
+2025-04-14 18:29:05,577 - root - INFO - QnAService initialized successfully
+2025-04-14 18:29:05,579 - src.services.pdf_service - INFO - Initializing PDFService...
+2025-04-14 18:29:05,579 - src.services.pdf_service - INFO - PDFService initialized successfully
+2025-04-14 18:29:05,579 - root - INFO - PDFService initialized successfully
+2025-04-14 18:29:05,579 - root - INFO - Services initialized and passed to routes
+2025-04-14 18:29:05,584 - asyncio - WARNING - Executing <Task pending name='Task-3' coro=<Lifespan.handle_lifespan() running at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/lifespan.py:55> wait_for=<Future pending cb=[Task.task_wakeup()] created at /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py:448> created at /Volumes/T7 Shield/Codes/Python/Major Project/myproject_env_py3.12/lib/python3.12/site-packages/hypercorn/asyncio/run.py:83> took 59.666 seconds
+2025-04-14 18:29:05,587 - asyncio - INFO - <Server sockets=(<asyncio.TransportSocket fd=27, family=2, type=1, proto=0, laddr=('127.0.0.1', 5001)>,)> is serving
+2025-04-14 18:29:05,597 - hypercorn.error - INFO - Running on http://127.0.0.1:5001 (CTRL + C to quit)
+2025-04-14 18:29:30,645 - src.services.rag_service - INFO - Retrieved 1 documents
+2025-04-14 18:29:35,952 - src.services.rag_service - INFO - All documents (1) cleared from the RAG system
