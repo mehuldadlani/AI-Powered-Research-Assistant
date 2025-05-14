@@ -33,11 +33,10 @@ The Research Assistant is an innovative tool designed to analyze and summarize a
 | Component | Technologies |
 |-----------|--------------|
 | Backend   | Python, FastAPI |
-| AI/ML     | CrewAI, Ollama, Custom NLP models |
-| Database  | [Your database choice] |
+| AI/ML     | CrewAI, Ollama, |
+| Database  | ChromaDB(RAG) |
 | Frontend  | Flutter |
 | API Docs  | Swagger/OpenAPI |
-| Deployment| [Your deployment platform] |
 
 ## 🖥️ Backend API
 
